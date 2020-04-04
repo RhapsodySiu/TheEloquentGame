@@ -15,8 +15,11 @@ MonoBehaviour:
   tacticId: 17
   tacticType: 3
   tacticName: GuiltByAssociation
-  description: 'Guilt by association
+  description: 'An informal inductive argument of the hasty-generalization or red-herring
+    type and which asserts that qualities of one thing are inherently qualities of
+    another. Sometimes served as an effective ad hominem strategy.
 
-'
-  zh_description: 
-  cn_description: 
+
+    https://en.wikipedia.org/wiki/Guilt_by_Association'
+  zh_description: "\u5C6C\u65BC\u8349\u7387\u6982\u62EC\u6216\u8F49\u79FB\u8B70\u984C\u7126\u9EDE\u985E\u578B\u7684\u975E\u6B63\u5F0F\u6B78\u7D0D\u8AD6\u8B49\uFF0C\u5B83\u65B7\u8A00\u4E00\u4EF6\u4E8B\u7684\u672C\u8CEA\u662F\u53E6\u4E00\u4EF6\u4E8B\u7684\u672C\u8CEA\u3002\u6709\u6642\u662F\u6709\u6548\u7684\u4EBA\u8EAB\u653B\u64CA\u7B56\u7565\u3002"
+  cn_description: "\u5C5E\u4E8E\u8349\u7387\u6982\u62EC\u6216\u8F6C\u79FB\u8BAE\u9898\u7126\u70B9\u7C7B\u578B\u7684\u975E\u6B63\u5F0F\u5F52\u7EB3\u8BBA\u8BC1\uFF0C\u5B83\u65AD\u8A00\u4E00\u4EF6\u4E8B\u7684\u672C\u8D28\u662F\u53E6\u4E00\u4EF6\u4E8B\u7684\u672C\u8D28\u3002\u6709\u65F6\u662F\u6709\u6548\u7684\u4EBA\u8EAB\u653B\u51FB\u7B56\u7565\u3002"

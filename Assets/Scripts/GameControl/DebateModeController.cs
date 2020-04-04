@@ -8,6 +8,17 @@ public class DebateModeController : MonoBehaviour
 {
     public Flowchart flowchart;
     private DataController dataController;
+
+    public Canvas ActionGUI;
+    public Canvas TacticGUI;
+    public Canvas FactGUI;
+    public Canvas ThesesGUI;
+    public Canvas OverviewGUI;
+    public Canvas MainGUI;
+
+    public bool DebugMode;
+    public Text DebugText;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -148,7 +159,7 @@ public class DebateModeController : MonoBehaviour
         float publicSupport = dataController.GetAudienceSupport();
     }
 
-    public void DrawThesisMenu(bool showPlayer)
+    public void DrawThesesMenu(bool showPlayer)
     {
         DebaterThesis[] debaterTheses = null;
         List<Argument> playerArguments = dataController.GetPlayerArguments();
@@ -194,6 +205,34 @@ public class DebateModeController : MonoBehaviour
 
     }
 
+    // Open interactive mode: player can use Consult button, in particular
+    public void EnableInteraction()
+    {
+        Transform consultBtn = MainGUI.transform.Find("MainPanel/ButtonsContainer/ButtonsPanel/ConsultBtn");
+        if (consultBtn)
+        {
+            consultBtn.gameObject.GetComponent<Button>().interactable = true;
+        }
+        Transform actionBtn = MainGUI.transform.Find("MainPanel/ButtonsContainer/ButtonsPanel/ActionBtn");
+        if (actionBtn)
+        {
+            actionBtn.gameObject.GetComponent<Button>().interactable = true;
+        }
+    }
+
+    public void DisableInteraction()
+    {
+        Transform consultBtn = MainGUI.transform.Find("MainPanel/ButtonsContainer/ButtonsPanel/ConsultBtn");
+        if (consultBtn)
+        {
+            consultBtn.gameObject.GetComponent<Button>().interactable = false;
+        }
+        Transform actionBtn = MainGUI.transform.Find("MainPanel/ButtonsContainer/ButtonsPanel/ActionBtn");
+        if (actionBtn)
+        {
+            actionBtn.gameObject.GetComponent<Button>().interactable = false;
+        }
+    }
 
     public void DrawTemporaryArguments()
     {
@@ -214,22 +253,25 @@ public class DebateModeController : MonoBehaviour
 
     #region EventHandler
     /* Main menu */
-    public void OnClickedToggleThesisBtn()
+    public void OnClickedToggleThesesBtn()
     {
         Debug.Log("Toggle thesis menu");
+        ThesesGUI.gameObject.SetActive(!ThesesGUI.gameObject.activeSelf);
     }
 
-    public void OnClickedToggleArgumentBtn()
+    public void OnClickedToggleActionBtn()
     {
         Debug.Log("Toggle argument menu");
+        ActionGUI.gameObject.SetActive(!ActionGUI.gameObject.activeSelf);
     }
 
-    public void OnClickedToggleInfoBtn()
+    public void OnClickedToggleOverviewBtn()
     {
         Debug.Log("Toggle info menu");
+        OverviewGUI.gameObject.SetActive(!OverviewGUI.gameObject.activeSelf);
     }
 
-    public void OnClickConserseBtn()
+    public void OnClickedConserveBtn()
     {
         Debug.Log("Converse button is clicked");
     }
@@ -246,6 +288,16 @@ public class DebateModeController : MonoBehaviour
             Debug.Log("Update panel and play block '" + dataController.blockToPlay + "'");
         }
 
+    }
+
+    public void toggleFactMenu()
+    {
+        FactGUI.gameObject.SetActive(!FactGUI.gameObject.activeSelf);
+    }
+
+    public void toggleTacticMenu()
+    {
+        TacticGUI.gameObject.SetActive(!TacticGUI.gameObject.activeSelf);
     }
 
     public void OnClickedAddFactBtn()
@@ -272,7 +324,7 @@ public class DebateModeController : MonoBehaviour
 
     public void OnClickedToggleDebaterBtn(bool showPlayer)
     {
-        DrawThesisMenu(!showPlayer);
+        DrawThesesMenu(!showPlayer);
     }
 
     public void OnClickedThesisBtn()

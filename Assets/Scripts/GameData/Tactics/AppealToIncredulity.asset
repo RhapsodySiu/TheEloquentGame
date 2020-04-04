@@ -15,6 +15,11 @@ MonoBehaviour:
   tacticId: 11
   tacticType: 1
   tacticName: AppealToIncredulity
-  description: appeal to incredulity
-  zh_description: 
-  cn_description: 
+  description: 'Also known as argument from personal incredulity or appeal to common
+    sense, it asserts that a proposition must be false because it contradicts one''s
+    personal exceptions or beliefs, or is difficult to imagine. Very volatile strategy.
+
+
+    https://en.wikipedia.org/wiki/Argument_from_incredulity'
+  zh_description: "\u4E5F\u88AB\u7A31\u70BA\u81EA\u4FE1\u4E0D\u7591\u8AD6\u8B49\u6216\u8A34\u8AF8\u5E38\u8B58\uFF0C\u5B83\u65B7\u8A00\u82E5\u4E00\u500B\u547D\u984C\u8207\u67D0\u4EBA\u7684\u671F\u671B\u6216\u4FE1\u5FF5\u6709\u885D\u7A81\uFF0C\u6216\u662F\u5B83\u672C\u8EAB\u96E3\u4EE5\u7F6E\u4FE1\uFF0C\u90A3\u9EBC\u5B83\u5FC5\u9808\u662F\u932F\u8AA4\u7684\u3002\u6548\u679C\u975E\u5E38\u4E0D\u7A69\u5B9A\u7684\u7B56\u7565\u3002"
+  cn_description: "\u4E5F\u88AB\u79F0\u4E3A\u81EA\u4FE1\u4E0D\u7591\u8BBA\u8BC1\u6216\u8BC9\u8BF8\u5E38\u8BC6\uFF0C\u5B83\u65AD\u8A00\u82E5\u4E00\u4E2A\u547D\u9898\u4E0E\u67D0\u4EBA\u7684\u671F\u671B\u6216\u4FE1\u5FF5\u6709\u51B2\u7A81\uFF0C\u6216\u662F\u5B83\u672C\u8EAB\u96BE\u4EE5\u7F6E\u4FE1\uFF0C\u90A3\u4E48\u5B83\u5FC5\u987B\u662F\u9519\u8BEF\u7684\u3002\u6548\u679C\u975E\u5E38\u4E0D\u7A33\u5B9A\u7684\u7B56\u7565\u3002"

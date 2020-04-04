@@ -15,6 +15,12 @@ MonoBehaviour:
   tacticId: 13
   tacticType: 1
   tacticName: AppealToMorality
-  description: appeal to morality
-  zh_description: 
-  cn_description: 
+  description: 'Appeal to morality makes assumption that an aspect of nature which
+    has socially unpleasant consequences cannot exist. Very convincing to a portion
+    of people who holds strong moral value, yet generally contains less argumentative
+    effectiveness.
+
+
+    https://en.wikipedia.org/wiki/Moralistic_fallacy'
+  zh_description: "\u8A22\u8AF8\u9053\u5FB7\u7B56\u7565\u5047\u8A2D\u81EA\u7136\u4E2D\u4E0D\u5B58\u5728\u5F15\u8D77\u793E\u6703\u4E0D\u5FEB\u5F8C\u679C\u7684\u4E8B\u7269\u3002\u5C0D\u91CD\u8996\u9053\u5FB7\u50F9\u503C\u7684\u4EBA\u7FA4\u975E\u5E38\u6709\u8AAA\u670D\u529B\uFF0C\u4F46\u901A\u5E38\u4F86\u8AAA\u5B83\u7684\u8B70\u8AD6\u6548\u529B\u8F03\u4F4E\u3002"
+  cn_description: "\u6B23\u8BF8\u9053\u5FB7\u7B56\u7565\u5047\u8BBE\u81EA\u7136\u4E2D\u4E0D\u5B58\u5728\u5F15\u8D77\u793E\u4F1A\u4E0D\u5FEB\u540E\u679C\u7684\u4E8B\u7269\u3002\u5BF9\u91CD\u89C6\u9053\u5FB7\u4EF7\u503C\u7684\u4EBA\u7FA4\u975E\u5E38\u6709\u8BF4\u670D\u529B\uFF0C\u4F46\u901A\u5E38\u6765\u8BF4\u5B83\u7684\u8BAE\u8BBA\u6548\u529B\u8F83\u4F4E\u3002"

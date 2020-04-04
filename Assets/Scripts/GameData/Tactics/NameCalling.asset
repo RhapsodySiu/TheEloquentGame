@@ -15,6 +15,11 @@ MonoBehaviour:
   tacticId: 16
   tacticType: 3
   tacticName: NameCalling
-  description: name calling
-  zh_description: 
-  cn_description: 
+  description: 'Merely a form of verbal abuse to have the upper hand in a debate by
+    insulting or demeaning debaters/group of people. A double edge sword that promotes
+    propaganda and infuriate other debaters with possible loss in one''s reputation.
+
+
+    https://en.wikipedia.org/wiki/Name_calling'
+  zh_description: "\u50C5\u50C5\u901A\u904E\u4FAE\u8FB1\u6216\u8CB6\u4F4E\u8FAF\u8AD6\u8005/\u4E00\u500B\u7FA4\u9AD4\u7684\u8A00\u8A9E\u66B4\u529B\u4F86\u5728\u8FAF\u8AD6\u4F54\u5C0D\u8A71\u4E0A\u98A8\u3002\u4E00\u628A\u96D9\u5203\u528D\uFF0C\u65E2\u80FD\u5F15\u5C0E\u516C\u773E\u610F\u898B\u548C\u6FC0\u6012\u5176\u4ED6\u8FAF\u8AD6\u8005\uFF0C\u4EA6\u53EF\u80FD\u4F7F\u8AD6\u8005\u8072\u671B\u53D7\u640D\u3002"
+  cn_description: "\u4EC5\u4EC5\u901A\u8FC7\u4FAE\u8FB1\u6216\u8D2C\u4F4E\u8FA9\u8BBA\u8005/\u4E00\u4E2A\u7FA4\u4F53\u7684\u8A00\u8BED\u66B4\u529B\u6765\u5728\u8FA9\u8BBA\u5360\u5BF9\u8BDD\u4E0A\u98CE\u3002\u4E00\u628A\u53CC\u5203\u5251\uFF0C\u65E2\u80FD\u5F15\u5BFC\u516C\u4F17\u610F\u89C1\u548C\u6FC0\u6012\u5176\u4ED6\u8FA9\u8BBA\u8005\uFF0C\u4EA6\u53EF\u80FD\u4F7F\u8BBA\u8005\u58F0\u671B\u53D7\u635F\u3002"
