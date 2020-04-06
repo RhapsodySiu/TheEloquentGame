@@ -7,19 +7,36 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b069ccbcd66e3624e917528b284a1ab4, type: 3}
   m_Name: Enemy2
   m_EditorClassIdentifier: 
-  current_args: 0
+  thesis_count: 0
   id: 2
   isProponent: 0
   debaterName: Yellow
+  description: Faucibus ornare suspendisse sed nisi lacus sed. Sollicitudin ac orci
+    phasellus egestas tellus rutrum tellus pellentesque.
+  thesisList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  totalCurrentThesesHealth: 0
+  totalMaxThesesHealth: 0
   arguments:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - argumentRespondName: 
+    thesisRespondName: 
+    tacticName: 
+    factName: 
+  - argumentRespondName: 
+    thesisRespondName: 
+    tacticName: 
+    factName: 
+  - argumentRespondName: 
+    thesisRespondName: 
+    tacticName: 
+    factName: 
   traits: 
   mentalMaxHealth: 100
   mentalHealth: 100

@@ -18,98 +18,58 @@ MonoBehaviour:
       thesisRespondName: 
       tacticName: 
       factName: 
-    argumentInfo:
-      name: 
-      description: 
-      cn_description: 
-      zh_description: 
+    argumentInfo: {fileID: 0}
   - argument:
       argumentRespondName: 
       thesisRespondName: 
       tacticName: 
       factName: 
-    argumentInfo:
-      name: 
-      description: 
-      cn_description: 
-      zh_description: 
+    argumentInfo: {fileID: 0}
   - argument:
       argumentRespondName: 
       thesisRespondName: 
       tacticName: 
       factName: 
-    argumentInfo:
-      name: 
-      description: 
-      cn_description: 
-      zh_description: 
+    argumentInfo: {fileID: 0}
   - argument:
       argumentRespondName: 
       thesisRespondName: 
       tacticName: 
       factName: 
-    argumentInfo:
-      name: 
-      description: 
-      cn_description: 
-      zh_description: 
+    argumentInfo: {fileID: 0}
   - argument:
       argumentRespondName: 
       thesisRespondName: 
       tacticName: 
       factName: 
-    argumentInfo:
-      name: 
-      description: 
-      cn_description: 
-      zh_description: 
+    argumentInfo: {fileID: 0}
   - argument:
       argumentRespondName: 
       thesisRespondName: 
       tacticName: 
       factName: 
-    argumentInfo:
-      name: 
-      description: 
-      cn_description: 
-      zh_description: 
+    argumentInfo: {fileID: 0}
   - argument:
       argumentRespondName: 
       thesisRespondName: 
       tacticName: 
       factName: 
-    argumentInfo:
-      name: 
-      description: 
-      cn_description: 
-      zh_description: 
+    argumentInfo: {fileID: 0}
   - argument:
       argumentRespondName: 
       thesisRespondName: 
       tacticName: 
       factName: 
-    argumentInfo:
-      name: 
-      description: 
-      cn_description: 
-      zh_description: 
+    argumentInfo: {fileID: 0}
   - argument:
       argumentRespondName: 
       thesisRespondName: 
       tacticName: 
       factName: 
-    argumentInfo:
-      name: 
-      description: 
-      cn_description: 
-      zh_description: 
+    argumentInfo: {fileID: 0}
   - argument:
       argumentRespondName: 
       thesisRespondName: 
       tacticName: 
       factName: 
-    argumentInfo:
-      name: 
-      description: 
-      cn_description: 
-      zh_description: 
+    argumentInfo: {fileID: 0}

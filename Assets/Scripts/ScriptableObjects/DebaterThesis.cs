@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Debater thesis (testing)", menuName = "DebateGame/Create debater thesis")]
+[CreateAssetMenu(fileName = "New Debater thesis (testing)", menuName = "DebateGame/Create Debater thesis")]
 [System.Serializable]
 public class DebaterThesis : ScriptableObject
 {

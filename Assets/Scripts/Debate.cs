@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "new Debate", menuName = "DebateGame/Create Debate Data")]
 [System.Serializable]
-public class Debate
+public class Debate : ScriptableObject
 {
     public Debater player;
     public Debater enemy;

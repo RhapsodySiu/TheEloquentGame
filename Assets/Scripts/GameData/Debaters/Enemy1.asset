@@ -16,12 +16,14 @@ MonoBehaviour:
   id: 1
   isProponent: 1
   debaterName: Blue
+  description: ' Id consectetur purus ut faucibus pulvinar elementum. Dignissim cras
+    tincidunt lobortis feugiat vivamus at augue eget arcu. '
   thesisList:
   - {fileID: 11400000, guid: 74c66f4416054f54baaf83e2e2806fe2, type: 2}
   - {fileID: 11400000, guid: f49f3e020c211a94b9137688170f09f8, type: 2}
   - {fileID: 11400000, guid: d7972b35d64baaa4ca59c52cec0e3468, type: 2}
-  totalCurrentThesesHealth: 100
-  totalMaxThesesHealth: 100
+  totalCurrentThesesHealth: 400
+  totalMaxThesesHealth: 300
   arguments:
   - argumentRespondName: 
     thesisRespondName: 

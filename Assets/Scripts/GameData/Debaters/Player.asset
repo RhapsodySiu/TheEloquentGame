@@ -16,12 +16,15 @@ MonoBehaviour:
   id: 0
   isProponent: 0
   debaterName: Player
+  description: 'Proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo.
+    Pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Odio eu feugiat
+    pretium nibh. '
   thesisList:
   - {fileID: 11400000, guid: a77e40156d1cde74985fe60cd4ffcebf, type: 2}
   - {fileID: 11400000, guid: 216309fc1d9623847b1ce752cc2992dc, type: 2}
   - {fileID: 11400000, guid: f5361b70f101f614ba938eafde045cfb, type: 2}
-  totalCurrentThesesHealth: 100
-  totalMaxThesesHealth: 100
+  totalCurrentThesesHealth: 400
+  totalMaxThesesHealth: 300
   arguments:
   - argumentRespondName: 
     thesisRespondName: 

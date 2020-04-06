@@ -11,11 +11,11 @@ public class Thesis : ScriptableObject
     public bool isProponent;
     public int thesisMaxHealth;
 
-    [TextArea(20, 20)]
+    [TextArea(5, 20)]
     public string description;
-    [TextArea(20, 20)]
+    [TextArea(5, 20)]
     public string cn_description;
-    [TextArea(20, 20)]
+    [TextArea(5, 20)]
     public string zh_description;
 
     public override string ToString()

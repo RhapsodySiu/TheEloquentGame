@@ -20,6 +20,8 @@ public class Debater : ScriptableObject
     public int id;
     public bool isProponent;
     public string debaterName;
+    [TextArea(10, 20)]
+    public string description;
     public DebaterThesis[] thesisList = new DebaterThesis[MAX_ARGS];
     public int totalCurrentThesesHealth;
     public int totalMaxThesesHealth;
