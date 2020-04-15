@@ -49,6 +49,10 @@ MonoBehaviour:
   portraits:
   - {fileID: 21300000, guid: d312e31655eb7ab498d041957302da2f, type: 3}
   - {fileID: 21300000, guid: 17d815ad70b02244890c28087cdcf1d4, type: 3}
+  - {fileID: 21300000, guid: 8f1c4b2830521e5428bd4052a2e9ce26, type: 3}
+  - {fileID: 21300000, guid: 42cb437b933bf384f9f9e5895a6098ed, type: 3}
+  - {fileID: 21300000, guid: 856411fbea2edd848b1fc7a2f8c967e7, type: 3}
+  - {fileID: 21300000, guid: f15ff8bdbb74d0e40adafe2b91c7572e, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 

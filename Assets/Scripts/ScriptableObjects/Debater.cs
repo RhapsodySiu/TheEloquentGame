@@ -40,8 +40,8 @@ public class Debater : ScriptableObject
     public List<Argument> arguments = new List<Argument> ();
 
     public Trait[] traits;
-    public int mentalMaxHealth = 100;
-    public int mentalHealth = 100;
+    public float mentalMaxHealth = 100;
+    public float mentalHealth = 100;
     public int actionPoint = 3;
 
     public float basePow = 1f;

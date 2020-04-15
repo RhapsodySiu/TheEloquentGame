@@ -475,6 +475,10 @@ GameObject:
   - component: {fileID: 51907138}
   - component: {fileID: 51907137}
   - component: {fileID: 51907177}
+  - component: {fileID: 51907181}
+  - component: {fileID: 51907180}
+  - component: {fileID: 51907179}
+  - component: {fileID: 51907178}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -629,10 +633,9 @@ MonoBehaviour:
     stringRef: {fileID: 0}
     stringVal: "Me: (The same person with glorious clothing and a dis-proportionally\_huge
       horns stood upfront me.)\r\nMe: (Then. it's not a dream?) Not good. Can you
-      explain what happen to me, why that battle and, more importantly what are you?\r\n???
-      mouyu_normal: Wow silly me! I know you for too long that I forget that you don't
-      know me!\_\r\nMe:(She(?) speaks in an abnormal tone, as if she is slightly upset
-      about this)"
+      explain what happen to me, why that battle and, more importantly what are you?\r\n???:
+      Wow silly me! I know you for too long that I forget that you don't know me!\_\r\nMe:(She(?)
+      speaks in an abnormal tone, as if she is slightly upset about this)"
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -896,22 +899,22 @@ MonoBehaviour:
     stringVal: "Mouyu: Hmm, call me Mouyu for now. I have been living with the Mou
       family and guard them for years, including you!\r\nMe: So you are a god of guardian?
       Like Avalokitesvara or Tudigong? Or are you a deified ancestor? \r\nMe: (I ask
-      while I'm waiting for another bus to school.)\r\nMouyu: Don't compare me with
-      those youngsters, I am much more older than them! I know your ancestor though.
-      Kinda nice guy.\r\nMe: (It sounds interesting to hear, but there's a more urgent
-      problem to ask.)\r\nMe: Okay.. We can talk about this later. Does it mean you
-      save me? Thank you. Now may I know what happened?\r\nMouyu: That's pretty simple
-      actually, you're cursed to *death* when you fail a debate.\r\nMe: (Again more
-      questions. I try to keep my composure and decide to ask the most cogent question
-      of the core.) \r\nMe: Then, how do I get rid of it?\r\nMouyu: Haven't figured
-      it out yet.\_\r\nMe: (Receiving a useless answer, I cannot hold my discontent
-      any longer.) \r\nMe: WHAT can I do? The whole thing sounds ridiculous, the DEBATE
-      thing and why am I CURSED for that..\r\nMe: I don't even understand why you
-      used that topic!\r\nMouyu: I can shed some lights on these problems though.
-      In return, show some respect on me, please?\r\nMe: Please!\r\nMouyu: But the
-      problem is, do you\_really want to know? I mean even if you know it, you're
-      still in jeopardy and the game must go on. What's your decision?\r\nMe: (Do
-      I really want to know what's going on?)"
+      while I'm waiting for another bus to school.)\r\nMouyu mouyu_frown: Don't compare
+      me with those youngsters, I am much more older than them! I know your ancestor
+      though. Kinda nice guy.\r\nMe: (It sounds interesting to hear, but there's a
+      more urgent problem to ask.)\r\nMe: Okay.. We can talk about this later. Does
+      it mean you save me? Thank you. Now may I know what happened?\r\nMouyu mouyu_smile:
+      That's pretty simple actually, you're cursed to *death* when you fail a debate.\r\nMe:
+      (Again more questions. I try to keep my composure and decide to ask the most
+      cogent question of the core.) \r\nMe: Then, how do I get rid of it?\r\nMouyu:
+      ...Haven't figured it out yet.\_\r\nMe: (Receiving a useless answer, I cannot
+      hold my discontent any longer.) \r\nMe: WHAT can I do? The whole thing sounds
+      ridiculous, the DEBATE thing and why am I CURSED for that..\r\nMe: I don't even
+      understand why you used that topic!\r\nMouyu mouyu_frown: I can shed some lights
+      on these problems though. In return, show some respect on me, please?\r\nMe:
+      Please!\r\nMouyu: But the problem is, do you\_really want to know? I mean even
+      if you know it, you're still in jeopardy and the game must go on. What's your
+      decision?\r\nMe: (Do I really want to know what's going on?)"
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -956,8 +959,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 20
   indentLevel: 0
-  storyText: 'Mouyu: The one who doesn''t believe in the final trial or karma that
-    they''re neither in hell nor heaven; '
+  storyText: 'Mouyu mouyu_normal: The one who doesn''t believe in the final trial
+    or karma that they''re neither in hell nor heaven; '
   description: 
   character: {fileID: 1475872879}
   portrait: {fileID: 0}
@@ -1007,10 +1010,10 @@ MonoBehaviour:
   indentLevel: 0
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: "Me: (Anyway, I can't hold my curiosity.) Please do explain.\r\nMouyu:
-      Technically, your curse is that you coexist in the space of Lost Spirit and
-      the secular world.\r\nMe: Space of Lost Spirt?\r\nMouyu: Well, long religion
-      time. It's basically where soul without religion will go."
+    stringVal: "Me: (Anyway, I can't hold my curiosity.) Please do explain.\r\nMouyu
+      mouyu_normal: Technically, your curse is that you coexist in the space of Lost
+      Spirit and the secular world.\r\nMe: Space of Lost Spirt?\r\nMouyu mouyu_wink:
+      Well, long religion time. It's basically where soul without religion will go."
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -1176,8 +1179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 22
   indentLevel: 0
-  storyText: 'Mouyu: The one who doesn''t believe in the final trial or karma that
-    they''re neither in hell nor heaven; '
+  storyText: 'Mouyu mouyu_pensive: The one who doesn''t believe in the final trial
+    or karma that they''re neither in hell nor heaven; '
   description: 
   character: {fileID: 1475872879}
   portrait: {fileID: 0}
@@ -1243,11 +1246,11 @@ MonoBehaviour:
   conversationText:
     stringRef: {fileID: 0}
     stringVal: "Me: Then, what can I do now? Should I just avoid contentions in my
-      entire life? It's likely impossible, especially in current social context.\r\nMouyu:
-      At least for now, you know. I'm guardian of your family, so I'll try my best
-      to keep you alive. Just wait and see.\r\nMouyu: ...The bus arrives! I need to
-      take a short break for now. See you around. Don't get yourself into troubles!
-      If possible, just skip the school!\r\nMe: Wait..! "
+      entire life? It's likely impossible, especially in current social context.\r\nMouyu
+      mouyu_normal: At least for now, you know. I'm guardian of your family, so I'll
+      try my best to keep you alive. Just wait and see.\r\nMouyu mouyu_pensive: ...The
+      bus arrives! I need to take a short break for now. See you around. Don't get
+      yourself into troubles! If possible, just skip the school!\r\nMe: Wait..! "
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -1280,36 +1283,32 @@ MonoBehaviour:
       no one would believe it anyway)\r\nMouyu: Having no desire for material goods,
       social connection lost,\_no big change can\_they\_make\_to\_this\_world,\_\r\nMouyu:
       What remains in them is their self worth, anything that fulfills their pride
-      is their last resort to the boring world.\r\nMouyu: In other words, they like
-      to debate!\_\r\nMe: Huh?\r\nMouyu: The Lost Spirit enjoys ideology war, like
-      the legend of Three Kingdoms, the public opinion is the land and the debate
-      is the mean to win them!\r\nMe: (That's horrible... Why don't they stop the
-      disputes and rest in peace? But what do I know about the life after death..)\r\nMouyu:
+      is their last resort to the boring world.\r\nMouyu mouyu_normal: In other words,
+      they like to debate!\_\r\nMe: Huh?\r\nMouyu: The Lost Spirit enjoys ideology
+      war, like the legend of Three Kingdoms, the public opinion is the land and the
+      debate is the mean to win them!\r\nMe: (That's horrible... Why don't they stop
+      the disputes and rest in peace? But what do I know about the life after death..)\r\nMouyu:
       And thus the enforcement of the rules of debate is established under the collective
       power of the Lost Spirit. \r\nMouyu: For those who lost/shunned a debate, their
       soul will be bound to serve the winning ideology till they lose another debate.\r\nMe:
       But.. What does it do with me? I didn't join any of these debates, of course!
-      Not to mention the topic you had with me!\r\nMouyu: You are too young, too simple,
-      sometimes naive! \r\nMouyu: Every new discussion in the normal world means a
-      new debate in the Lost Spirt's world! They're everywhere!\r\nMe: (I decide to
-      ignore her smirk. ) So at the moment my father argued with me, I'm already involved
-      in their debate? \r\nMouyu: Smart! You could be the first human who entered
-      their world, so rare that even I cannot preempt what happened and save you beforehand!\r\nMe:
-      Then why can you save me from that debate at last?\r\nMouyu: Since I'm also
-      a guardian of the Mou family, I can act as agent of your father and continue
-      the debate.\r\nMouyu: But the same trick won't work beyond your family, as suggested
+      Not to mention the topic you had with me!\r\nMouyu mouyu_smile: You are too
+      young, too simple, sometimes naive! \r\nMouyu: Every new discussion in the normal
+      world means a new debate in the Lost Spirt's world! They're everywhere!\r\nMe:
+      (I decide to ignore her smirk. ) So at the moment my father argued with me,
+      I'm already involved in their debate? \r\nMouyu mouyu_wink: Smart! You could
+      be the first human who entered their world, so rare that even I cannot preempt
+      what happened and save you beforehand!\r\nMe: Then why can you save me from
+      that debate at last?\r\nMouyu mouyu_smile: Since I'm also a guardian of the
+      Mou family, I can act as agent of your father and continue the debate.\r\nMouyu
+      mouyu_frown: But the same trick won't work beyond your family, as suggested
       by their rules, so I can't fix them all.\r\nMe: (I let out a helpless sigh.
       Kind of fed of with the truth, I ask the final question that really concerns.)\r\nMe:
-      All in all, why am I cursed? What did I do wrong? Does someone curse me on purpose?\r\nMouyu:
-      Unfortunately, humans are always cursed and cursing, welcome to the club!\r\nMe:
-      (Does this god imply that she doesn't know the curse? Or is she refused to tell
-      me the truth?\r\nMe: Since she won't give me a straight answer, I ignore it
-      for now.)\r\nMe: Then, what can I do now? Should I just avoid contentions in
-      my entire life? It's likely impossible, especially in current social context.\r\nMouyu:
-      At least for now, you know. I'm guardian of your family, so I'll try my best
-      to keep you alive. Just wait and see.\r\nMouyu: ...The bus arrives! I need to
-      take a short break for now. See you around. Don't get yourself into troubles!
-      If possible, just skip the school!\r\nMe: Wait..! "
+      All in all, why am I cursed? What did I do wrong? Does someone curse me on purpose?\r\nMouyu
+      mouyu_smile: Unfortunately, humans are always cursed and cursing, welcome to
+      the club!\r\nMe: (Does this god imply that she doesn't know the curse? Or is
+      she refused to tell me the truth?\r\nMe: Since she won't give me a straight
+      answer, I ignore it for now.)\r"
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -1599,10 +1598,14 @@ MonoBehaviour:
   commandList:
   - {fileID: 51907137}
   - {fileID: 51907153}
+  - {fileID: 51907181}
+  - {fileID: 51907180}
   - {fileID: 51907152}
+  - {fileID: 51907178}
   - {fileID: 51907149}
   - {fileID: 51907150}
   - {fileID: 51907148}
+  - {fileID: 51907179}
   - {fileID: 51907147}
   - {fileID: 51907146}
   - {fileID: 51907145}
@@ -2346,14 +2349,14 @@ MonoBehaviour:
       Does she create this space for us to talk? But that's not important.) \r\nMe:
       I didn't start that, you know.\r\nMouyu: It makes no difference. I can already
       see the spirits around you cavorting. They are so excited to see your performance!\r\nMe:
-      No, I rejected it before I am involved!\r\nMouyu: I have told you to avoid school.
-      So just face it like a big boy.\r\nMe: (Deep inside I know she gets a point..
-      But I'm still angry about this nonsense.)\r\nMe: It's easier to say than to
-      do...  Can't you do something about this?\r\nMouyu: Well, I'd be happy to help,
-      sadly I can't be your agent. It's your war and it's your soul to defend for.
-      \r\nMouyu: But I can give you hints, and resources that may be helpful in the
-      debate, I'll explain to you later!\r\nMe: Fine... I am ready...\r\nMouyu: That's
-      the spirit. Now's your turn!"
+      No, I rejected it before I am involved!\r\nMouyu mouyu_smile: I have told you
+      to avoid school. So just face it like a big boy.\r\nMe: (Deep inside I know
+      she gets a point.. But I'm still angry about this nonsense.)\r\nMe: It's easier
+      to say than to do...  Can't you do something about this?\r\nMouyu: Well, I'd
+      be happy to help, sadly I can't be your agent. It's your war and it's your soul
+      to defend for. \r\nMouyu mouyu_wink: But I can give you hints, and resources
+      that may be helpful in the debate, I'll explain to you later!\r\nMe: Fine...
+      I am ready...\r\nMouyu: That's the spirit. Now's your turn!"
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -2558,6 +2561,126 @@ MonoBehaviour:
   indentLevel: 0
   commenterName: back to classroom
   commentText: 
+--- !u!114 &51907178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51907099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 84
+  indentLevel: 0
+  display: 2
+  stage: {fileID: 0}
+  character: {fileID: 370762333}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 0}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 736634742}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 1
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &51907179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51907099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 83
+  indentLevel: 0
+  display: 2
+  stage: {fileID: 0}
+  character: {fileID: 535080230}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 0}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &51907180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51907099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 82
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 535080230}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 7434f4fae24927442b631a62719045a2, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 736634744}
+  facing: 2
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &51907181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51907099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 81
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 370762333}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: df06cadf77625d3438be24d26d76bbe5, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 736634743}
+  facing: 1
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
 --- !u!1 &122449729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,56 +3098,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &370762332
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 370762334}
-  - component: {fileID: 370762333}
-  m_Layer: 0
-  m_Name: StoryCharNgaan
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &370762333
+--- !u!114 &370762333 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1587331790158653586, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+    type: 3}
+  m_PrefabInstance: {fileID: 1587331790392920783}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370762332}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: Yu Yu Ngaan
-  nameColor: {r: 0.6485991, g: 0.25938943, b: 0.8207547, a: 1}
-  soundEffect: {fileID: 8300000, guid: 774486030b696474e8b3cf7f178123da, type: 3}
-  portraits: []
-  portraitsFace: 0
-  setSayDialog: {fileID: 0}
-  description: 
---- !u!4 &370762334
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370762332}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &375327025 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3676746845720488241, guid: d6b702084347ece42b453053d10da0b2,
@@ -3130,56 +3215,18 @@ MonoBehaviour:
   viewSize: 1
   primaryAspectRatio: {x: 4, y: 3}
   secondaryAspectRatio: {x: 2, y: 1}
---- !u!1 &535080229
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 535080231}
-  - component: {fileID: 535080230}
-  m_Layer: 0
-  m_Name: StoryCharLi
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &535080230
+--- !u!114 &535080230 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4178357847724406178, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+    type: 3}
+  m_PrefabInstance: {fileID: 4178357847386527876}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535080229}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: Seun Yut Li
-  nameColor: {r: 0.9150943, g: 0.6268164, b: 0.20287468, a: 1}
-  soundEffect: {fileID: 8300000, guid: c53b7c20372e444c6bd7f2ac0729bbe2, type: 3}
-  portraits: []
-  portraitsFace: 0
-  setSayDialog: {fileID: 0}
-  description: 
---- !u!4 &535080231
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535080229}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &601607198
 GameObject:
   m_ObjectHideFlags: 0
@@ -3259,6 +3306,86 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &697992937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 697992941}
+  - component: {fileID: 697992940}
+  - component: {fileID: 697992939}
+  - component: {fileID: 697992938}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &697992938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697992937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ForceModuleActive: 0
+--- !u!114 &697992939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697992937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &697992940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697992937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
+--- !u!4 &697992941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697992937}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &721290411
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,6 +3661,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 474cafc6557ea914281297865de30c23, type: 3}
+--- !u!224 &736634742 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8307418767076237778, guid: 474cafc6557ea914281297865de30c23,
+    type: 3}
+  m_PrefabInstance: {fileID: 736634741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &736634743 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8307418767991447633, guid: 474cafc6557ea914281297865de30c23,
+    type: 3}
+  m_PrefabInstance: {fileID: 736634741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &736634744 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8307418768576651833, guid: 474cafc6557ea914281297865de30c23,
+    type: 3}
+  m_PrefabInstance: {fileID: 736634741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &891320921 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8307418767362734472, guid: 474cafc6557ea914281297865de30c23,
@@ -4335,3 +4480,141 @@ MonoBehaviour:
   viewSize: 1
   primaryAspectRatio: {x: 4, y: 3}
   secondaryAspectRatio: {x: 2, y: 1}
+--- !u!1001 &1587331790392920783
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1587331790158653587, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+        type: 3}
+      propertyPath: m_Name
+      value: StoryCharNgaan
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587331790158653585, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587331790158653585, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587331790158653585, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587331790158653585, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587331790158653585, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587331790158653585, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587331790158653585, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587331790158653585, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587331790158653585, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587331790158653585, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587331790158653585, guid: 7cce1d560da6eff4b8ffa010a2f80331,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7cce1d560da6eff4b8ffa010a2f80331, type: 3}
+--- !u!1001 &4178357847386527876
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4178357847724406177, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+        type: 3}
+      propertyPath: m_Name
+      value: StoryCharLi
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178357847724406179, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178357847724406179, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178357847724406179, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178357847724406179, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178357847724406179, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178357847724406179, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178357847724406179, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178357847724406179, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178357847724406179, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178357847724406179, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178357847724406179, guid: ef56a68e8c8df3f4d81a72df25a3b454,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef56a68e8c8df3f4d81a72df25a3b454, type: 3}

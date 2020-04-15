@@ -18,6 +18,8 @@ public class DebateModeController : MonoBehaviour
 
     public bool DebugMode;
     public Text DebugText;
+
+    private Debate currentDebate;
     
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,8 @@ public class DebateModeController : MonoBehaviour
     {
         Debug.Log("Enemy arguments generated!");
         // TODO: Set up enemy AI. Current thought is to draw possible argument from the predefined set based on game status
+        // Hard-code enemy argument generation during tutorial
+
     }
 
     public void StartRound()
@@ -53,11 +57,11 @@ public class DebateModeController : MonoBehaviour
     public void EndRound()
     {
         Debug.Log("Check if there is winner");
-        if (dataController.debate.IsPlayerWin())
+        if (dataController.IsPlayerWin())
         {
             Debug.Log("player win");
             flowchart.ExecuteBlock("Win");
-        } else if (dataController.debate.IsPlayerLose())
+        } else if (dataController.IsPlayerLose())
         {
             Debug.Log("enemy win");
             flowchart.ExecuteBlock("Lose");
@@ -71,10 +75,9 @@ public class DebateModeController : MonoBehaviour
     public void UpdateRound()
     {
         Debug.Log("Update round.");
-        dataController.debate.round += 1;
-        flowchart.SetIntegerVariable("round", dataController.debate.round);
-        dataController.debate.isPlayerRound = !dataController.debate.isPlayerRound;
-        flowchart.SetBooleanVariable("isPlayerRound", dataController.debate.isPlayerRound);
+        dataController.UpdateRound();
+        flowchart.SetIntegerVariable("round", dataController.GetCurrentRound());
+        flowchart.SetBooleanVariable("isPlayerRound", dataController.IsPlayerRound());
         Debug.Log("Back to interaction block");
         flowchart.ExecuteBlock("Interaction");
     }
@@ -98,6 +101,11 @@ public class DebateModeController : MonoBehaviour
         //}
     }
 
+    public void AddPlayerThesis(string thesisName)
+    {
+        Debug.Log("Add debater thesis to player");
+        dataController.AddPlayerThesis(thesisName);
+    }
 
     public void AddPlayerArgument(string arg)
     {
@@ -116,6 +124,17 @@ public class DebateModeController : MonoBehaviour
     {
         
     }
+    #endregion
+
+    #region Setter
+    public void UpdatePlayerConfidence(float newValue)
+    {
+        Debug.Log("Aa");
+        Debug.Log(newValue);
+        dataController.UpdatePlayerConfidence(newValue);
+        Debug.Log("New player confidence = " + newValue);
+    }
+
     #endregion
 
     #region GUIControl
@@ -148,14 +167,14 @@ public class DebateModeController : MonoBehaviour
 
     public void DrawStatusPanel()
     {
-        int playerMentalHealth = dataController.GetPlayerMentalHealth();
-        int playerMaxMentalHealth = dataController.GetPlayerMaxMentalHealth();
-        int enemyMentalHealth = dataController.GetEnemyMentalHealth();
-        int enemyMaxMentalHealth = dataController.GetEnemyMaxMentalHealth();
-        int playerThesisHealth = dataController.GetPlayerThesesHealth();
-        int playerMaxThesisHealth = dataController.GetPlayerMaxThesesHealth();
-        int enemyThesisHealth = dataController.GetEnemyThesesHealth();
-        int enemyMaxThesisHealth = dataController.GetEnemyrMaxThesesHealth();
+        float playerMentalHealth = dataController.GetPlayerMentalHealth();
+        float playerMaxMentalHealth = dataController.GetPlayerMaxMentalHealth();
+        float enemyMentalHealth = dataController.GetEnemyMentalHealth();
+        float enemyMaxMentalHealth = dataController.GetEnemyMaxMentalHealth();
+        float playerThesisHealth = dataController.GetPlayerThesesHealth();
+        float playerMaxThesisHealth = dataController.GetPlayerMaxThesesHealth();
+        float enemyThesisHealth = dataController.GetEnemyThesesHealth();
+        float enemyMaxThesisHealth = dataController.GetEnemyrMaxThesesHealth();
         float publicSupport = dataController.GetAudienceSupport();
     }
 

@@ -447,8 +447,8 @@ Camera:
   m_GameObject: {fileID: 80652439}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -719,7 +719,7 @@ PrefabInstance:
     - target: {fileID: 5758330179381382557, guid: 588dc1ec529aaa54b9a9613371a6cfc4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5758330179381382557, guid: 588dc1ec529aaa54b9a9613371a6cfc4,
         type: 3}
@@ -1786,57 +1786,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479243109}
   m_CullTransparentMesh: 0
---- !u!1 &493972454
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 493972456}
-  - component: {fileID: 493972455}
-  m_Layer: 0
-  m_Name: CharMe
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &493972455
+--- !u!114 &509587579 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3676746845720488241, guid: d6b702084347ece42b453053d10da0b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1323337485}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493972454}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: Me
-  nameColor: {r: 1, g: 1, b: 1, a: 1}
-  soundEffect: {fileID: 0}
-  portraits:
-  - {fileID: 21300000, guid: 40085a5fbc9327240a8b661911d77138, type: 3}
-  portraitsFace: 2
-  setSayDialog: {fileID: 0}
-  description: 
---- !u!4 &493972456
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493972454}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &509887853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,10 +2783,10 @@ RectTransform:
   m_Father: {fileID: 1002026489}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.8, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 220, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &745075784
 MonoBehaviour:
@@ -3069,7 +3030,6 @@ GameObject:
   - component: {fileID: 758942334}
   - component: {fileID: 758942333}
   - component: {fileID: 758942332}
-  - component: {fileID: 758942336}
   - component: {fileID: 758942391}
   - component: {fileID: 758942390}
   - component: {fileID: 758942389}
@@ -3120,13 +3080,10 @@ GameObject:
   - component: {fileID: 758942349}
   - component: {fileID: 758942352}
   - component: {fileID: 758942351}
-  - component: {fileID: 758942350}
   - component: {fileID: 758942348}
   - component: {fileID: 758942392}
-  - component: {fileID: 758942394}
   - component: {fileID: 758942393}
   - component: {fileID: 758942396}
-  - component: {fileID: 758942422}
   - component: {fileID: 758942415}
   - component: {fileID: 758942414}
   - component: {fileID: 758942413}
@@ -3141,10 +3098,7 @@ GameObject:
   - component: {fileID: 758942404}
   - component: {fileID: 758942403}
   - component: {fileID: 758942402}
-  - component: {fileID: 758942400}
-  - component: {fileID: 758942399}
   - component: {fileID: 758942398}
-  - component: {fileID: 758942385}
   - component: {fileID: 758942432}
   - component: {fileID: 758942440}
   - component: {fileID: 758942439}
@@ -3157,7 +3111,6 @@ GameObject:
   - component: {fileID: 758942420}
   - component: {fileID: 758942442}
   - component: {fileID: 758942441}
-  - component: {fileID: 758942395}
   - component: {fileID: 758942424}
   - component: {fileID: 758942421}
   - component: {fileID: 758942419}
@@ -3166,22 +3119,69 @@ GameObject:
   - component: {fileID: 758942417}
   - component: {fileID: 758942388}
   - component: {fileID: 758942447}
-  - component: {fileID: 758942446}
   - component: {fileID: 758942445}
   - component: {fileID: 758942444}
   - component: {fileID: 758942433}
-  - component: {fileID: 758942431}
-  - component: {fileID: 758942430}
   - component: {fileID: 758942429}
-  - component: {fileID: 758942428}
-  - component: {fileID: 758942427}
   - component: {fileID: 758942426}
   - component: {fileID: 758942425}
-  - component: {fileID: 758942423}
-  - component: {fileID: 758942401}
+  - component: {fileID: 758942448}
   - component: {fileID: 758942397}
   - component: {fileID: 758942387}
-  - component: {fileID: 758942448}
+  - component: {fileID: 758942449}
+  - component: {fileID: 758942395}
+  - component: {fileID: 758942474}
+  - component: {fileID: 758942472}
+  - component: {fileID: 758942471}
+  - component: {fileID: 758942470}
+  - component: {fileID: 758942469}
+  - component: {fileID: 758942468}
+  - component: {fileID: 758942467}
+  - component: {fileID: 758942466}
+  - component: {fileID: 758942465}
+  - component: {fileID: 758942464}
+  - component: {fileID: 758942463}
+  - component: {fileID: 758942462}
+  - component: {fileID: 758942461}
+  - component: {fileID: 758942460}
+  - component: {fileID: 758942459}
+  - component: {fileID: 758942458}
+  - component: {fileID: 758942457}
+  - component: {fileID: 758942456}
+  - component: {fileID: 758942455}
+  - component: {fileID: 758942454}
+  - component: {fileID: 758942453}
+  - component: {fileID: 758942452}
+  - component: {fileID: 758942451}
+  - component: {fileID: 758942450}
+  - component: {fileID: 758942422}
+  - component: {fileID: 758942446}
+  - component: {fileID: 758942487}
+  - component: {fileID: 758942485}
+  - component: {fileID: 758942484}
+  - component: {fileID: 758942483}
+  - component: {fileID: 758942482}
+  - component: {fileID: 758942481}
+  - component: {fileID: 758942480}
+  - component: {fileID: 758942479}
+  - component: {fileID: 758942478}
+  - component: {fileID: 758942477}
+  - component: {fileID: 758942476}
+  - component: {fileID: 758942475}
+  - component: {fileID: 758942473}
+  - component: {fileID: 758942486}
+  - component: {fileID: 758942431}
+  - component: {fileID: 758942430}
+  - component: {fileID: 758942428}
+  - component: {fileID: 758942427}
+  - component: {fileID: 758942423}
+  - component: {fileID: 758942401}
+  - component: {fileID: 758942400}
+  - component: {fileID: 758942399}
+  - component: {fileID: 758942394}
+  - component: {fileID: 758942385}
+  - component: {fileID: 758942350}
+  - component: {fileID: 758942336}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -3217,8 +3217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 67
-    y: 70
+    x: 68
+    y: 71
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3228,7 +3228,6 @@ MonoBehaviour:
   description: initiate debate with debate controller
   eventHandler: {fileID: 758942332}
   commandList:
-  - {fileID: 758942336}
   - {fileID: 758942389}
   - {fileID: 758942390}
 --- !u!114 &758942334
@@ -3244,19 +3243,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 316.17883, y: 7.430272}
+  scrollPos: {x: 238.1013, y: 289.4944}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 280
-  zoom: 0.8800001
+  zoom: 0.94000006
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 758942333}
+  selectedBlocks: []
   selectedCommands: []
   variables:
   - {fileID: 758942347}
@@ -3303,52 +3301,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95d9ff288f3904c05ada7ac9c9a075bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 1
+  itemId: 192
   indentLevel: 0
-  description: 
-  delay: 0
-  invokeType: 0
-  staticEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  booleanParameter:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
-  booleanEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  integerParameter:
-    integerRef: {fileID: 0}
-    integerVal: 0
-  integerEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  floatParameter:
-    floatRef: {fileID: 0}
-    floatVal: 0
-  floatEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  stringParameter:
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 758942383}
+  startLabel:
     stringRef: {fileID: 0}
     stringVal: 
-  stringEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  startIndex: 0
+  callMode: 0
 --- !u!114 &758942337
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3594,11 +3558,7 @@ MonoBehaviour:
   description: Destination when debater has no more unmade argument.
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 758942350}
-  - {fileID: 758942400}
-  - {fileID: 758942399}
   - {fileID: 758942398}
-  - {fileID: 758942385}
   - {fileID: 758942348}
 --- !u!114 &758942350
 MonoBehaviour:
@@ -3609,25 +3569,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 46
+  itemId: 191
   indentLevel: 0
-  storyText: We're now in the EndRound block. Visual effect should be played here.
-    It invokes the endRound method in the controller.
-  description: 
-  character: {fileID: 1770688682}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Me: ...I win? \nMe mou_think: (What's the use of winning? I have so
+      many questions to ask...)\n???: Indeed, and I'll keep my word to send you back,
+      just sleep for now!\nMe mou_confused: But I don't want to sleep!....\nMe mou_think:
+      (Em.. My eyelids are so heavy all in a second...Is this it's work?)\n??? mouyu_shadow:
+      Just sleep for now... And I'll explain later..."
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!114 &758942351
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3679,7 +3644,8 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 758942394}
+  - {fileID: 758942385}
+  - {fileID: 758942350}
 --- !u!114 &758942353
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4276,7 +4242,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 640.57117
     y: 249.2486
-    width: 156.81818
+    width: 150
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4476,7 +4442,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 641.57117
     y: 174.24858
-    width: 120.45454
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4587,10 +4553,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 15
   indentLevel: 1
-  storyText: It's my turn now. Since game AI is not defined yet, I will make a default
-    argument.
+  storyText: '- Enemy round -'
   description: 
-  character: {fileID: 1120199713}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4629,9 +4594,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 13
   indentLevel: 1
-  storyText: It's my round now. What should I do....
+  storyText: '- Player round -'
   description: 
-  character: {fileID: 1770688682}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4721,7 +4686,7 @@ MonoBehaviour:
   itemId: 11
   indentLevel: 0
   targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 758942383}
+  targetBlock: {fileID: 758942470}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 
@@ -4790,16 +4755,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 86
+  itemId: 190
   indentLevel: 0
-  _sceneName:
-    stringRef: {fileID: 0}
-    stringVal: MenuScene
-  loadingImage: {fileID: 0}
-  sceneNameOLD: 
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 509587579}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 5eadccde7c14d934c8641fd8f54878f7, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 792095747}
+  facing: 2
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
 --- !u!114 &758942386
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4814,9 +4790,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 384.57114
-    y: 70.81108
-    width: 182.95453
+    x: 209.57114
+    y: -14.188919
+    width: 174.46808
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4825,7 +4801,8 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 758942422}
+  - {fileID: 758942471}
+  - {fileID: 758942468}
   - {fileID: 758942382}
 --- !u!114 &758942387
 MonoBehaviour:
@@ -4836,16 +4813,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 130
+  itemId: 134
   indentLevel: 0
-  messageTarget: 0
-  _message:
+  conversationText:
     stringRef: {fileID: 0}
-    stringVal: switchEnemy
-  messageOLD: 
+    stringVal: '??? mouyu_smile: ..........'
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!114 &758942388
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4942,8 +4929,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 225
-    y: 70
+    x: 226
+    y: 69
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -4955,7 +4942,6 @@ MonoBehaviour:
   commandList:
   - {fileID: 758942440}
   - {fileID: 758942448}
-  - {fileID: 758942446}
   - {fileID: 758942433}
   - {fileID: 758942388}
   - {fileID: 758942444}
@@ -5052,24 +5038,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 49
+  itemId: 189
   indentLevel: 0
-  storyText: Yeah! I win!
-  description: 
-  character: {fileID: 1770688682}
-  portrait: {fileID: 21300000, guid: df1919fdc5612aa41938748ed0eda0dc, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: '??? mouyu_smile: ...that''s it for now! I am running of idea as well.
+
+      ??? mouyu_frown: Also, I''m tired of debate. God is usually the rule setter
+      instead of the debater, you know.
+
+      ??? mouyu_normal: Since I lose my willingness to continue, you are the winner
+      of the debate!'
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!114 &758942395
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5079,22 +5073,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 861.966
-    y: 360.26654
-    width: 188.63635
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 106
-  blockName: tutorialEnemyGivenUp
-  description: 
-  eventHandler: {fileID: 0}
-  commandList: []
+  itemId: 136
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: 'Me: That''s it?
+
+      ??? mouyu_normal: As simple as hell! Now make your argument!'
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!114 &758942396
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5136,18 +5136,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 295.79263
-    y: 584.7442
-    width: 159.0909
+    x: 814.66473
+    y: 431.95227
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 129
-  blockName: ArgumentTutorial
+  itemId: 133
+  blockName: tutorialEnd
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 758942476}
+  - {fileID: 758942475}
+  - {fileID: 758942427}
   - {fileID: 758942387}
+  - {fileID: 758942430}
+  - {fileID: 758942428}
+  - {fileID: 758942431}
+  - {fileID: 758942423}
+  - {fileID: 758942401}
+  - {fileID: 758942400}
+  - {fileID: 758942399}
+  - {fileID: 758942394}
+  - {fileID: 758942473}
 --- !u!114 &758942398
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5162,7 +5174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 85
   indentLevel: 0
-  storyText: Jump to the menu scene
+  storyText: '- Visual effect: END ROUND -'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -5184,25 +5196,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 84
+  itemId: 188
   indentLevel: 0
-  storyText: 'If no one wins, it will go back to player''s round. Since we didn''t
-    finish it, so that''s all of the demo for now. '
-  description: 
-  character: {fileID: 1770688682}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchEnemy
+  messageOLD: 
 --- !u!114 &758942400
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5215,12 +5218,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 82
+  itemId: 187
   indentLevel: 0
-  storyText: It will do some conditional checking to see if either side wins and hence
-    plays the corresponding story block.
+  storyText: And what's next? Please don't tell me I have to make another argument!
+    I am running out of ideas!
   description: 
-  character: {fileID: 1770688682}
+  character: {fileID: 509587579}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5240,26 +5243,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 128
+  itemId: 186
   indentLevel: 0
-  storyText: 'My thesis
-
-'
-  description: 
-  character: {fileID: 493972455}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchPlayer
+  messageOLD: 
 --- !u!114 &758942402
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5673,9 +5666,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 226.00468
-    y: 266.6955
-    width: 124.99999
+    x: 225.00468
+    y: 265.6955
+    width: 120.21276
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5702,13 +5695,13 @@ MonoBehaviour:
   indentLevel: 0
   display: 1
   stage: {fileID: 0}
-  character: {fileID: 493972455}
+  character: {fileID: 509587579}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 40085a5fbc9327240a8b661911d77138, type: 3}
+  portrait: {fileID: 0}
   offset: 1
   fromPosition: {fileID: 0}
   toPosition: {fileID: 792095747}
-  facing: 0
+  facing: 2
   useDefaultSettings: 1
   fadeDuration: 0.5
   moveDuration: 1
@@ -5730,7 +5723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 112
   indentLevel: 0
-  display: 2
+  display: 1
   stage: {fileID: 0}
   character: {fileID: 894164284}
   replacedCharacter: {fileID: 0}
@@ -5764,7 +5757,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 894164284}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 17d815ad70b02244890c28087cdcf1d4, type: 3}
+  portrait: {fileID: 0}
   offset: 2
   fromPosition: {fileID: 0}
   toPosition: {fileID: 1130664790}
@@ -5819,9 +5812,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 109
   indentLevel: 0
-  display: 2
+  display: 1
   stage: {fileID: 0}
-  character: {fileID: 493972455}
+  character: {fileID: 509587579}
   replacedCharacter: {fileID: 0}
   portrait: {fileID: 0}
   offset: 0
@@ -5844,24 +5837,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 61
+  itemId: 164
   indentLevel: 0
-  storyText: My thesis.
-  description: 
-  character: {fileID: 894164284}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Me mou_think: Since the launch of the first smart device, it has gradually
+      become an indispensable part of our daily life.\r\nMe: Checking email, chatting
+      with friends, learning online... These functionalities are all included in a
+      small device, it'd be inconvenient without it.\r\nMe mou_firm: Hence, I think
+      children and teenagers can reward more with reasonable use of smartphones, and
+      for this reason, they shouldn't be banned from smartphones.\r\nMe mou_normal:
+      (Phew! I make it!)"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!114 &758942423
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5871,23 +5872,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 444.5728
-    y: 534.7442
-    width: 129.54544
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 127
-  blockName: PlayerThesis
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 758942401}
+  itemId: 185
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: '??? mouyu_normal: Yes,and I am rather impressed!
+
+      ???: Sometimes logical fallacy is hard to spot, even you may have a chance of
+      making one!
+
+      ???: So be careful of what you say and don''t jump into the trap the enemy made
+      for you!'
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!114 &758942424
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5902,9 +5912,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 92.29144
-    y: 270.3719
-    width: 128.40909
+    x: 86.29144
+    y: 265.3719
+    width: 123.40425
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5931,7 +5941,7 @@ MonoBehaviour:
   indentLevel: 0
   text: Option Text
   description: 
-  targetBlock: {fileID: 758942423}
+  targetBlock: {fileID: 0}
   hideIfVisited: 0
   interactable:
     booleanRef: {fileID: 0}
@@ -5978,18 +5988,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 124
+  itemId: 184
   indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 758942429}
-  startLabel:
+  messageTarget: 0
+  _message:
     stringRef: {fileID: 0}
-    stringVal: 
-  startIndex: 0
-  callMode: 0
+    stringVal: switchEnemy
+  messageOLD: 
 --- !u!114 &758942428
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5999,16 +6007,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 123
+  itemId: 183
   indentLevel: 0
-  messageTarget: 0
-  _message:
+  conversationText:
     stringRef: {fileID: 0}
-    stringVal: switchPlayer
-  messageOLD: 
+    stringVal: 'Me: ........
+
+      Me mou_flustered: Did I do that wrong?!'
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!114 &758942429
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6023,9 +6043,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 444.57275
-    y: 456.69543
-    width: 181.81816
+    x: 446.57275
+    y: 450.69543
+    width: 173.40425
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6045,33 +6065,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 121
+  itemId: 182
   indentLevel: 0
-  conversationText:
+  messageTarget: 0
+  _message:
     stringRef: {fileID: 0}
-    stringVal: "???: My argument.\n???: Now I made my thesis and the first argument.
-      Now, its your turn! Don't make me ask you the second time. I am not patient.\nMe:
-      I start feeling like quitting.. Having a debate is too intense for an introvert.\r\n???:
-      Of course you feel pressured. My argument just gives you damage in your \"confidence\",
-      ie. your willingness to continue. If your confidence is completely lost, you
-      can no longer handle reasoning and you will be dead!\r\nMe: Such punishment
-      is so severe!\r\n???: I know, and they say fear drives action, which you need
-      to take. Now shall we continue?"
-  clearPrevious:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  waitForInput:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  waitForSeconds:
-    floatRef: {fileID: 0}
-    floatVal: 0
-  fadeWhenDone:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
+    stringVal: switchPlayer
+  messageOLD: 
 --- !u!114 &758942431
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6081,25 +6084,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 412.86536
-    y: 385.9637
-    width: 161.36362
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 120
-  blockName: EnemyArgument1
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 758942430}
-  - {fileID: 758942428}
-  - {fileID: 758942427}
+  itemId: 181
+  indentLevel: 0
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchEnemy
+  messageOLD: 
 --- !u!114 &758942432
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6328,7 +6322,7 @@ MonoBehaviour:
   portrait: {fileID: 21300000, guid: 17d815ad70b02244890c28087cdcf1d4, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 1992078462}
+  toPosition: {fileID: 1130664790}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
@@ -6439,16 +6433,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 117
-  indentLevel: 0
-  messageTarget: 0
-  _message:
-    stringRef: {fileID: 0}
-    stringVal: switchPlayer
-  messageOLD: 
+  nodeRect:
+    serializedVersion: 2
+    x: -1.0638298
+    y: 0
+    width: 120
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 165
+  blockName: New Block
+  description: 
+  eventHandler: {fileID: 0}
+  commandList: []
 --- !u!114 &758942447
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6465,7 +6465,7 @@ MonoBehaviour:
   message: switchPlayer
 --- !u!114 &758942448
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6479,12 +6479,189 @@ MonoBehaviour:
   indentLevel: 0
   display: 1
   stage: {fileID: 0}
-  character: {fileID: 493972455}
+  character: {fileID: 509587579}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 40085a5fbc9327240a8b661911d77138, type: 3}
+  portrait: {fileID: 21300000, guid: 5eadccde7c14d934c8641fd8f54878f7, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 1571843160}
+  toPosition: {fileID: 792095747}
+  facing: 2
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &758942449
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 848.66473
+    y: 304.95227
+    width: 148.93616
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 135
+  blockName: tutorialFirstBlood
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 758942487}
+  - {fileID: 758942485}
+  - {fileID: 758942486}
+  - {fileID: 758942395}
+  - {fileID: 758942484}
+--- !u!114 &758942450
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 396.66473
+    y: 60.95227
+    width: 190.42552
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 163
+  blockName: DefalutPlayerThesisCon
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 758942422}
+  - {fileID: 758942336}
+--- !u!114 &758942451
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 162
+  indentLevel: 0
+  text: Smartphone is beneficial to the youngsters if used properly
+  description: 
+  targetBlock: {fileID: 758942450}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &758942452
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 161
+  indentLevel: 0
+  storyText: So here is my thesis...
+  description: 
+  character: {fileID: 509587579}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &758942453
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 160
+  indentLevel: 0
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchPlayer
+  messageOLD: 
+--- !u!114 &758942454
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 159
+  indentLevel: 0
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchEnemy
+  messageOLD: 
+--- !u!114 &758942455
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 158
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 509587579}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 9b9163ef4dcb43143ba80e0b448dac27, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
@@ -6493,6 +6670,899 @@ MonoBehaviour:
   move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 0
+--- !u!114 &758942456
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 156
+  indentLevel: 0
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchPlayer
+  messageOLD: 
+--- !u!114 &758942457
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 155
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 509587579}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 1138b03a61c21a34b9e883bc0fc0513e, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &758942458
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 154
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 894164284}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 17d815ad70b02244890c28087cdcf1d4, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &758942459
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 153
+  indentLevel: 0
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchPlayer
+  messageOLD: 
+--- !u!114 &758942460
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 152
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 894164284}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: f15ff8bdbb74d0e40adafe2b91c7572e, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &758942461
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 150
+  indentLevel: 0
+  storyText: (...I can feel a potent aura emanating from this presence. Although it
+    seems nonsense to me, guess I can only follow what it says..)
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &758942462
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 149
+  indentLevel: 0
+  storyText: "Indeed, and they say fear drives action, which you need to take one.
+    Shall we continue?\r"
+  description: 
+  character: {fileID: 894164284}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &758942463
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 148
+  indentLevel: 0
+  storyText: "Such punishment is so severe!\r"
+  description: 
+  character: {fileID: 509587579}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &758942464
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 147
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "???: It's your willingness to continue, as shown in the meter. Its
+      rate of decrease is depending on one's traits and the acrimony of enemy's move.\r\n???:
+      If your confidence is completely lost, you can no longer handle the reasoning
+      and you will be dead.. So always check the meter!\r"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &758942465
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 146
+  indentLevel: 0
+  storyText: "What?\r"
+  description: 
+  character: {fileID: 509587579}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &758942466
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 145
+  indentLevel: 0
+  storyText: "So, my thesis has given you a \"confidence damage\".\r"
+  description: 
+  character: {fileID: 894164284}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &758942467
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 144
+  indentLevel: 0
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchEnemy
+  messageOLD: 
+--- !u!114 &758942468
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 143
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 2042594260}
+  targetComponentAssemblyName: DebateModeController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: DebateModeController
+  targetMethod: UpdatePlayerConfidence
+  targetMethodText: 'UpdatePlayerConfidence (Single): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Single
+      intValue: 0
+      boolValue: 0
+      floatValue: 0.9
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &758942469
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 142
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Me: (I can't help but to sweat.)\r\nMe: I start feeling like quitting..
+      Having a debate is too intense for an introvert like me.\r\n"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &758942470
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 412.66473
+    y: -15.0477295
+    width: 167.02127
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 141
+  blockName: DefaultPlayerThesis
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 758942457}
+  - {fileID: 758942456}
+  - {fileID: 758942469}
+  - {fileID: 758942460}
+  - {fileID: 758942454}
+  - {fileID: 758942466}
+  - {fileID: 758942465}
+  - {fileID: 758942458}
+  - {fileID: 758942464}
+  - {fileID: 758942459}
+  - {fileID: 758942463}
+  - {fileID: 758942467}
+  - {fileID: 758942462}
+  - {fileID: 758942455}
+  - {fileID: 758942453}
+  - {fileID: 758942461}
+  - {fileID: 758942452}
+  - {fileID: 758942451}
+--- !u!114 &758942471
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 140
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "???: Debaters start the debate with \"Thesis\". It's now my turn to
+      make a thesis!\r\n???: People can't leave their phones for even a minute nowadays.
+      While we are growing heavier dependency on these gadgets, \r\n???: They may
+      affect our life in a bad way, it's especially true to the teenagers and children,
+      who are still developing and are thus susceptible to external influence. \r\n???:
+      Next, I will argue how smartphones damage teenagers' physical health.\r\n???:
+      Now I made my first thesis, and it's your round then! Don't make me ask you
+      for the second time, I am not a patient god."
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &758942472
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 942.66473
+    y: 398.95227
+    width: 188.29787
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 139
+  blockName: tutorialFallacyArgument
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 758942479}
+  - {fileID: 758942478}
+  - {fileID: 758942477}
+--- !u!114 &758942473
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 179
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 758942349}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
+--- !u!114 &758942474
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 1071.6648
+    y: 350.95227
+    width: 173.40425
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 137
+  blockName: tutorialFirstArgument
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 758942482}
+  - {fileID: 758942483}
+  - {fileID: 758942481}
+  - {fileID: 758942480}
+--- !u!114 &758942475
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 178
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: 'Me mou_think: In your last argument, you didn''t provide any reliable
+      data and reasoning.
+
+      Me: Instead, you tried to accuse me to be one of the teenagers who is addicted
+      to smart phone.
+
+      Me mou_normal: In fact, you''re making "guilt by association" fallacy. Your
+      argument doesn''t stand at all.
+
+      Me: Whether or not I''m addicted to smart phones, the facts I presented do not
+      change.
+
+      Me mou_firm: Your act of deceit is misleading and corrode the root of our fair
+      debate. I am dissapointed!'
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &758942476
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 177
+  indentLevel: 0
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchPlayer
+  messageOLD: 
+--- !u!114 &758942477
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 176
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 758942349}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
+--- !u!114 &758942478
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 175
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: 'Mouyu: You are speaking for them because you''re one of them! No wonder
+      you object the topic.
+
+      Mouyu: It would be very devious if you support something that will only do good
+      to you!'
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &758942479
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 174
+  indentLevel: 0
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchEnemy
+  messageOLD: 
+--- !u!114 &758942480
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 173
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 758942349}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
+--- !u!114 &758942481
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 172
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: 'Mouyu: Not bad.'
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &758942482
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 171
+  indentLevel: 0
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchPlayer
+  messageOLD: 
+--- !u!114 &758942483
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 170
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: 'Me: Well, based on the survey, the penetration rate of smartphones
+      among teenagers is over 90%.
+
+      Me: Without the assistance, we would have harder time to look for relative information.
+
+      Me: Though we can use computer, but it would be less sufficient.
+
+      Me: If we do not ban computer, why should we ban smartphone for teenagers?'
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &758942484
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 169
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 758942349}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
+--- !u!114 &758942485
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 168
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: '??? mouyu_pensive: Teenager gets addicted to mobile games and social
+      media easily.
+
+      ???: From a report, more than 60% of teenager interviewees belive they are anxious
+      with phone.
+
+      ??? mouyu_wink: In all to say, I don''t think such a addictive device would
+      be beneficial to immature people..'
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &758942486
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 180
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 509587579}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 5eadccde7c14d934c8641fd8f54878f7, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 792095747}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &758942487
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 166
+  indentLevel: 0
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchEnemy
+  messageOLD: 
 --- !u!1 &760031564
 GameObject:
   m_ObjectHideFlags: 0
@@ -6605,7 +7675,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -490.00006, y: -1000}
-  m_SizeDelta: {x: 750, y: 750}
+  m_SizeDelta: {x: 750, y: 1000}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &792095748
 MonoBehaviour:
@@ -7062,7 +8132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &900232085
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8399,7 +9469,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 181.99997, y: -1000}
-  m_SizeDelta: {x: 750, y: 750}
+  m_SizeDelta: {x: 750, y: 1000}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1130664791
 MonoBehaviour:
@@ -9442,6 +10512,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299746063}
   m_CullTransparentMesh: 0
+--- !u!1001 &1323337485
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3676746845720488242, guid: d6b702084347ece42b453053d10da0b2,
+        type: 3}
+      propertyPath: m_Name
+      value: StoryCharMe
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6b702084347ece42b453053d10da0b2, type: 3}
 --- !u!1 &1349911904
 GameObject:
   m_ObjectHideFlags: 0
@@ -10509,7 +11648,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -1102.7, y: -1000}
-  m_SizeDelta: {x: 750, y: 750}
+  m_SizeDelta: {x: 750, y: 1000}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1571843161
 MonoBehaviour:
@@ -10772,7 +11911,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -154, y: -1000}
-  m_SizeDelta: {x: 750, y: 750}
+  m_SizeDelta: {x: 750, y: 1000}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1577189972
 CanvasRenderer:
@@ -11934,7 +13073,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 794.6, y: -1000}
-  m_SizeDelta: {x: 750, y: 750}
+  m_SizeDelta: {x: 750, y: 1000}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1992078463
 MonoBehaviour:

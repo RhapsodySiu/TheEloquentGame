@@ -15,9 +15,7 @@ public class DataController : MonoBehaviour
 
     public List<Argument> tempArguments = new List<Argument>();
 
-    public Dictionary<string, int> argumentDict = new Dictionary<string, int> ();
-
-    public Debate debate;
+    protected Debate debate;
 
     private string gameDataFileName = "data.json";
 
@@ -63,6 +61,16 @@ public class DataController : MonoBehaviour
     public bool IsPlayerRound()
     {
         return debate.isPlayerRound;
+    }
+
+    public bool IsPlayerWin()
+    {
+        return debate.IsPlayerWin();
+    }
+
+    public bool IsPlayerLose()
+    {
+        return debate.IsPlayerLose();
     }
 
     public bool IsArgumentInfoExists(Argument argument)
@@ -170,42 +178,42 @@ public class DataController : MonoBehaviour
         return debate.player.thesisList;
     }
 
-    public int GetPlayerMentalHealth()
+    public float GetPlayerMentalHealth()
     {
         return debate.player.mentalHealth;
     }
 
-    public int GetPlayerMaxMentalHealth()
+    public float GetPlayerMaxMentalHealth()
     {
         return debate.player.mentalMaxHealth;
     }
 
-    public int GetEnemyMentalHealth()
+    public float GetEnemyMentalHealth()
     {
         return debate.enemy.mentalHealth;
     }
 
-    public int GetEnemyMaxMentalHealth()
+    public float GetEnemyMaxMentalHealth()
     {
         return debate.enemy.mentalMaxHealth;
     }
 
-    public int GetPlayerMaxThesesHealth()
+    public float GetPlayerMaxThesesHealth()
     {
         return debate.player.totalMaxThesesHealth;
     }
 
-    public int GetPlayerThesesHealth()
+    public float GetPlayerThesesHealth()
     {
         return debate.player.totalCurrentThesesHealth;
     }
 
-    public int GetEnemyrMaxThesesHealth()
+    public float GetEnemyrMaxThesesHealth()
     {
         return debate.enemy.totalMaxThesesHealth;
     }
 
-    public int GetEnemyThesesHealth()
+    public float GetEnemyThesesHealth()
     {
         return debate.enemy.totalCurrentThesesHealth;
     }
@@ -295,6 +303,13 @@ public class DataController : MonoBehaviour
         return true;
     }
 
+    // increment round count and toggle player round
+    public void UpdateRound()
+    {
+        debate.round += 1;
+        debate.isPlayerRound = !debate.isPlayerRound;
+    }
+
     public void UpdateDebateStat(ArgumentEffect effect)
     {
         blockToPlay = effect.conversationBlock;
@@ -308,6 +323,20 @@ public class DataController : MonoBehaviour
         }
 
         debate.audience.UpdateStat(effect);
+    }
+
+    // For adjusting value without argument
+    public void UpdatePlayerConfidence(float newValue)
+    {
+        Debug.Log("BBB");
+        try
+        {
+            debate.player.mentalHealth = newValue;
+        } catch (System.Exception ex)
+        {
+            Debug.LogException(ex);
+        }
+        
     }
 
     
