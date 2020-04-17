@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: teenagerAddiction
+  m_EditorClassIdentifier: 
+  factId: 1
+  factName: TeenagerAddiction
+  description: "Common Sense Media\n\"Technology addiction - concern, controversy,
+    and finding balance\" 2016\n\n78% of teens check their devices at least hourly;\r\n\n59%
+    of parents feel their teens are addicted to their cell phones;\r\n\n50% of teenagers
+    admit that they are addicted to their mobile devices;\r\n1/3 of teen kids very
+    often or occasionally try to cut down on time spent on mobile device;\r\n\n72%
+    of teens feel the need to immediately respond to texts, social-networking messages
+    and other notifications."
+  cn_description: 
+  zh_description: 

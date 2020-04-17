@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Fungus;
+using System;
 
 public class DataController : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class DataController : MonoBehaviour
 
     public List<Argument> tempArguments = new List<Argument>();
 
-    protected Debate debate;
+    public Debate debate;
 
     private string gameDataFileName = "data.json";
 
@@ -58,6 +59,11 @@ public class DataController : MonoBehaviour
         return debate.round;
     }
 
+    public bool IsTutorial()
+    {
+        return debate.isTutorial;
+    }
+
     public bool IsPlayerRound()
     {
         return debate.isPlayerRound;
@@ -78,14 +84,17 @@ public class DataController : MonoBehaviour
         return debate.definedArgumentInfoDict.ContainsKey(argument);
     }
 
+    /* Check whether player made an argument 
+     * Useful when checking if player is doing repeated move.
+     */
     public bool DoesPlayerMadeArgument(Argument argument)
     {
-        return debate.player.arguments.Contains(argument);
+        return debate.IsPlayerArgumentExist(argument);
     }
 
     public bool DoesEnemyMadeArgument(Argument argument)
     {
-        return debate.enemy.arguments.Contains(argument);
+        return debate.IsEnemyArgumentExist(argument);
     }
 
     public Debater GetPlayer()
@@ -140,7 +149,7 @@ public class DataController : MonoBehaviour
 
     public ArgumentEffect GetArgumentEffect(Argument argument)
     {
-        ArgumentEffect value = new ArgumentEffect();
+        ArgumentEffect value;
 
         if (debate.definedArgumentEffectDict.TryGetValue(argument, out value))
         {
@@ -148,8 +157,27 @@ public class DataController : MonoBehaviour
         }
         else
         {
-            // TODO: set default argument effect(failure, no effect...)
-            return value;
+            return null;
+        }
+    }
+
+    public Dictionary<Argument, ArgumentInfo> GetDefinedArgumentInfoDict()
+    {
+        return debate.definedArgumentInfoDict;
+    }
+
+    public Dictionary<Argument, ArgumentEffect> GetDefinedArgumentEffectDict()
+    {
+        return debate.definedArgumentEffectDict;
+    }
+
+    public void GenerateEnemyArgument()
+    {
+        // Add the enemy argument to temporary list
+        Tuple<ArgumentInfo, Argument, ArgumentEffect> result = debate.GenerateEnemyArgument();
+        if (result != null)
+        {
+            tempArguments.Add(result.Item2);
         }
     }
 
@@ -161,6 +189,11 @@ public class DataController : MonoBehaviour
     public Tactic GetTacticByName(string tacticName)
     {
         return tacticDict[tacticName];
+    }
+
+    public bool IsPlayerProponent()
+    {
+        return debate.player.isProponent;
     }
 
     public List<Argument> GetPlayerArguments()
@@ -248,48 +281,67 @@ public class DataController : MonoBehaviour
         debate.Init();
     }
 
+    public void SetPlayerSide(bool isProponent)
+    {
+        try
+        {
+            debate.SetPlayerSide(isProponent);
+        } catch (System.Exception ex)
+        {
+            Debug.LogException(ex);
+        }
+        
+    }
+
     public void AddPlayerThesis(string thesisName)
     {
-        if (debate.player.thesis_count >= MAX_THESES)
+        try
         {
-            Debug.Log("Error in add player thesis: Player already have 3 or above theses");
-            return;
-        }
-
-        Thesis thesisToAdd = null;
-        foreach (Thesis thesis in debate.thesisAvailable)
-        {
-            if (thesisName == thesis.thesisName)
+            if (debate.player.thesisCount >= MAX_THESES)
             {
-                thesisToAdd = thesis;
-                break;
-            }
-        }
-
-        if (thesisToAdd != null)
-        {
-            if (debate.player.isProponent != thesisToAdd.isProponent)
-            {
-                Debug.LogError("Error in add player thesis: Player stand conflicts with thesis stand");
+                Debug.Log("Error in add player thesis: Player already have 3 or above theses");
                 return;
             }
 
-            debate.player.thesisList[debate.player.thesis_count] = new DebaterThesis(thesisToAdd);
-            debate.player.thesis_count += 1;
+            Thesis thesisToAdd = null;
+            foreach (Thesis thesis in debate.thesisAvailable)
+            {
+                if (thesisName == thesis.thesisName)
+                {
+                    thesisToAdd = thesis;
+                    break;
+                }
+            }
 
-        } else
+            if (thesisToAdd != null)
+            {
+                if (debate.player.isProponent != thesisToAdd.isProponent)
+                {
+                    Debug.LogError("Error in add player thesis: Player stand conflicts with thesis stand");
+                    return;
+                }
+
+                debate.player.AddThesis(thesisToAdd);
+
+            }
+            else
+            {
+                Debug.LogError("Error in add player thesis: thesis with name '" + thesisName + "' not found.");
+            }
+        } catch (System.Exception ex)
         {
-            Debug.LogError("Error in add player thesis: thesis with name '" + thesisName + "' not found.");
+            Debug.Log("Error during adding player thesis:");
+            Debug.LogException(ex);
         }
     }
 
     // TODO: revamp to make logic clear
-    public bool ApplyTempArgument()
+    public string ApplyTempArgument()
     {
         // If no temporary arguments, indicate no argument made by returning false
         if (tempArguments.Count == 0)
         {
-            return false;
+            return null;
         }
         Argument argumentMade = tempArguments[0];
         tempArguments.RemoveAt(0);
@@ -298,9 +350,16 @@ public class DataController : MonoBehaviour
         debate.player.arguments.Add(argumentMade);
 
         ArgumentEffect effect = GetArgumentEffect(argumentMade);
-        UpdateDebateStat(effect);
+        if (effect != null)
+        {
+            UpdateDebateStat(effect);
+        } else
+        {
+            Debug.LogError("Received null argument effect during applying temporary argument");
+        }
 
-        return true;
+        Debug.Log("Applied debate effect, return conversation block " + effect.conversationBlock);
+        return effect.conversationBlock;
     }
 
     // increment round count and toggle player round
@@ -316,19 +375,21 @@ public class DataController : MonoBehaviour
         if (effect.toSelf)
         {
             debate.player.UpdateStat(effect);
+            Debug.Log("Player status updated");
         }
         else
         {
-            debate.audience.UpdateStat(effect);
+            debate.enemy.UpdateStat(effect);
+            Debug.Log("Enemy status updated");
         }
 
         debate.audience.UpdateStat(effect);
+        Debug.Log("Audience status updated");
     }
 
     // For adjusting value without argument
     public void UpdatePlayerConfidence(float newValue)
     {
-        Debug.Log("BBB");
         try
         {
             debate.player.mentalHealth = newValue;

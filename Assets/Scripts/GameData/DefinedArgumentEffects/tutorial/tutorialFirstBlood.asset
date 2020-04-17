@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b1dcfeb715890844bf15ef1d385baf0, type: 3}
-  m_Name: tutorialArgumentEffect
+  m_Name: tutorialFirstBlood
   m_EditorClassIdentifier: 
   toSelf: 0
-  mentalHealthChange: -1
-  supportChange: 0
+  mentalHealthChange: -0.1
+  supportChange: 0.1
   ArgAttBuff: 0
   mentalAttBuff: 0
   influenceBuff: 0
@@ -22,4 +22,4 @@ MonoBehaviour:
   maxThesisHealthChange: 0
   currentThesisHealthChange: 0
   defenseChange: 0
-  conversationBlock: tutorialEnemyGivenUp
+  conversationBlock: tutorialFirstBlood

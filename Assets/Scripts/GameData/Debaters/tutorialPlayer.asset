@@ -10,22 +10,27 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b069ccbcd66e3624e917528b284a1ab4, type: 3}
-  m_Name: tutorialEnemy
+  m_Name: tutorialPlayer
   m_EditorClassIdentifier: 
-  thesisCount: 0
-  id: 1
-  isProponent: 1
-  debaterName: ???
-  description: Who is it?
+  thesisCount: 1
+  id: 0
+  isProponent: 0
+  debaterName: Player
+  description: 'Proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo.
+    Pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Odio eu feugiat
+    pretium nibh. '
   thesisList:
-  - {fileID: 11400000, guid: feab818ffbd986442ae5e4728bb506f4, type: 2}
+  - {fileID: 11400000, guid: 387fd5d6e65d2d24c881064f060ab0a4, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   totalCurrentThesesHealth: 100
   totalMaxThesesHealth: 100
-  arguments: []
-  traits: 00000000
+  arguments:
+  - {fileID: 11400000, guid: 893600f012958a849a3c693a8835a95d, type: 2}
+  traits: 
   mentalMaxHealth: 1
   mentalHealth: 0.9
-  actionPoint: 1
+  actionPoint: 3
   basePow: 1
   baseInfluence: 1
-  baseRoast: 1.1
+  baseRoast: 1

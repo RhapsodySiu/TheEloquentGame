@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: tutorialPlayerThesis
   m_EditorClassIdentifier: 
   thesisId: 10
-  thesisName: OneOfThePlayerThesis
+  thesisName: SmartphoneIsBeneficialToTeenagerDevelopment
   isProponent: 0
   thesisMaxHealth: 100
   description: Massa sed elementum tempus egestas. Eleifend mi in nulla posuere sollicitudin

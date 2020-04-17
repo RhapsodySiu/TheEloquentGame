@@ -21,6 +21,15 @@ public class Argument : ScriptableObject
     [Header("Either thesis is null or argument is null")]
     public Thesis thesis;
     public ArgumentInfo argument;
+
+    public override string ToString()
+    {
+        if (thesis != null)
+        {
+            return "Argument[Thesis to respond=" + thesis.thesisName + ", tactic=" + tactic.tacticName + ", fact=" + (fact == null ? "None" : fact.factName) + "]";
+        }
+        return "Argument[Argument to respond=" + argument.ArgumentName + ", tactic=" + tactic.tacticName + ", fact=" + (fact == null ? "None" : fact.factName) + "]";
+    }
 }
 
 public class ArgumentComparer : IEqualityComparer<Argument>

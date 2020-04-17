@@ -22,6 +22,23 @@ public class Thesis : ScriptableObject
     {
         return "Thesis: " + thesisName + "\n\tMax health: " + thesisMaxHealth.ToString();
     }
+    public override bool Equals(object obj)
+    {
+        if (obj == null) return false;
+        Thesis objAsThesis = obj as Thesis;
+        if (objAsThesis == null) return false;
+        else return Equals(objAsThesis);
+    }
+
+    public override int GetHashCode()
+    {
+        return thesisName.GetHashCode();
+    }
+    public bool Equals(Thesis other)
+    {
+        if (other == null) return false;
+        return (this.thesisName == other.thesisName && this.thesisId == other.thesisId);
+    }
 
     public string GetDescription(string language)
     {

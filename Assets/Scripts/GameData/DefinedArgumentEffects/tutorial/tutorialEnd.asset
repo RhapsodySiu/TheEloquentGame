@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b1dcfeb715890844bf15ef1d385baf0, type: 3}
-  m_Name: tutorialSecondArgument
+  m_Name: tutorialEnd
   m_EditorClassIdentifier: 
   toSelf: 0
-  mentalHealthChange: 0
+  mentalHealthChange: -1
   supportChange: 0
   ArgAttBuff: 0
   mentalAttBuff: 0
@@ -22,4 +22,4 @@ MonoBehaviour:
   maxThesisHealthChange: 0
   currentThesisHealthChange: 0
   defenseChange: 0
-  conversationBlock: 
+  conversationBlock: tutorialEnd

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01f0fa001e7e13e4ea0838b11a808659, type: 3}
-  m_Name: tutorialFallacyArgument
+  m_Name: oppArg1UsefulnessByAuthority
   m_EditorClassIdentifier: 
   argumentRespondName: 
   thesisRespondName: 
   tacticName: 
   factName: 
-  fact: {fileID: 0}
-  tactic: {fileID: 0}
-  thesis: {fileID: 0}
+  fact: {fileID: 11400000, guid: 7870453a6f1a7874c9bf2b344d844f20, type: 2}
+  tactic: {fileID: 11400000, guid: 2a0796b6e8dce084db02e42f0b7206b1, type: 2}
+  thesis: {fileID: 11400000, guid: 7048b713e2829314ea9d28d3be4fb057, type: 2}
   argument: {fileID: 0}

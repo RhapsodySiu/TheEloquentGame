@@ -10,34 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b069ccbcd66e3624e917528b284a1ab4, type: 3}
-  m_Name: Player
+  m_Name: player
   m_EditorClassIdentifier: 
-  thesis_count: 3
-  id: 0
-  isProponent: 0
-  debaterName: Player
-  description: 'Proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo.
-    Pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Odio eu feugiat
-    pretium nibh. '
+  thesis_count: 0
+  id: 2
+  isProponent: 1
+  debaterName: Blue
+  description: ' Id consectetur purus ut faucibus pulvinar elementum. Dignissim cras
+    tincidunt lobortis feugiat vivamus at augue eget arcu. '
   thesisList:
-  - {fileID: 11400000, guid: a77e40156d1cde74985fe60cd4ffcebf, type: 2}
-  - {fileID: 11400000, guid: 216309fc1d9623847b1ce752cc2992dc, type: 2}
-  - {fileID: 11400000, guid: f5361b70f101f614ba938eafde045cfb, type: 2}
-  totalCurrentThesesHealth: 400
+  - {fileID: 11400000, guid: 74c66f4416054f54baaf83e2e2806fe2, type: 2}
+  - {fileID: 11400000, guid: f49f3e020c211a94b9137688170f09f8, type: 2}
+  - {fileID: 11400000, guid: d7972b35d64baaa4ca59c52cec0e3468, type: 2}
+  totalCurrentThesesHealth: 700
   totalMaxThesesHealth: 300
   arguments:
-  - argumentRespondName: 
-    thesisRespondName: 
-    tacticName: 
-    factName: 
-  - argumentRespondName: 
-    thesisRespondName: 
-    tacticName: 
-    factName: 
-  - argumentRespondName: 
-    thesisRespondName: 
-    tacticName: 
-    factName: 
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   traits: 
   mentalMaxHealth: 100
   mentalHealth: 100

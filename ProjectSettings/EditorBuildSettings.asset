@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Debate1Scene.unity
     guid: 03e4813f8cef3aa4ea5cda78bb77d3e8
+  - enabled: 1
+    path: Assets/Scenes/Story2Scene.unity
+    guid: 562111ee17ccb694782e80e016c6833a
+  - enabled: 1
+    path: Assets/Scenes/Debate2Scene.unity
+    guid: 2ba5cea0263298149aae9abb36e3f452
   m_configObjects: {}

@@ -6,22 +6,34 @@ using UnityEngine;
 [System.Serializable]
 public class ArgumentInfo : ScriptableObject
 {
-    public string name;
+    public string ArgumentName = "";
+
+    public bool IsProponentArgument = false;
 
     [Tooltip("The information text to display in GUI")]
-    [TextArea(20, 20)]
+    [TextArea(10, 10)]
     public string description;
-    [TextArea(20, 20)]
+    [TextArea(10, 10)]
     public string cn_description;
-    [TextArea(20, 20)]
+    [TextArea(10, 10)]
     public string zh_description;
 
-    public ArgumentInfo()
+    public override string ToString()
     {
-        name = "";
-        description = "";
-        cn_description = "";
-        zh_description = "";
+        return "[" + ArgumentName + ", isProponentArgument=" + IsProponentArgument + "]";
+    }
+
+    public override bool Equals(object other)
+    {
+        if (other == null) return false;
+        ArgumentInfo otherArgumentInfo = other as ArgumentInfo;
+
+        return ArgumentName == otherArgumentInfo.ArgumentName && IsProponentArgument == otherArgumentInfo.IsProponentArgument;
+    }
+
+    public override int GetHashCode()
+    {
+        return ArgumentName.GetHashCode();
     }
 
     public string GetDescription(string language)

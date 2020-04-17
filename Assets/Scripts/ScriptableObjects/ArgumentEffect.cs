@@ -7,7 +7,7 @@ using UnityEngine;
 public class ArgumentEffect : ScriptableObject
 {
     public bool toSelf;
-    public int mentalHealthChange;
+    public float mentalHealthChange;
     public float supportChange;
     public float ArgAttBuff;
     public float mentalAttBuff;
@@ -19,4 +19,9 @@ public class ArgumentEffect : ScriptableObject
     public int defenseChange;
 
     public string conversationBlock;
+
+    public override string ToString()
+    {
+        return "ArgumentEffect[toSelf="+toSelf+", conversationBlock="+conversationBlock+"]";
+    }
 }

@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "new Debate", menuName = "DebateGame/Create Debate Data")]
@@ -10,6 +12,7 @@ public class Debate : ScriptableObject
     public Debater enemy;
 
     public bool isPlayerRound;
+    public bool isTutorial;
 
     public Audience audience;
 
@@ -22,37 +25,61 @@ public class Debate : ScriptableObject
     
     public DefinedArgumentEffects definedEffectAsset;
     public DefinedArgumentInfos definedInfoAsset;
-    
+ 
+    // Arguments that player/enemy made
+    private List<Tuple<ArgumentInfo, Argument>> playerArgumentInfoHistory = new List<Tuple<ArgumentInfo, Argument>>();
+    private List<Tuple<ArgumentInfo, Argument>> enemyArgumentInfoHistory = new List<Tuple<ArgumentInfo, Argument>>();
+
+    // Arguments that player/enemy can make
+    private List<(ArgumentInfo, Argument)> availableEnemyArguments = new List<(ArgumentInfo, Argument)>();
+    private List<(ArgumentInfo, Argument)> availablePlayerArguments = new List<(ArgumentInfo, Argument)>();
 
     private ArgumentEffect defalutInvalidArgumentEffect;
-    
+
+    // for random utility
+    private System.Random rng = new System.Random();
+
     public int maxRound;
     public int round;
 
     public void Init()
     {
-        player.mentalHealth = player.mentalMaxHealth;
-        enemy.mentalHealth = enemy.mentalMaxHealth;
-        player.thesis_count = 0;
-        enemy.thesis_count = 0;
-        audience.support = 0f;
-        PopulateDebateFactDict();
-        PopulateDefinedArgumentEffectDict();
-        
+        try
+        {
+            player.InitDebater(true);
+            enemy.InitDebater();
+            audience.support = 0f;
+            playerArgumentInfoHistory.Clear();
+            enemyArgumentInfoHistory.Clear();
+            availableEnemyArguments.Clear();
+            availablePlayerArguments.Clear();
+            InitDefinedArguments();
+            PopulateDefinedArgumentEffectDict();
+        } catch (System.Exception ex)
+        {
+            Debug.LogError("Error during initializing debate");
+            Debug.LogException(ex);
+        }
     }
 
-    public void PopulateDebateFactDict()
+    public void InitDefinedArguments()
     {
-        debateFactDict.Clear();
-        if (debateFacts != null)
+        availableEnemyArguments.Clear();
+        availablePlayerArguments.Clear();
+        foreach (DefinedArgumentInfo definedArgumentInfo in definedInfoAsset.definedArgumentInfos)
         {
-            foreach (Fact fact in debateFacts.availableFacts)
+            ArgumentInfo argumentInfo = definedArgumentInfo.argumentInfo;
+            Argument argument = definedArgumentInfo.argument;
+
+            if (argumentInfo.IsProponentArgument == player.isProponent)
             {
-                debateFactDict.Add(fact.factName, fact);
+                Debug.Log("Add " + argumentInfo + " to player available move");
+                availablePlayerArguments.Add((argumentInfo, argument));
+            } else
+            {
+                Debug.Log("Add " + argumentInfo + " to enemy available move");
+                availableEnemyArguments.Add((argumentInfo, argument));
             }
-        } else
-        {
-            Debug.Log("Unable to popuolate fact dict: debateFacts is null");
         }
     }
 
@@ -61,9 +88,9 @@ public class Debate : ScriptableObject
         definedArgumentEffectDict.Clear();
         if (definedEffectAsset != null)
         {
-            foreach (DefinedArgumentEffect definedArgument in definedEffectAsset.definedArguments)
+            foreach (DefinedArgumentEffect definedArgumentEffect in definedEffectAsset.definedArguments)
             {
-                definedArgumentEffectDict.Add(definedArgument.argument, definedArgument.argumentEffect);
+                definedArgumentEffectDict.Add(definedArgumentEffect.argument, definedArgumentEffect.argumentEffect);
             }
         } else
         {
@@ -71,6 +98,7 @@ public class Debate : ScriptableObject
         }
     }
 
+    // Create dictionary from the asset for better lookup
     public void PopulateDefinedArgumentInfoDict()
     {
         definedArgumentInfoDict.Clear();
@@ -86,17 +114,127 @@ public class Debate : ScriptableObject
         }
     }
 
-    public void SetDefaultEnemyThesis()
+    public void SetPlayerSide(bool isProponent)
     {
+        player.isProponent = isProponent;
         if (player.isProponent)
         {
             // set enemy as opponent
             enemy.isProponent = false;
-        } else
+        }
+        else
         {
             // set enemy as proponent
             enemy.isProponent = true;
         }
+    }
+
+    /*
+     * Draw random argument from availableEnemyArguments. 
+     * The argument drawn must fulfill two condition 1) Its ArgumentInfo's never in enemy history; 
+     * 2) The argument/thesis to which it responds exists. 
+     * If the ArgumentInfo is already in enemy history, remove the item.
+     * TODO: Use better datatype eg Dictionary to manage items
+    */
+    public Tuple<ArgumentInfo, Argument, ArgumentEffect> GenerateEnemyArgument()
+    {
+        try
+        {
+            ArgumentInfo argumentInfo = null;
+            Argument argument = null;
+            ArgumentEffect argumentEffect;
+
+            Debug.Log("Current enemy argument remains = " + availableEnemyArguments.Count);
+            if (isTutorial)
+            {
+                // HARD CODE enemy ai for tutorial
+                // In tutorial, MobileAppsCauseAddiction argument goes first, following by YouAreAddictedAsWell
+                if (availableEnemyArguments.Count <= 1)
+                {
+                    argumentInfo = availableEnemyArguments[0].Item1;
+                    argument = availableEnemyArguments[0].Item2;
+                    availableEnemyArguments.Clear();
+                }
+                else
+                {
+                    foreach ((ArgumentInfo, Argument) argumentTuple in availableEnemyArguments)
+                    {
+                        if (argumentTuple.Item1.ArgumentName == "MobileAppsCauseAddiction")
+                        {
+                            argumentInfo = argumentTuple.Item1;
+                            argument = argumentTuple.Item2;
+                            break;
+                        }
+                    }
+                    availableEnemyArguments.RemoveAll(t => t.Item1 == argumentInfo);
+                    
+                }
+
+                Debug.Log("GenerateEnemyArgument: get arugment info = " + argumentInfo);
+                Debug.Log("GenerateEnemyArgument: get arugment = " + argument);
+
+                definedArgumentEffectDict.TryGetValue(argument, out argumentEffect);
+                Debug.Log("GenerateEnemyArgument: get effect = " + argumentEffect);
+                return new Tuple<ArgumentInfo, Argument, ArgumentEffect>(argumentInfo, argument, argumentEffect);
+            }
+
+            List<int> values = Enumerable.Range(0, availableEnemyArguments.Count).ToList();
+            // shuffle the list
+            int n = values.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                int value = values[k];
+                values[k] = values[n];
+                values[n] = value;
+            }
+
+            bool foundArgument = false;
+            foreach (int i in values)
+            {
+                argumentInfo = availableEnemyArguments[i].Item1;
+                argument = availableEnemyArguments[i].Item2;
+                // Check if the argument/thesis to which it responds exists.
+                if (argument.thesis != null && (player.HasThesis(argument.thesis) || enemy.HasThesis(argument.thesis)))
+                {
+                    Debug.Log("Found corresponding thesis info, candidate selected");
+                    foundArgument = true;
+                    break;
+                }
+                else if (argument.argument != null && playerArgumentInfoHistory.Any(argumentTuple => argumentTuple.Item1 == argument.argument))
+                {
+                    Debug.Log("Found corresponding argument info, candidate selected");
+                    foundArgument = true;
+                    break;
+                }
+            }
+
+            if (!foundArgument)
+            {
+                Debug.LogError("Enemy argument exhausted. Should increase available argument size or handle properly");
+            }
+
+            if (argumentInfo != null && foundArgument)
+            {
+                Debug.Log("Argument selected: " + argumentInfo);
+                // if suitable argument is found, remove all available arguments having the same argument info
+                Debug.Log("Removed relative argument infos");
+                availableEnemyArguments.RemoveAll(t => t.Item1 == argumentInfo);
+                // update enemy history and enemy argument record
+                Tuple<ArgumentInfo, Argument> history = new Tuple<ArgumentInfo, Argument>(argumentInfo, argument);
+                enemyArgumentInfoHistory.Add(history);
+                enemy.arguments.Add(argument);
+
+                definedArgumentEffectDict.TryGetValue(argument, out argumentEffect);
+                return new Tuple<ArgumentInfo, Argument, ArgumentEffect>(argumentInfo, argument, argumentEffect);   
+            }
+        } catch (System.Exception ex)
+        {
+            Debug.LogError("Error exists during generation of enemy argument:");
+            Debug.LogException(ex);
+        }
+        return null;
     }
 
     public bool IsPlayerLose()
@@ -104,21 +242,25 @@ public class Debate : ScriptableObject
         // Check audience support first
         if (player.isProponent && audience.support <= -1f)
         {
+            Debug.Log("Player loses as proponent");
             return true;
         } else if (!player.isProponent && audience.support >= 1f)
         {
+            Debug.Log("Player loses as opponent");
             return true;
         }
 
         // Check mental health
         if (player.mentalHealth <= 0)
         {
+            Debug.Log("Player breakdown");
             return true;
         }
 
         // Check thesis health
         if (player.totalCurrentThesesHealth <= 0)
         {
+            Debug.Log("Player loses convincingness");
             return true;
         }
 
@@ -150,6 +292,34 @@ public class Debate : ScriptableObject
             Debug.Log("Enemy thesis health is zero, player wins");
             return true;
         }
+        return false;
+    }
+
+    public bool IsPlayerArgumentExist(Argument argument)
+    {
+        ArgumentInfo argumentInfo;
+        if (definedArgumentInfoDict.TryGetValue(argument, out argumentInfo))
+        {
+            if (playerArgumentInfoHistory.Any(t => t.Item1 == argumentInfo))
+            {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+
+    public bool IsEnemyArgumentExist(Argument argument)
+    {
+        ArgumentInfo argumentInfo;
+        if (definedArgumentInfoDict.TryGetValue(argument, out argumentInfo))
+        {
+            if (enemyArgumentInfoHistory.Any(t => t.Item1 == argumentInfo))
+            {
+                return true;
+            }
+        }
+
         return false;
     }
 }

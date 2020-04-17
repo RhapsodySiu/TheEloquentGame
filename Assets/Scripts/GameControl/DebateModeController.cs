@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Fungus;
+using System;
 
 public class DebateModeController : MonoBehaviour
 {
@@ -28,6 +29,10 @@ public class DebateModeController : MonoBehaviour
         if (dataController == null)
         {
             Debug.LogError("Cannot get reference of DataController. You should load the Persistent scene.");
+        } else
+        {
+            // Get defined arguments and divided into player arguments and enemy arguments
+            
         }
     }
 
@@ -36,16 +41,26 @@ public class DebateModeController : MonoBehaviour
     /* Called by fungus block to initiate variables and gui for game */
     public void InitDebate()
     {
+        UpdateDebugText();
+        dataController.InitDebate();
         Debug.Log("Start the debate");
     }
 
     /* Create arguments for enemy and stack them in temporary arguments */
     public void GenerateEnemyArguments()
     {
-        Debug.Log("Enemy arguments generated!");
-        // TODO: Set up enemy AI. Current thought is to draw possible argument from the predefined set based on game status
-        // Hard-code enemy argument generation during tutorial
-
+        // Call the below method 1-3 times to get argument(s) for enemy
+        // FOR TUTORIAL, only called once
+        if (dataController.IsTutorial())
+        {
+            dataController.GenerateEnemyArgument();
+        } else
+        {
+            dataController.GenerateEnemyArgument();
+        }
+        Debug.Log("Enemy argument loaded into temporary argument");
+        // Make argument
+        // MakeArgument();
     }
 
     public void StartRound()
@@ -56,6 +71,9 @@ public class DebateModeController : MonoBehaviour
 
     public void EndRound()
     {
+        // update debug info
+        UpdateDebugText();
+
         Debug.Log("Check if there is winner");
         if (dataController.IsPlayerWin())
         {
@@ -72,6 +90,18 @@ public class DebateModeController : MonoBehaviour
         }
     }
 
+    public void UpdateDebugText()
+    {
+        Debug.Log("Update debug panel");
+        DebugText.text = "Player proponent=" +  dataController.IsPlayerProponent() + 
+                         "\nPlayer confidence=" + dataController.GetPlayerMentalHealth() +
+                         "\nPopularity=" + dataController.GetAudienceSupport() +
+                         "\nPlayer convincingness=" + dataController.GetPlayerThesesHealth() +
+                         "\nEnemy confidence=" + dataController.GetEnemyMentalHealth() +
+                         "\nIs player round=" + dataController.IsPlayerRound();
+
+    }
+
     public void UpdateRound()
     {
         Debug.Log("Update round.");
@@ -85,20 +115,19 @@ public class DebateModeController : MonoBehaviour
     /* Push an argument from temporary argument list, if empty, execute end round block */
     public void MakeArgument()
     {
-        flowchart.ExecuteBlock("DefaultArgument");
-        //if (dataController.tempArguments.Count == 0)
-        //{
-        //    Debug.Log("Empty temporary argument, continue");
-        //    flowchart.ExecuteBlock("EndRound");
-        //} else
-        //{
-        //    Debug.Log("Get argument effect and play default block");
-        //    Argument temp = dataController.tempArguments[0];
-        //    dataController.tempArguments.RemoveAt(0);
-        //    ArgumentEffect effect = dataController.GetArgumentEffect(temp);
-        //    // flowchart.ExecuteBlock(effect.conversationBlock)
-        //    flowchart.ExecuteBlock("defaultArgument");
-        //}
+        // flowchart.ExecuteBlock("DefaultArgument");
+        Debug.Log("Make argument");
+        while (dataController.tempArguments.Count != 0)
+        {
+            Debug.Log("Call datacontroller to apply temp argument");
+            string blockToExecute = dataController.ApplyTempArgument();
+
+            flowchart.ExecuteBlock(blockToExecute);
+        }
+
+        Debug.Log("Empty temporary argument, run fungus EndRound block");
+        flowchart.ExecuteBlock("EndRound");
+
     }
 
     public void AddPlayerThesis(string thesisName)
@@ -127,9 +156,15 @@ public class DebateModeController : MonoBehaviour
     #endregion
 
     #region Setter
+
+    public void SetPlayerSide(bool isProponent)
+    {
+        Debug.Log("Set player side: isProponent=" + isProponent);
+        dataController.SetPlayerSide(isProponent);
+    }
+
     public void UpdatePlayerConfidence(float newValue)
     {
-        Debug.Log("Aa");
         Debug.Log(newValue);
         dataController.UpdatePlayerConfidence(newValue);
         Debug.Log("New player confidence = " + newValue);
@@ -228,7 +263,8 @@ public class DebateModeController : MonoBehaviour
     public void EnableInteraction()
     {
         Transform consultBtn = MainGUI.transform.Find("MainPanel/ButtonsContainer/ButtonsPanel/ConsultBtn");
-        if (consultBtn)
+        // in tutorial mode, consult button is always disabled
+        if (consultBtn && !dataController.IsTutorial())
         {
             consultBtn.gameObject.GetComponent<Button>().interactable = true;
         }
@@ -300,12 +336,10 @@ public class DebateModeController : MonoBehaviour
     public void OnClickedMakeArgumentsBtn()
     {
         Debug.Log("Make arguments");
+        // Load items into temporary arguments
 
-        while (dataController.ApplyTempArgument())
-        {
-            DrawStatusPanel();
-            Debug.Log("Update panel and play block '" + dataController.blockToPlay + "'");
-        }
+        // Make argument
+        MakeArgument();
 
     }
 

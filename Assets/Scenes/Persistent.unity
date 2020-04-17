@@ -228,7 +228,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -303,20 +303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8491f1e01f45840848c240ae07d9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tacticData: {fileID: 0}
+  tacticData: {fileID: 11400000, guid: 797a6503f8f51f34da3e66b3c6bcba3d, type: 2}
   tempArguments: []
-  debate:
-    player: {fileID: 11400000, guid: c30a0fa8bfb5a284c9b340c7e3902a2f, type: 2}
-    enemy: {fileID: 11400000, guid: ee9e968b3a3ece94cbbfcff8a4a5216c, type: 2}
-    isPlayerRound: 0
-    audience: {fileID: 11400000, guid: d04d1d55d488962419a79089359dd8b6, type: 2}
-    debateFacts: {fileID: 0}
-    thesisAvailable: []
-    definedEffectAsset: {fileID: 0}
-    definedInfoAsset: {fileID: 0}
-    maxRound: 0
-    round: 0
-  debugScene: MenuScene
+  debate: {fileID: 11400000, guid: 6ec9f0e633f9a5d4c9f727344592c680, type: 2}
+  debugScene: Debate1Scene
   blockToPlay: 
 --- !u!4 &560611307
 Transform:

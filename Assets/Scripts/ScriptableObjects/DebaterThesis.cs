@@ -13,20 +13,12 @@ public class DebaterThesis : ScriptableObject
     public int maxHealth;
     public int currentHealth;
 
-    private void Awake()
-    {
-        maxHealth = thesis.thesisMaxHealth;
-        currentHealth = maxHealth;
-        Debug.Log("current health = " + currentHealth.ToString());
-    }
-
-
     public DebaterThesis()
     {
 
     }
 
-    public DebaterThesis(Thesis t)
+    public void AddThesis(Thesis t)
     {
         thesis = t;
         maxHealth = thesis.thesisMaxHealth;

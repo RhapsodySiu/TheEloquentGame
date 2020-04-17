@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15feac708c71a0940a42690079b13183, type: 3}
-  m_Name: tutorialDebatFacts
+  m_Script: {fileID: 11500000, guid: 9a5a0ca14d08e3d40869c63ad5b4c2ab, type: 3}
+  m_Name: oppArg2AgainstProArg2
   m_EditorClassIdentifier: 
-  availableFacts:
-  - {fileID: 11400000, guid: 7870453a6f1a7874c9bf2b344d844f20, type: 2}
-  - {fileID: 11400000, guid: 4c19814d0360c8b44bf731d6b6e7c864, type: 2}
+  ArgumentName: RefuteYouAreAddictedClaim
+  IsProponentArgument: 0
+  description: Your statement is making "Guilt by Association" fallacy.
+  cn_description: 
+  zh_description: 

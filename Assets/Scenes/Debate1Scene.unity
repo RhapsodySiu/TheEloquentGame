@@ -719,7 +719,7 @@ PrefabInstance:
     - target: {fileID: 5758330179381382557, guid: 588dc1ec529aaa54b9a9613371a6cfc4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5758330179381382557, guid: 588dc1ec529aaa54b9a9613371a6cfc4,
         type: 3}
@@ -2575,7 +2575,7 @@ MonoBehaviour:
   storyText: {fileID: 1071427245}
   storyTextGO: {fileID: 0}
   characterImage: {fileID: 461356003}
-  fitTextWithImage: 1
+  fitTextWithImage: 0
   closeOtherDialogs: 0
 --- !u!114 &732183202
 MonoBehaviour:
@@ -3085,21 +3085,11 @@ GameObject:
   - component: {fileID: 758942393}
   - component: {fileID: 758942396}
   - component: {fileID: 758942415}
-  - component: {fileID: 758942414}
-  - component: {fileID: 758942413}
-  - component: {fileID: 758942412}
-  - component: {fileID: 758942411}
-  - component: {fileID: 758942410}
   - component: {fileID: 758942409}
-  - component: {fileID: 758942408}
   - component: {fileID: 758942407}
   - component: {fileID: 758942406}
-  - component: {fileID: 758942405}
   - component: {fileID: 758942404}
-  - component: {fileID: 758942403}
-  - component: {fileID: 758942402}
   - component: {fileID: 758942398}
-  - component: {fileID: 758942432}
   - component: {fileID: 758942440}
   - component: {fileID: 758942439}
   - component: {fileID: 758942438}
@@ -3127,7 +3117,6 @@ GameObject:
   - component: {fileID: 758942425}
   - component: {fileID: 758942448}
   - component: {fileID: 758942397}
-  - component: {fileID: 758942387}
   - component: {fileID: 758942449}
   - component: {fileID: 758942395}
   - component: {fileID: 758942474}
@@ -3136,20 +3125,8 @@ GameObject:
   - component: {fileID: 758942470}
   - component: {fileID: 758942469}
   - component: {fileID: 758942468}
-  - component: {fileID: 758942467}
-  - component: {fileID: 758942466}
-  - component: {fileID: 758942465}
-  - component: {fileID: 758942464}
-  - component: {fileID: 758942463}
-  - component: {fileID: 758942462}
   - component: {fileID: 758942461}
-  - component: {fileID: 758942460}
-  - component: {fileID: 758942459}
-  - component: {fileID: 758942458}
   - component: {fileID: 758942457}
-  - component: {fileID: 758942456}
-  - component: {fileID: 758942455}
-  - component: {fileID: 758942454}
   - component: {fileID: 758942453}
   - component: {fileID: 758942452}
   - component: {fileID: 758942451}
@@ -3158,30 +3135,33 @@ GameObject:
   - component: {fileID: 758942446}
   - component: {fileID: 758942487}
   - component: {fileID: 758942485}
-  - component: {fileID: 758942484}
   - component: {fileID: 758942483}
   - component: {fileID: 758942482}
   - component: {fileID: 758942481}
-  - component: {fileID: 758942480}
   - component: {fileID: 758942479}
   - component: {fileID: 758942478}
-  - component: {fileID: 758942477}
   - component: {fileID: 758942476}
   - component: {fileID: 758942475}
-  - component: {fileID: 758942473}
   - component: {fileID: 758942486}
-  - component: {fileID: 758942431}
-  - component: {fileID: 758942430}
-  - component: {fileID: 758942428}
-  - component: {fileID: 758942427}
-  - component: {fileID: 758942423}
-  - component: {fileID: 758942401}
-  - component: {fileID: 758942400}
-  - component: {fileID: 758942399}
-  - component: {fileID: 758942394}
   - component: {fileID: 758942385}
   - component: {fileID: 758942350}
   - component: {fileID: 758942336}
+  - component: {fileID: 758942488}
+  - component: {fileID: 758942489}
+  - component: {fileID: 758942490}
+  - component: {fileID: 758942403}
+  - component: {fileID: 758942408}
+  - component: {fileID: 758942405}
+  - component: {fileID: 758942402}
+  - component: {fileID: 758942414}
+  - component: {fileID: 758942413}
+  - component: {fileID: 758942412}
+  - component: {fileID: 758942411}
+  - component: {fileID: 758942410}
+  - component: {fileID: 758942399}
+  - component: {fileID: 758942400}
+  - component: {fileID: 758942394}
+  - component: {fileID: 758942401}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -3228,7 +3208,10 @@ MonoBehaviour:
   description: initiate debate with debate controller
   eventHandler: {fileID: 758942332}
   commandList:
+  - {fileID: 758942403}
   - {fileID: 758942389}
+  - {fileID: 758942488}
+  - {fileID: 758942490}
   - {fileID: 758942390}
 --- !u!114 &758942334
 MonoBehaviour:
@@ -3243,11 +3226,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 238.1013, y: 289.4944}
+  scrollPos: {x: -252.42143, y: 74.20276}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 280
-  zoom: 0.94000006
+  zoom: 0.85000014
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -3255,7 +3238,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks: []
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 758942389}
   variables:
   - {fileID: 758942347}
   - {fileID: 758942346}
@@ -3547,8 +3531,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 834.57117
-    y: 174.24858
+    x: 837.8678
+    y: 175.34749
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3576,11 +3560,19 @@ MonoBehaviour:
   indentLevel: 0
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: "Me: ...I win? \nMe mou_think: (What's the use of winning? I have so
-      many questions to ask...)\n???: Indeed, and I'll keep my word to send you back,
-      just sleep for now!\nMe mou_confused: But I don't want to sleep!....\nMe mou_think:
-      (Em.. My eyelids are so heavy all in a second...Is this it's work?)\n??? mouyu_shadow:
-      Just sleep for now... And I'll explain later..."
+    stringVal: "???: Excellent work. Sometimes it is hard to spot the fallacy, even
+      you will make some unconsciously. So think twice before making your argument!\r\n???
+      mouyu_smile: Although revealing an informal fallacy sounds rewarding, you should
+      also construct your own arguments so you won't oppose for the sake of opposing.\r\n???:
+      If you want to check on your opponent's status, you can open the *Overview menu*
+      for details.\r\nMe mou_sweat: (Overview button?)\_Then what should I do? I am
+      really sick of debating...\r\n??? mouyu_wink: Well...\r\n???: I'm running out
+      of argument now, and I am too lazy to come up with the new one. I surrender!\r\nMe:
+      So, does it mean I don't have to ..die?\r\n??? mouyu_normal: Indeed! Congrats.\r\nMe:
+      How do I get out of here? I have so many questions to ask now!\r\n???: Chill
+      out. I will explain in a moment. Now, take a nap, don't you?\r\nMe mou_confused:
+      I don't want to sleep! Who are you, actu.............\nMe mou_think: ...ally.......
+      ZZZZZZ.\r\n??? mouyu_shadow: Good dream."
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -3645,7 +3637,11 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 758942385}
+  - {fileID: 758942401}
   - {fileID: 758942350}
+  - {fileID: 758942400}
+  - {fileID: 758942399}
+  - {fileID: 758942394}
 --- !u!114 &758942353
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3731,7 +3727,7 @@ MonoBehaviour:
   indentLevel: 2
   storyText: Lastly,
   description: 
-  character: {fileID: 1770688682}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: df1919fdc5612aa41938748ed0eda0dc, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3822,7 +3818,7 @@ MonoBehaviour:
   indentLevel: 2
   storyText: First of all,
   description: 
-  character: {fileID: 1770688682}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a78e4070adc2fb444ba3a4e6c965eedb, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4137,7 +4133,7 @@ MonoBehaviour:
   storyText: This block should not be accessed during enemy's round. But let's make
     an exception here to demostrate the default argument act.
   description: 
-  character: {fileID: 1120199713}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4240,9 +4236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 640.57117
-    y: 249.2486
-    width: 150
+    x: 1088.2991
+    y: 452.65765
+    width: 149.99998
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4252,8 +4248,6 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 758942368}
-  - {fileID: 758942412}
-  - {fileID: 758942413}
   - {fileID: 758942358}
   - {fileID: 758942357}
   - {fileID: 758942356}
@@ -4267,18 +4261,11 @@ MonoBehaviour:
   - {fileID: 758942359}
   - {fileID: 758942353}
   - {fileID: 758942367}
-  - {fileID: 758942402}
-  - {fileID: 758942410}
   - {fileID: 758942366}
-  - {fileID: 758942408}
   - {fileID: 758942409}
   - {fileID: 758942407}
-  - {fileID: 758942405}
   - {fileID: 758942406}
-  - {fileID: 758942432}
   - {fileID: 758942404}
-  - {fileID: 758942411}
-  - {fileID: 758942403}
   - {fileID: 758942365}
 --- !u!114 &758942370
 MonoBehaviour:
@@ -4440,8 +4427,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 641.57117
-    y: 174.24858
+    x: 618.8436
+    y: 177.65768
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -4457,7 +4444,6 @@ MonoBehaviour:
   - {fileID: 758942372}
   - {fileID: 758942371}
   - {fileID: 758942370}
-  - {fileID: 758942414}
   - {fileID: 758942392}
 --- !u!114 &758942376
 MonoBehaviour:
@@ -4762,18 +4748,18 @@ MonoBehaviour:
   indentLevel: 0
   display: 1
   stage: {fileID: 0}
-  character: {fileID: 509587579}
+  character: {fileID: 894164284}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 5eadccde7c14d934c8641fd8f54878f7, type: 3}
+  portrait: {fileID: 21300000, guid: 17d815ad70b02244890c28087cdcf1d4, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 792095747}
-  facing: 2
+  toPosition: {fileID: 1130664790}
+  facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
-  move: 0
+  move: 1
   shiftIntoPlace: 0
   waitUntilFinished: 0
 --- !u!114 &758942386
@@ -4792,7 +4778,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 209.57114
     y: -14.188919
-    width: 174.46808
+    width: 175.88232
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4804,35 +4790,6 @@ MonoBehaviour:
   - {fileID: 758942471}
   - {fileID: 758942468}
   - {fileID: 758942382}
---- !u!114 &758942387
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 134
-  indentLevel: 0
-  conversationText:
-    stringRef: {fileID: 0}
-    stringVal: '??? mouyu_smile: ..........'
-  clearPrevious:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  waitForInput:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  waitForSeconds:
-    floatRef: {fileID: 0}
-    floatVal: 0
-  fadeWhenDone:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
 --- !u!114 &758942388
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4944,8 +4901,9 @@ MonoBehaviour:
   - {fileID: 758942448}
   - {fileID: 758942433}
   - {fileID: 758942388}
-  - {fileID: 758942444}
+  - {fileID: 758942408}
   - {fileID: 758942396}
+  - {fileID: 758942444}
   - {fileID: 758942384}
 --- !u!114 &758942392
 MonoBehaviour:
@@ -5018,7 +4976,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Yeah! My victory!
   description: 
-  character: {fileID: 1120199713}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 3171354ea092734458cf21cc0f9bdf1c, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5038,32 +4996,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 189
+  itemId: 210
   indentLevel: 0
-  conversationText:
+  _sceneName:
     stringRef: {fileID: 0}
-    stringVal: '??? mouyu_smile: ...that''s it for now! I am running of idea as well.
-
-      ??? mouyu_frown: Also, I''m tired of debate. God is usually the rule setter
-      instead of the debater, you know.
-
-      ??? mouyu_normal: Since I lose my willingness to continue, you are the winner
-      of the debate!'
-  clearPrevious:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  waitForInput:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  waitForSeconds:
-    floatRef: {fileID: 0}
-    floatVal: 0
-  fadeWhenDone:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
+    stringVal: Story2Scene
+  loadingImage: {fileID: 0}
+  sceneNameOLD: 
 --- !u!114 &758942395
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5080,9 +5022,18 @@ MonoBehaviour:
   indentLevel: 0
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: 'Me: That''s it?
-
-      ??? mouyu_normal: As simple as hell! Now make your argument!'
+    stringVal: "Me: Ok, I can feel my confidence is losing again.\r\n??? mouyu_normal:
+      Come on, be positive! Your negativity is drowning you down!\r\nMe: May I have
+      some hints on making an argument?\r\n???: First, open the *Action menu* with
+      the bottom right button. You can click it when it's your move. Inside it, click
+      on one of the *Temporary Argument bars*. \r\n???: You should see 3 fields below
+      the bars. There, you can select the *Thesis* to respond, *Tactic* to use and
+      *Fact* to present!\r\n???: Click into the fact menu, you visit the *Fact menu*.
+      It shows the facts available in this debate. These are the basic elements of
+      the argument. \n??? mouyu_smile: Just make one argument for now, you should
+      have all the things needed. Respond to your thesis for now.\r\nMe mou_confused:
+      Button? l don't know what you're talking about.\r\n??? mouyu_wink: Someone will
+      do!\r\nMe mou_think: Okay? Then it's my round...."
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -5136,8 +5087,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 814.66473
-    y: 431.95227
+    x: 829.5176
+    y: 468.27573
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -5149,17 +5100,6 @@ MonoBehaviour:
   commandList:
   - {fileID: 758942476}
   - {fileID: 758942475}
-  - {fileID: 758942427}
-  - {fileID: 758942387}
-  - {fileID: 758942430}
-  - {fileID: 758942428}
-  - {fileID: 758942431}
-  - {fileID: 758942423}
-  - {fileID: 758942401}
-  - {fileID: 758942400}
-  - {fileID: 758942399}
-  - {fileID: 758942394}
-  - {fileID: 758942473}
 --- !u!114 &758942398
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5174,7 +5114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 85
   indentLevel: 0
-  storyText: '- Visual effect: END ROUND -'
+  storyText: '- END ROUND -'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -5196,16 +5136,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
+  m_Script: {fileID: 11500000, guid: 207aecf668a0345388087ccf522f9957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 188
+  itemId: 208
   indentLevel: 0
-  messageTarget: 0
-  _message:
-    stringRef: {fileID: 0}
-    stringVal: switchEnemy
-  messageOLD: 
+  duration: 3
+  targetAlpha: 1
+  waitUntilFinished: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeTexture: {fileID: 0}
 --- !u!114 &758942400
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5215,45 +5155,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: b359b09a7ba2e4af981f07c07f8af85a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 187
+  itemId: 209
   indentLevel: 0
-  storyText: And what's next? Please don't tell me I have to make another argument!
-    I am running out of ideas!
-  description: 
-  character: {fileID: 509587579}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &758942401
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 186
-  indentLevel: 0
-  messageTarget: 0
-  _message:
-    stringRef: {fileID: 0}
-    stringVal: switchPlayer
-  messageOLD: 
---- !u!114 &758942402
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5265,24 +5172,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 81
-  indentLevel: 1
-  display: 2
+  itemId: 211
+  indentLevel: 0
+  display: 1
   stage: {fileID: 0}
-  character: {fileID: 1770688682}
+  character: {fileID: 509587579}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 9b9163ef4dcb43143ba80e0b448dac27, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
-  facing: 0
+  toPosition: {fileID: 792095747}
+  facing: 2
   useDefaultSettings: 1
   fadeDuration: 0.5
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
-  move: 0
+  move: 1
   shiftIntoPlace: 0
   waitUntilFinished: 0
+--- !u!114 &758942402
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 202
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "???: ...\r\nMe: Em... Is that it? \r\n??? mouyu_wink: Not bad.. But
+      a debate is never complete without an argument!\r\nMe mou_flustered: What? Do
+      you mean a fight?\r\n??? mouyu_normal: Nah, argument here is a statement to
+      support your thesis or oppose others' thesis. \r\n???: An argument could be
+      formal or informal, while the former argues in a logical and supportive way,
+      the later is less logical and is commonly used in daily conversation.\r\nMe
+      mou_confused: I guess I know what it is... I should have learned it from the
+      school discussion... Though I never be a debater myself.\r\n???: Good! Let's
+      not waste the time and I'll start first!"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!114 &758942403
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5292,18 +5236,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 437f9a4e3dbc647f9bdce95308418bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 80
-  indentLevel: 1
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 758942349}
-  startLabel:
-    stringRef: {fileID: 0}
-    stringVal: 
-  startIndex: 0
-  callMode: 0
+  itemId: 199
+  indentLevel: 0
+  duration: 1
+  fadeOut: 1
+  targetView: {fileID: 1373597295}
+  waitUntilFinished: 0
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeTexture: {fileID: 0}
+  targetCamera: {fileID: 0}
 --- !u!114 &758942404
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5321,7 +5265,7 @@ MonoBehaviour:
   storyText: It is important to design a natural dialogue that won't make it feels
     'strange'. Now, let's move on to the EndRound block.
   description: 
-  character: {fileID: 1120199713}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5344,22 +5288,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 78
-  indentLevel: 1
+  itemId: 201
+  indentLevel: 0
   display: 1
   stage: {fileID: 0}
-  character: {fileID: 1120199713}
+  character: {fileID: 894164284}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: b27c2b98e544a2849b21cdd1474212d5, type: 3}
+  portrait: {fileID: 21300000, guid: 42cb437b933bf384f9f9e5895a6098ed, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 1130664790}
-  facing: 1
+  facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
-  move: 0
+  move: 1
   shiftIntoPlace: 0
   waitUntilFinished: 0
 --- !u!114 &758942406
@@ -5379,7 +5323,7 @@ MonoBehaviour:
   storyText: Indeed what I've said doesnt' sound good. After all the default argument
     is a boilerplate to handle undefined actions from the player.
   description: 
-  character: {fileID: 1120199713}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5408,7 +5352,7 @@ MonoBehaviour:
     is not effective for its nature... In short, I don't think you make a convincing
     argument.
   description: 
-  character: {fileID: 1120199713}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5431,17 +5375,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 75
-  indentLevel: 1
+  itemId: 200
+  indentLevel: 0
   display: 1
   stage: {fileID: 0}
-  character: {fileID: 1120199713}
+  character: {fileID: 894164284}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 52434fbe8245180489da36ac5a251019, type: 3}
+  portrait: {fileID: 21300000, guid: 8f1c4b2830521e5428bd4052a2e9ce26, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 1130664790}
-  facing: 1
+  toPosition: {fileID: 0}
+  facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
   moveDuration: 1
@@ -5466,7 +5410,7 @@ MonoBehaviour:
   storyText: Some fungus variables are assigned so that I can refer to some useful
     string in my dialogue.
   description: 
-  character: {fileID: 1120199713}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5486,27 +5430,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 73
-  indentLevel: 1
-  display: 1
-  stage: {fileID: 0}
-  character: {fileID: 1120199713}
-  replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: b27c2b98e544a2849b21cdd1474212d5, type: 3}
-  offset: 0
-  fromPosition: {fileID: 0}
-  toPosition: {fileID: 1130664790}
-  facing: 1
-  useDefaultSettings: 1
-  fadeDuration: 0.5
-  moveDuration: 1
-  shiftOffset: {x: 0, y: 0}
-  move: 0
-  shiftIntoPlace: 0
-  waitUntilFinished: 0
+  itemId: 207
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Me mou_think: (In its argument, it tried to compare me with those
+      who are addicted to smartphones and attack my thesis with this correlation)\r\nMe:
+      (However, it is merely a weak guesswork that provides no evidence against my
+      thesis. With no doubt the argument used a tactic of *distraction*)\r\nMe: (I
+      have to point that out!)"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!114 &758942411
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5516,27 +5463,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 72
-  indentLevel: 1
-  display: 2
-  stage: {fileID: 0}
-  character: {fileID: 1120199713}
-  replacedCharacter: {fileID: 0}
-  portrait: {fileID: 0}
-  offset: 0
-  fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
-  facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
-  moveDuration: 1
-  shiftOffset: {x: 0, y: 0}
-  move: 0
-  shiftIntoPlace: 0
-  waitUntilFinished: 0
+  itemId: 206
+  indentLevel: 0
+  messageTarget: 0
+  _message:
+    stringRef: {fileID: 0}
+    stringVal: switchPlayer
+  messageOLD: 
 --- !u!114 &758942412
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5546,27 +5482,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 71
-  indentLevel: 1
-  display: 2
-  stage: {fileID: 0}
-  character: {fileID: 1120199713}
-  replacedCharacter: {fileID: 0}
-  portrait: {fileID: 0}
-  offset: 0
-  fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
-  facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
-  moveDuration: 1
-  shiftOffset: {x: 0, y: 0}
-  move: 0
-  shiftIntoPlace: 0
-  waitUntilFinished: 0
+  itemId: 205
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Me: That is too pungent! Why are you humiliating me in that way?\r\n???
+      mouyu_wink: Call it a vaccine of trolling, you need to get used to it for survival.
+      And in fact it's not too hard to respond.\r\n???: I made an informal fallacy
+      in my argument, can you spot it? It's a chance for you to revert the situation.\r\nMe
+      mou_confused: Sort of...\r\n??? mouyu_normal: When you want to refute opponent's
+      argument, select that argument in the *Thesis menu* in the Respond field of
+      your temporary argument list.\r\n???: For the *Tactic field*, select the tactic
+      used in that informal argument to debunk it. \r\n???: Sometimes you need *Facts*
+      to refute an informal argument, but luckily not this time. Now, prepare your
+      move!"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
 --- !u!114 &758942413
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5579,13 +5523,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 70
-  indentLevel: 1
+  itemId: 204
+  indentLevel: 0
   display: 1
   stage: {fileID: 0}
-  character: {fileID: 1770688682}
+  character: {fileID: 509587579}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: a78e4070adc2fb444ba3a4e6c965eedb, type: 3}
+  portrait: {fileID: 21300000, guid: 1138b03a61c21a34b9e883bc0fc0513e, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 792095747}
@@ -5594,7 +5538,7 @@ MonoBehaviour:
   fadeDuration: 0.5
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
-  move: 0
+  move: 1
   shiftIntoPlace: 0
   waitUntilFinished: 0
 --- !u!114 &758942414
@@ -5606,24 +5550,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 758942331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 69
+  itemId: 203
   indentLevel: 0
-  storyText: Jump to default argument block.
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 894164284}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 17d815ad70b02244890c28087cdcf1d4, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 1130664790}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 1
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
 --- !u!114 &758942415
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5668,7 +5615,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 225.00468
     y: 265.6955
-    width: 120.21276
+    width: 125.294106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5844,48 +5791,15 @@ MonoBehaviour:
   indentLevel: 0
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: "Me mou_think: Since the launch of the first smart device, it has gradually
-      become an indispensable part of our daily life.\r\nMe: Checking email, chatting
-      with friends, learning online... These functionalities are all included in a
-      small device, it'd be inconvenient without it.\r\nMe mou_firm: Hence, I think
-      children and teenagers can reward more with reasonable use of smartphones, and
-      for this reason, they shouldn't be banned from smartphones.\r\nMe mou_normal:
-      (Phew! I make it!)"
-  clearPrevious:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  waitForInput:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  waitForSeconds:
-    floatRef: {fileID: 0}
-    floatVal: 0
-  fadeWhenDone:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
---- !u!114 &758942423
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 185
-  indentLevel: 0
-  conversationText:
-    stringRef: {fileID: 0}
-    stringVal: '??? mouyu_normal: Yes,and I am rather impressed!
-
-      ???: Sometimes logical fallacy is hard to spot, even you may have a chance of
-      making one!
-
-      ???: So be careful of what you say and don''t jump into the trap the enemy made
-      for you!'
+    stringVal: "Me mou_think: Since the launch of the first smart device, they have
+      gradually become an indispensable part of our daily life.\r\nMe: Checking email,
+      chatting with friends, learning online... Smart phone acts like a micro-computer
+      that we can hardly afford the cost of losing it.\r\nMe mou_normal: Unarguably
+      smartphone brings benefits, its negative effects often come from improper use.
+      As Paracelsus once said, \"It is only the dose which makes a thing poison.\"
+      \r\nMe mou_firm: Hence, I think children and teenagers can reward more with
+      reasonable use of smartphones, and for this reason, banning is just an irresponsible
+      Procrustean solution at all.\r\nMe: ...\r\nMe mou_sweat: (Phew! I make it!)"
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -5914,7 +5828,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 86.29144
     y: 265.3719
-    width: 123.40425
+    width: 127.64705
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5979,56 +5893,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &758942427
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 184
-  indentLevel: 0
-  messageTarget: 0
-  _message:
-    stringRef: {fileID: 0}
-    stringVal: switchEnemy
-  messageOLD: 
---- !u!114 &758942428
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 183
-  indentLevel: 0
-  conversationText:
-    stringRef: {fileID: 0}
-    stringVal: 'Me: ........
-
-      Me mou_flustered: Did I do that wrong?!'
-  clearPrevious:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  waitForInput:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  waitForSeconds:
-    floatRef: {fileID: 0}
-    floatVal: 0
-  fadeWhenDone:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
 --- !u!114 &758942429
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6045,7 +5909,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 446.57275
     y: 450.69543
-    width: 173.40425
+    width: 175.88232
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6056,74 +5920,6 @@ MonoBehaviour:
   commandList:
   - {fileID: 758942426}
   - {fileID: 758942425}
---- !u!114 &758942430
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 182
-  indentLevel: 0
-  messageTarget: 0
-  _message:
-    stringRef: {fileID: 0}
-    stringVal: switchPlayer
-  messageOLD: 
---- !u!114 &758942431
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 181
-  indentLevel: 0
-  messageTarget: 0
-  _message:
-    stringRef: {fileID: 0}
-    stringVal: switchEnemy
-  messageOLD: 
---- !u!114 &758942432
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 87
-  indentLevel: 1
-  display: 1
-  stage: {fileID: 0}
-  character: {fileID: 1120199713}
-  replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: ca201acf6a59e134995d86dbf50b9816, type: 3}
-  offset: 0
-  fromPosition: {fileID: 0}
-  toPosition: {fileID: 1130664790}
-  facing: 1
-  useDefaultSettings: 1
-  fadeDuration: 0.5
-  moveDuration: 1
-  shiftOffset: {x: 0, y: 0}
-  move: 0
-  shiftIntoPlace: 0
-  waitUntilFinished: 0
 --- !u!114 &758942433
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6507,9 +6303,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 848.66473
-    y: 304.95227
-    width: 148.93616
+    x: 812.30096
+    y: 331.0886
+    width: 152.35292
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6522,7 +6318,6 @@ MonoBehaviour:
   - {fileID: 758942485}
   - {fileID: 758942486}
   - {fileID: 758942395}
-  - {fileID: 758942484}
 --- !u!114 &758942450
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6537,9 +6332,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 396.66473
-    y: 60.95227
-    width: 190.42552
+    x: 397.8011
+    y: 59.815907
+    width: 193.52939
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6548,7 +6343,10 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 758942489}
   - {fileID: 758942422}
+  - {fileID: 758942405}
+  - {fileID: 758942402}
   - {fileID: 758942336}
 --- !u!114 &758942451
 MonoBehaviour:
@@ -6621,74 +6419,6 @@ MonoBehaviour:
     stringRef: {fileID: 0}
     stringVal: switchPlayer
   messageOLD: 
---- !u!114 &758942454
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 159
-  indentLevel: 0
-  messageTarget: 0
-  _message:
-    stringRef: {fileID: 0}
-    stringVal: switchEnemy
-  messageOLD: 
---- !u!114 &758942455
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 158
-  indentLevel: 0
-  display: 1
-  stage: {fileID: 0}
-  character: {fileID: 509587579}
-  replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 9b9163ef4dcb43143ba80e0b448dac27, type: 3}
-  offset: 0
-  fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
-  facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
-  moveDuration: 1
-  shiftOffset: {x: 0, y: 0}
-  move: 0
-  shiftIntoPlace: 0
-  waitUntilFinished: 0
---- !u!114 &758942456
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 156
-  indentLevel: 0
-  messageTarget: 0
-  _message:
-    stringRef: {fileID: 0}
-    stringVal: switchPlayer
-  messageOLD: 
 --- !u!114 &758942457
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6707,95 +6437,16 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 509587579}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 1138b03a61c21a34b9e883bc0fc0513e, type: 3}
+  portrait: {fileID: 21300000, guid: 4b65602a68a66c34b87ae5b06ab8398b, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
+  toPosition: {fileID: 792095747}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
-  move: 0
-  shiftIntoPlace: 0
-  waitUntilFinished: 0
---- !u!114 &758942458
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 154
-  indentLevel: 0
-  display: 1
-  stage: {fileID: 0}
-  character: {fileID: 894164284}
-  replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 17d815ad70b02244890c28087cdcf1d4, type: 3}
-  offset: 0
-  fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
-  facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
-  moveDuration: 1
-  shiftOffset: {x: 0, y: 0}
-  move: 0
-  shiftIntoPlace: 0
-  waitUntilFinished: 0
---- !u!114 &758942459
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 153
-  indentLevel: 0
-  messageTarget: 0
-  _message:
-    stringRef: {fileID: 0}
-    stringVal: switchPlayer
-  messageOLD: 
---- !u!114 &758942460
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 152
-  indentLevel: 0
-  display: 1
-  stage: {fileID: 0}
-  character: {fileID: 894164284}
-  replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: f15ff8bdbb74d0e40adafe2b91c7572e, type: 3}
-  offset: 0
-  fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
-  facing: 0
-  useDefaultSettings: 1
-  fadeDuration: 0.5
-  moveDuration: 1
-  shiftOffset: {x: 0, y: 0}
-  move: 0
+  move: 1
   shiftIntoPlace: 0
   waitUntilFinished: 0
 --- !u!114 &758942461
@@ -6826,166 +6477,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &758942462
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 149
-  indentLevel: 0
-  storyText: "Indeed, and they say fear drives action, which you need to take one.
-    Shall we continue?\r"
-  description: 
-  character: {fileID: 894164284}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &758942463
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 148
-  indentLevel: 0
-  storyText: "Such punishment is so severe!\r"
-  description: 
-  character: {fileID: 509587579}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &758942464
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 147
-  indentLevel: 0
-  conversationText:
-    stringRef: {fileID: 0}
-    stringVal: "???: It's your willingness to continue, as shown in the meter. Its
-      rate of decrease is depending on one's traits and the acrimony of enemy's move.\r\n???:
-      If your confidence is completely lost, you can no longer handle the reasoning
-      and you will be dead.. So always check the meter!\r"
-  clearPrevious:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  waitForInput:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  waitForSeconds:
-    floatRef: {fileID: 0}
-    floatVal: 0
-  fadeWhenDone:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
---- !u!114 &758942465
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 146
-  indentLevel: 0
-  storyText: "What?\r"
-  description: 
-  character: {fileID: 509587579}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &758942466
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 145
-  indentLevel: 0
-  storyText: "So, my thesis has given you a \"confidence damage\".\r"
-  description: 
-  character: {fileID: 894164284}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &758942467
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43743931d28f43f89eced820d907351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 144
-  indentLevel: 0
-  messageTarget: 0
-  _message:
-    stringRef: {fileID: 0}
-    stringVal: switchEnemy
-  messageOLD: 
 --- !u!114 &758942468
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7048,7 +6539,17 @@ MonoBehaviour:
   conversationText:
     stringRef: {fileID: 0}
     stringVal: "Me: (I can't help but to sweat.)\r\nMe: I start feeling like quitting..
-      Having a debate is too intense for an introvert like me.\r\n"
+      Having a debate is too intense for an introvert like me.\r\n???: So, my thesis
+      has given you a \"confidence damage\".\r\nMe mou_confused: What?\r\n???: It's
+      your willingness to continue a debate that's shown in the meter. Its rate of
+      decrease is depending on one's traits and the acrimony of the enemy's move.\r\n???
+      mouyu_frown: If your confidence is completely lost, you can no longer handle
+      the reasoning and you will be dead.. So always check the meter!\r\n??? mouyu_smile:
+      Of course, the same goes to your opponent. You can destroy their will to fight
+      using psychological means, like irritating them or debasing them.\r\nMe mou_flustered:
+      Such punishment is so severe! Why would I have to die for losing a debate!\r\n???
+      mouyu_wink: Indeed, and they say fear drives action, which you need to take
+      one. Shall we continue?"
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -7077,7 +6578,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 412.66473
     y: -15.0477295
-    width: 167.02127
+    width: 169.99997
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7087,19 +6588,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 758942457}
-  - {fileID: 758942456}
   - {fileID: 758942469}
-  - {fileID: 758942460}
-  - {fileID: 758942454}
-  - {fileID: 758942466}
-  - {fileID: 758942465}
-  - {fileID: 758942458}
-  - {fileID: 758942464}
-  - {fileID: 758942459}
-  - {fileID: 758942463}
-  - {fileID: 758942467}
-  - {fileID: 758942462}
-  - {fileID: 758942455}
   - {fileID: 758942453}
   - {fileID: 758942461}
   - {fileID: 758942452}
@@ -7120,14 +6609,22 @@ MonoBehaviour:
   indentLevel: 0
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: "???: Debaters start the debate with \"Thesis\". It's now my turn to
-      make a thesis!\r\n???: People can't leave their phones for even a minute nowadays.
-      While we are growing heavier dependency on these gadgets, \r\n???: They may
-      affect our life in a bad way, it's especially true to the teenagers and children,
-      who are still developing and are thus susceptible to external influence. \r\n???:
-      Next, I will argue how smartphones damage teenagers' physical health.\r\n???:
-      Now I made my first thesis, and it's your round then! Don't make me ask you
-      for the second time, I am not a patient god."
+    stringVal: "??? mouyu_normal: Debaters start the debate with \"Thesis\". It allows
+      them to explain what they value and believe.\r\n???: First impression is very
+      important, so one makes the most convincing propositions of one's stand here
+      so that one can expound them later.\r\n??? mouyu_smile: If you make fishy or
+      trivial points in the beginning, your opponent can attack you right away and
+      destroy your reliability, so be careful.\r\n??? mouyu_normal: Now, let's begin.\n???:
+      In society today, almost everyone has a smartphone. Many of them cannot resist
+      the temptation to check their phones before they sleep. \r\n???: And some of
+      them spend all day with mobile apps during the holidays. While we are growing
+      heavier dependency on these gadgets, \r\n???: We are putting our health at risk.
+      It's especially true to the teenagers and children, who are still developing
+      and are thus susceptible to external influence. \r\n???: In the coming round,
+      I will explain how smartphones damage teenagers' physical health and thus, they
+      should be banned from the young people.\r\n??? mouyu_wink: ... That's my thesis.
+      And it's your turn then! \r\n??? mouyu_shadow: Don't make me ask you for the
+      second time, I am not a patient one."
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -7154,9 +6651,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 942.66473
-    y: 398.95227
-    width: 188.29787
+    x: 827.8922
+    y: 421.60696
+    width: 192.35292
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7167,28 +6664,10 @@ MonoBehaviour:
   commandList:
   - {fileID: 758942479}
   - {fileID: 758942478}
-  - {fileID: 758942477}
---- !u!114 &758942473
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 179
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 758942349}
-  startLabel:
-    stringRef: {fileID: 0}
-    stringVal: 
-  startIndex: 0
-  callMode: 0
+  - {fileID: 758942413}
+  - {fileID: 758942412}
+  - {fileID: 758942411}
+  - {fileID: 758942410}
 --- !u!114 &758942474
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7203,9 +6682,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1071.6648
-    y: 350.95227
-    width: 173.40425
+    x: 827.34656
+    y: 372.54318
+    width: 177.0588
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7216,8 +6695,8 @@ MonoBehaviour:
   commandList:
   - {fileID: 758942482}
   - {fileID: 758942483}
+  - {fileID: 758942414}
   - {fileID: 758942481}
-  - {fileID: 758942480}
 --- !u!114 &758942475
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7234,20 +6713,16 @@ MonoBehaviour:
   indentLevel: 0
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: 'Me mou_think: In your last argument, you didn''t provide any reliable
-      data and reasoning.
-
-      Me: Instead, you tried to accuse me to be one of the teenagers who is addicted
-      to smart phone.
-
-      Me mou_normal: In fact, you''re making "guilt by association" fallacy. Your
-      argument doesn''t stand at all.
-
-      Me: Whether or not I''m addicted to smart phones, the facts I presented do not
-      change.
-
-      Me mou_firm: Your act of deceit is misleading and corrode the root of our fair
-      debate. I am dissapointed!'
+    stringVal: "Me mou_normal: I feel obliged to respond to your distracting argument
+      made for the sake of the debate.\r\nMe: In your previous argument, you defame
+      me for being a smartphone addict and thus my thesis does not stand.\r\nMe mou_think:
+      Here, you made a \"Guilt by Association\" fallacy, that you compare me to smartphone
+      addict just because we are teenagers.\r\nMe: The fact is, this relationship
+      does not stand. What you are trying to do is to evade the validity of my argument
+      and distort my reasoning to be self-serving.\r\nMe mou_firm: Whether you are
+      intended or not, I have to point out that your argument disrupts the debate.
+      And I advice you to be careful in your arguments.\r\nMe mou_normal: That's all
+      for my argument."
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -7279,27 +6754,6 @@ MonoBehaviour:
     stringRef: {fileID: 0}
     stringVal: switchPlayer
   messageOLD: 
---- !u!114 &758942477
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 176
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 758942349}
-  startLabel:
-    stringRef: {fileID: 0}
-    stringVal: 
-  startIndex: 0
-  callMode: 0
 --- !u!114 &758942478
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7316,11 +6770,15 @@ MonoBehaviour:
   indentLevel: 0
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: 'Mouyu: You are speaking for them because you''re one of them! No wonder
-      you object the topic.
-
-      Mouyu: It would be very devious if you support something that will only do good
-      to you!'
+    stringVal: "???: I am sorry to point this out, but I must say, your thesis is
+      making nonsense!\r\n??? mouyu_frown: As much as almost teenager has a smartphone
+      in the society, including you, you could be intoxicated by smart phone already!\r\n???
+      mouyu_smile: In the way you believe that smartphones are good for teenagers,
+      I see no difference in your claim from the smoker's claim that cigarettes are
+      not bad for one's health.\r\n???: You are speaking for teenagers who are addicted
+      to smartphones, just because you are one of them! \n???: It's really devious
+      for you to hide your intention in your grand thesis. All in all, I think your
+      thesis do not stand. \r\n??? mouyu_normal: ...THE END. Are you okay now?"
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -7352,27 +6810,6 @@ MonoBehaviour:
     stringRef: {fileID: 0}
     stringVal: switchEnemy
   messageOLD: 
---- !u!114 &758942480
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 173
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 758942349}
-  startLabel:
-    stringRef: {fileID: 0}
-    stringVal: 
-  startIndex: 0
-  callMode: 0
 --- !u!114 &758942481
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7389,7 +6826,13 @@ MonoBehaviour:
   indentLevel: 0
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: 'Mouyu: Not bad.'
+    stringVal: "???: Good, keep it up! By making an argument on your own thesis, your
+      'convincingness', which is the overall soundness of your theses, will raise.\r\n???:
+      If it drops to zero, obviously, you lose all your credit to sustain a debate,
+      and eventually, you die!\r\nMe mou_flustered: Wait, how do I know these value?\r\n???
+      mouyu_wink: You can check them on the TV switch interface! Observe with the
+      eye of your heart! Now back to my term. Things're going interesting...\r\nMe
+      mou_sweat: I have a bad feeling about it..."
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -7437,14 +6880,16 @@ MonoBehaviour:
   indentLevel: 0
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: 'Me: Well, based on the survey, the penetration rate of smartphones
-      among teenagers is over 90%.
-
-      Me: Without the assistance, we would have harder time to look for relative information.
-
-      Me: Though we can use computer, but it would be less sufficient.
-
-      Me: If we do not ban computer, why should we ban smartphone for teenagers?'
+    stringVal: "Me: I would like to add some points on my thesis that smart phones
+      are good productivity tools to the users.\r\nMe mou_normal: According to a survey
+      from Google/Heart+Mind Strategies, 75% of people believe smartphones help them
+      to be more productive.\r\nMe: -- 54% of people say their phones reduce stress
+      or anxiety in their lives and 60% of people say smartphones help them feel more
+      confident and prepared.\r\nMe: With the convenience of smart devices, it's obvious
+      that people can prepare their work, schedule their time, coordinate with other
+      people and access data in faster way.\r\nMe mou_firm: If the majority of the
+      people affirms the advantages brought by the smart phones, why should we ban
+      them from teenagers?\r\nMe: That's the end of my argument..."
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -7457,27 +6902,6 @@ MonoBehaviour:
   fadeWhenDone:
     booleanRef: {fileID: 0}
     booleanVal: 1
---- !u!114 &758942484
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758942331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 169
-  indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 758942349}
-  startLabel:
-    stringRef: {fileID: 0}
-    stringVal: 
-  startIndex: 0
-  callMode: 0
 --- !u!114 &758942485
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7494,14 +6918,16 @@ MonoBehaviour:
   indentLevel: 0
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: '??? mouyu_pensive: Teenager gets addicted to mobile games and social
-      media easily.
-
-      ???: From a report, more than 60% of teenager interviewees belive they are anxious
-      with phone.
-
-      ??? mouyu_wink: In all to say, I don''t think such a addictive device would
-      be beneficial to immature people..'
+    stringVal: "??? mouyu_pensive: Recall your thesis that teenagers can be benefited
+      from smartphone, although it sounds plausible, I hold a different view.\r\n???
+      mouyu_smile: From a report by non-profit organisation, more than half of teenager
+      and parent interviewees believe that they or their children are addicted to
+      mobile devices.\r\n??? mouyu_normal: Also, 69% of parents and 78% of teens check
+      their devices at least hourly. Intuitively, this is a counterproductive behavior,
+      yet people have trouble getting rid of it!\r\n??? mouyu_wink: In all to say,
+      how can one use the device properly if they cannot control themselves? I don't
+      think such a addictive device would help immature people..\r\n???: ...And this
+      is my argument! As simple as hell."
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -7541,7 +6967,7 @@ MonoBehaviour:
   fadeDuration: 0.5
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
-  move: 0
+  move: 1
   shiftIntoPlace: 0
   waitUntilFinished: 0
 --- !u!114 &758942487
@@ -7563,6 +6989,124 @@ MonoBehaviour:
     stringRef: {fileID: 0}
     stringVal: switchEnemy
   messageOLD: 
+--- !u!114 &758942488
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 193
+  indentLevel: 0
+  description: Set player to be opponent
+  targetObject: {fileID: 2042594260}
+  targetComponentAssemblyName: DebateModeController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: DebateModeController
+  targetMethod: SetPlayerSide
+  targetMethodText: 'SetPlayerSide (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &758942489
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 194
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 2042594260}
+  targetComponentAssemblyName: DebateModeController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: DebateModeController
+  targetMethod: AddPlayerThesis
+  targetMethodText: 'AddPlayerThesis (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: SmartphoneIsBeneficialToTeenagerDevelopment
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &758942490
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758942331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 195
+  indentLevel: 0
+  description: Initialize debate
+  targetObject: {fileID: 2042594260}
+  targetComponentAssemblyName: DebateModeController, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: DebateModeController
+  targetMethod: InitDebate
+  targetMethodText: 'InitDebate (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &760031564
 GameObject:
   m_ObjectHideFlags: 0
@@ -8193,7 +7737,7 @@ Transform:
   m_LocalScale: {x: 0.65162593, y: 0.719255, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &902123825
 GameObject:
@@ -9308,60 +8852,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1120199712
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1120199714}
-  - component: {fileID: 1120199713}
-  m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1120199713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120199712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: Enemy
-  nameColor: {r: 0.9245283, g: 0.5538448, b: 0.8521787, a: 1}
-  soundEffect: {fileID: 8300000, guid: 774486030b696474e8b3cf7f178123da, type: 3}
-  portraits:
-  - {fileID: 21300000, guid: ca201acf6a59e134995d86dbf50b9816, type: 3}
-  - {fileID: 21300000, guid: b27c2b98e544a2849b21cdd1474212d5, type: 3}
-  - {fileID: 21300000, guid: c223127910b7be242adfcfa6cb80d13b, type: 3}
-  - {fileID: 21300000, guid: 52434fbe8245180489da36ac5a251019, type: 3}
-  portraitsFace: 2
-  setSayDialog: {fileID: 0}
-  description: For testing only.
---- !u!4 &1120199714
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120199712}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1126300962
 GameObject:
   m_ObjectHideFlags: 0
@@ -10562,7 +10052,7 @@ PrefabInstance:
     - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3676746845720488240, guid: d6b702084347ece42b453053d10da0b2,
         type: 3}
@@ -10698,11 +10188,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373597294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31, y: 1.36, z: 0}
+  m_LocalPosition: {x: -12.25, y: 0.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1392253713
 GameObject:
@@ -12317,61 +11807,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1770688681
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1770688683}
-  - component: {fileID: 1770688682}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1770688682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770688681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: John
-  nameColor: {r: 0.9339623, g: 0.902496, b: 0.21586865, a: 1}
-  soundEffect: {fileID: 8300000, guid: f637c5ce9d10e45c7855ed89bfc6b97e, type: 3}
-  portraits:
-  - {fileID: 21300000, guid: a78e4070adc2fb444ba3a4e6c965eedb, type: 3}
-  - {fileID: 21300000, guid: 6346c5a592054a24092e999c31767776, type: 3}
-  - {fileID: 21300000, guid: 7cbcdce2667b85d4490366380d1f2d86, type: 3}
-  - {fileID: 21300000, guid: 7cbcdce2667b85d4490366380d1f2d86, type: 3}
-  portraitsFace: 2
-  setSayDialog: {fileID: 0}
-  description: For testing only.
---- !u!4 &1770688683
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770688681}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1792863992
 GameObject:
@@ -13307,7 +12743,7 @@ MonoBehaviour:
   ThesesGUI: {fileID: 1057532252}
   OverviewGUI: {fileID: 437515368}
   MainGUI: {fileID: 1002026488}
-  DebugMode: 0
+  DebugMode: 1
   DebugText: {fileID: 1278939785}
 --- !u!4 &2042594262
 Transform:
@@ -13499,3 +12935,77 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &6535582802947656175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6535582803157487406, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: m_Name
+      value: ParticleDebateFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487403, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487403, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487403, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487403, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487403, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487403, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487403, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487403, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487403, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487403, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487403, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487404, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 14.04595
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2adc9d9da63c1944bb04cf3c8e98806, type: 3}

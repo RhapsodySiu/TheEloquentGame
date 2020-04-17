@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: tutorialEnemyThesis
   m_EditorClassIdentifier: 
   thesisId: 11
-  thesisName: OneOfTheEnemyThesis
+  thesisName: SmartphoneIsBadForPhysicalHealth
   isProponent: 0
   thesisMaxHealth: 100
   description: Mattis ullamcorper velit sed ullamcorper. Nisl purus in mollis nunc

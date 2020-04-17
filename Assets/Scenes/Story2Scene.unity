@@ -479,6 +479,12 @@ GameObject:
   - component: {fileID: 51907180}
   - component: {fileID: 51907179}
   - component: {fileID: 51907178}
+  - component: {fileID: 51907185}
+  - component: {fileID: 51907184}
+  - component: {fileID: 51907183}
+  - component: {fileID: 51907182}
+  - component: {fileID: 51907187}
+  - component: {fileID: 51907186}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -555,7 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 91.770065, y: 180.94466}
+  scrollPos: {x: -0.6349721, y: 150.5649}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -567,8 +573,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 51907156}
-  selectedCommands: []
+  - {fileID: 51907123}
+  selectedCommands:
+  - {fileID: 51907136}
   variables: []
   description: 
   stepPause: 0
@@ -959,8 +966,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 20
   indentLevel: 0
-  storyText: 'Mouyu mouyu_normal: The one who doesn''t believe in the final trial
-    or karma that they''re neither in hell nor heaven; '
+  storyText: 'The one who doesn''t believe in the final trial or karma that they''re
+    neither in hell nor heaven; '
   description: 
   character: {fileID: 1475872879}
   portrait: {fileID: 0}
@@ -1133,9 +1140,11 @@ MonoBehaviour:
   - {fileID: 51907119}
   - {fileID: 51907135}
   - {fileID: 51907134}
+  - {fileID: 51907187}
   - {fileID: 51907117}
   - {fileID: 51907118}
   - {fileID: 51907116}
+  - {fileID: 51907186}
   - {fileID: 51907125}
   - {fileID: 51907136}
   - {fileID: 51907129}
@@ -1179,8 +1188,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 22
   indentLevel: 0
-  storyText: 'Mouyu mouyu_pensive: The one who doesn''t believe in the final trial
-    or karma that they''re neither in hell nor heaven; '
+  storyText: 'The one who doesn''t believe in the final trial or karma that they''re
+    neither in hell nor heaven; '
   description: 
   character: {fileID: 1475872879}
   portrait: {fileID: 0}
@@ -2009,6 +2018,8 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 51907126}
+  - {fileID: 51907183}
+  - {fileID: 51907182}
 --- !u!114 &51907157
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2103,10 +2114,9 @@ MonoBehaviour:
   indentLevel: 0
   conversationText:
     stringRef: {fileID: 0}
-    stringVal: "Me: The proponent, please.\nMiss Wen: Good, how about the opponent?\nYu
-      Yu Ngaan: (Raise her hand) Miss Wen, please let me try. I think it's a very
-      meaning topic.\r\nMiss Wen: Great. Miss Ngaan, I'm sure we can learn a lot from
-      your performance.\r\nMe: (She's one of the Debate Team! I feel so much pressure.....)"
+    stringVal: 'Me: The proponent, please.
+
+      Miss Wen: Good, how about the opponent?'
   clearPrevious:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -2172,6 +2182,8 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 51907160}
+  - {fileID: 51907185}
+  - {fileID: 51907184}
   - {fileID: 51907155}
 --- !u!114 &51907163
 MonoBehaviour:
@@ -2547,7 +2559,7 @@ MonoBehaviour:
     booleanVal: 1
 --- !u!114 &51907177
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2563,7 +2575,7 @@ MonoBehaviour:
   commentText: 
 --- !u!114 &51907178
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2593,7 +2605,7 @@ MonoBehaviour:
   waitUntilFinished: 0
 --- !u!114 &51907179
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2623,7 +2635,7 @@ MonoBehaviour:
   waitUntilFinished: 0
 --- !u!114 &51907180
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2653,7 +2665,7 @@ MonoBehaviour:
   waitUntilFinished: 0
 --- !u!114 &51907181
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2674,6 +2686,167 @@ MonoBehaviour:
   fromPosition: {fileID: 0}
   toPosition: {fileID: 736634743}
   facing: 1
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &51907182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51907099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 88
+  indentLevel: 0
+  _sceneName:
+    stringRef: {fileID: 0}
+    stringVal: Debate2Scene
+  loadingImage: {fileID: 0}
+  sceneNameOLD: 
+--- !u!114 &51907183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51907099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ff0f540016ff64ab1556db6fe1e10f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 87
+  indentLevel: 0
+  display: 2
+  stage: {fileID: 736634745}
+  replacedStage: {fileID: 0}
+  useDefaultSettings: 1
+  fadeDuration: 0
+  waitUntilFinished: 0
+--- !u!114 &51907184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51907099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f608b8c9fb3044200aac956492d8d586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 86
+  indentLevel: 0
+  conversationText:
+    stringRef: {fileID: 0}
+    stringVal: "Yu Yu Ngaan: (Raise her hand) Miss Wen, please let me try. I think
+      it's a very meaning topic.\r\nMiss Wen: Great. Miss Ngaan, I'm sure we can learn
+      a lot from your performance.\r\nMe: (She's one of the Debate Team! I feel so
+      much pressure.....)"
+  clearPrevious:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForInput:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  waitForSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  fadeWhenDone:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+--- !u!114 &51907185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51907099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 85
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 370762333}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 435eb597b8be67c458fb5389d8eb4846, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 736634743}
+  facing: 1
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &51907186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51907099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 90
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 1475872879}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 42cb437b933bf384f9f9e5895a6098ed, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &51907187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51907099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 89
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 1475872879}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 17d815ad70b02244890c28087cdcf1d4, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
   moveDuration: 1
@@ -3679,6 +3852,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 736634741}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &736634745 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8307418768007393048, guid: 474cafc6557ea914281297865de30c23,
+    type: 3}
+  m_PrefabInstance: {fileID: 736634741}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6478b25a400c642b2dee75f022ab12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &891320921 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8307418767362734472, guid: 474cafc6557ea914281297865de30c23,
