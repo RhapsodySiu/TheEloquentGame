@@ -153,6 +153,27 @@ public class DebateModeController : MonoBehaviour
     {
         
     }
+
+    /*
+     * Check if the player can fire the arguments.
+     * First it ensures all arguments are responding to either a thesis or an enemy argument, and have a tactic attached to them
+     * Second in tutorial mode, the argument that the player made is limited and fixed
+     * Finally it checks if similar arguments are made previously
+     */
+    public bool ValidateArgument()
+    {
+        if (dataController.IsTutorial())
+        {
+            if (dataController.GetCurrentRound() == 0)
+            {
+                // Check if player is making "MobileAppProductivity" argument
+            } else if (dataController.GetCurrentRound() == 1)
+            {
+                // Check if player is making "RefuteYouAreAddictedClaim" argument
+            }
+        }
+        return false;
+    }
     #endregion
 
     #region Setter
