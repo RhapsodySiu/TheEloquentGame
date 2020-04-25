@@ -16,6 +16,7 @@ MonoBehaviour:
   thesisName: CrsisSolver
   isProponent: 1
   thesisMaxHealth: 100
-  description: Response to demands help rebuild governance and confidence
+  description: Response to demands help rebuild governance and tackle deep-rooted
+    problem
   cn_description: "\u56DE\u61C9\u8A34\u6C42\u53EF\u91CD\u5EFA\u653F\u5E9C\u6B0A\u5A01\u53CA\u5316\u89E3\u793E\u6703\u5371\u6A5F"
   zh_description: 

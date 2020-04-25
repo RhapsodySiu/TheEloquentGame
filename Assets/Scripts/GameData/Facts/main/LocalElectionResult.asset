@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: LocalElectionResult
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: LocalElectionResult
+  description: "Hong Kong\u2019s pro-democracy candidates won big in local elections
+    on Sunday, but there will be no easy solutions to the issues hanging over the
+    territory as protesters stand up to China\u2019s growing influence, analysts told
+    CNBC on Monday.\r\n\r\n\u201CIt\u2019s very clear that people are not happy with
+    the government, so they try to support the pro-democracy camp in this election,\u201D
+    said Alfred Wu, associate professor at the Lee Kuan Yew School of Public Policy
+    in Singapore.\r\n\r\nThe polls come after six months of anti-government, pro-democracy
+    protests that have turned increasingly violent, and as Hong Kong struggles to
+    overcome its most serious political crisis in decades. The local elections have
+    been widely viewed as a barometer of public sentiment.\n\n\nhttps://www.cnbc.com/2019/11/25/hong-kong-protests-landslide-win-for-pro-democracy-parties-in-elections.html"
+  cn_description: 
+  zh_description: 

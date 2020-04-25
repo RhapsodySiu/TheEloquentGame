@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: ChinaInterferesAustralia
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: ChinaInterferesAustralia
+  description: "Australia is the canary in the coal mine of Chinese Communist Party
+    interference. Over the past 18 months, the country has been shaken by allegations
+    of the Chinese party-state working to covertly manipulate the Australian political
+    system and curate the wider political landscape. There are claims of Beijing-linked
+    political donors buying access and influence, universities being co-opted as \u201Cpropaganda
+    vehicles,\u201D and Australian-funded scientific research being diverted to aid
+    the modernization of the People\u2019s Liberation Army (PLA). Most notoriously,
+    an ambitious young senator, Sam Dastyari, was exposed for parroting Communist
+    Party talking points and giving countersurveillance advice to a Chinese political
+    donor before being hounded into premature retirement.\n\nhttps://www.foreignaffairs.com/articles/china/2018-03-09/how-china-interferes-australia\n"
+  cn_description: 
+  zh_description: 

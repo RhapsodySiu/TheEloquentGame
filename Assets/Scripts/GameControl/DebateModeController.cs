@@ -20,6 +20,8 @@ public class DebateModeController : MonoBehaviour
     public bool DebugMode;
     public Text DebugText;
 
+    public List<Argument> PlayerTemporaryArgumentList = new List<Argument>();
+
     private Debate currentDebate;
     
     // Start is called before the first frame update
@@ -94,10 +96,10 @@ public class DebateModeController : MonoBehaviour
     {
         Debug.Log("Update debug panel");
         DebugText.text = "Player proponent=" +  dataController.IsPlayerProponent() + 
-                         "\nPlayer confidence=" + dataController.GetPlayerMentalHealth() +
+                         "\nPlayer confidence=" + dataController.GetPlayerConfidence() +
                          "\nPopularity=" + dataController.GetAudienceSupport() +
                          "\nPlayer convincingness=" + dataController.GetPlayerThesesHealth() +
-                         "\nEnemy confidence=" + dataController.GetEnemyMentalHealth() +
+                         "\nEnemy confidence=" + dataController.GetEnemyConfidence() +
                          "\nIs player round=" + dataController.IsPlayerRound();
 
     }
@@ -110,6 +112,20 @@ public class DebateModeController : MonoBehaviour
         flowchart.SetBooleanVariable("isPlayerRound", dataController.IsPlayerRound());
         Debug.Log("Back to interaction block");
         flowchart.ExecuteBlock("Interaction");
+    }
+
+    /**
+     * Update game related status variables in the flowchart
+     */
+    public void UpdateFlowChartStatus()
+    {
+        flowchart.SetFloatVariable("support", dataController.GetAudienceSupport());
+        flowchart.SetFloatVariable("health", dataController.GetPlayerThesesHealth() / dataController.GetPlayerMaxThesesHealth());
+        flowchart.SetFloatVariable("confidence", dataController.GetPlayerConfidence());
+        flowchart.SetFloatVariable("enemyHealth", dataController.GetEnemyThesesHealth() / dataController.GetEnemyrMaxThesesHealth());
+        flowchart.SetFloatVariable("enemyConfidence", dataController.GetEnemyConfidence());
+        flowchart.SetIntegerVariable("round", 1);
+        flowchart.SetBooleanVariable("isPlayerRound", dataController.IsPlayerRound());
     }
 
     /* Push an argument from temporary argument list, if empty, execute end round block */
@@ -178,6 +194,15 @@ public class DebateModeController : MonoBehaviour
 
     #region Setter
 
+    /**
+     * Finish the current debate. Increment debate index in dataController
+     */
+    public void EndDebate()
+    {
+        Debug.Log("Debate is declared finished.");
+        dataController.IncrementDebateIdx();
+    }
+
     public void SetPlayerSide(bool isProponent)
     {
         Debug.Log("Set player side: isProponent=" + isProponent);
@@ -223,10 +248,10 @@ public class DebateModeController : MonoBehaviour
 
     public void DrawStatusPanel()
     {
-        float playerMentalHealth = dataController.GetPlayerMentalHealth();
-        float playerMaxMentalHealth = dataController.GetPlayerMaxMentalHealth();
-        float enemyMentalHealth = dataController.GetEnemyMentalHealth();
-        float enemyMaxMentalHealth = dataController.GetEnemyMaxMentalHealth();
+        float playerMentalHealth = dataController.GetPlayerConfidence();
+        float playerMaxMentalHealth = dataController.GetPlayerMaxConfidence();
+        float enemyMentalHealth = dataController.GetEnemyConfidence();
+        float enemyMaxMentalHealth = dataController.GetEnemyMaxConfidence();
         float playerThesisHealth = dataController.GetPlayerThesesHealth();
         float playerMaxThesisHealth = dataController.GetPlayerMaxThesesHealth();
         float enemyThesisHealth = dataController.GetEnemyThesesHealth();

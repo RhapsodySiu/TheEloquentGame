@@ -26,10 +26,6 @@ public class Debater : ScriptableObject
     public int totalCurrentThesesHealth;
     public int totalMaxThesesHealth;
 
-    private void Awake()
-    {
-        UpdateDebaterThesis();
-    }
 
     public List<Argument> arguments = new List<Argument> ();
 
@@ -53,7 +49,7 @@ public class Debater : ScriptableObject
     public void InitDebater(bool clearThesis = false)
     {
         thesisCount = 0;
-        // detach thesis from debater thesis
+        // detach thesis from debater thesis if clearThesis = true. Otherwise, reset debater thesis
         if (clearThesis)
         {
             totalCurrentThesesHealth = 0;
@@ -65,6 +61,17 @@ public class Debater : ScriptableObject
                     debaterThesis.thesis = null;
                 }
             }
+        } else
+        {
+            foreach (DebaterThesis debaterThesis in thesisList)
+            {
+                if (debaterThesis != null)
+                {
+                    debaterThesis.InitDebaterThesis();
+                }
+            }
+
+            UpdateDebaterThesis();
         }
         mentalHealth = mentalMaxHealth;
         if (arguments.Count > 0)
@@ -98,6 +105,8 @@ public class Debater : ScriptableObject
     // Called only when new thesis is added, update debater thesis health
     public void UpdateDebaterThesis()
     {
+        totalCurrentThesesHealth = 0;
+        totalMaxThesesHealth = 0;
         foreach (DebaterThesis debaterThesis in thesisList)
         {
             if (debaterThesis != null && debaterThesis.thesis != null)

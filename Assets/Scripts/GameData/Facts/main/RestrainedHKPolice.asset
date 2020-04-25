@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: RestrainedHKPolice
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: RestrainedHKPolice
+  description: "From Spain to the UK and from Chile to Bolivia, protests have rocked
+    the streets. Some of these countries include those considered democratic countries
+    or development models for their regions. \r\n\r\nDespite the different reasons
+    for the protests in these countries, the police and relevant departments hold
+    the same firm attitude on dealing with protests. Compared to them, Hong Kong police,
+    who have experienced serious threats for the past weeks, are restrained and cautious.\n\nSome
+    netizens called the Hong Kong police the most restrained force in the world. \"Protesters
+    want the police to attack them, to advance their ridiculous Hong Kong police brutality
+    narrative,\" a Twitter user wrote. \r\n\r\nHong Kong police are the most restraint
+    team in the world and we are proud of them, another Twitter user, Irene Chau,
+    said.\n\n\nhttp://www.globaltimes.cn/content/1168214.shtml\n"
+  cn_description: 
+  zh_description: 

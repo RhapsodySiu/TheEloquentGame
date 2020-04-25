@@ -16,6 +16,7 @@ MonoBehaviour:
   thesisName: China
   isProponent: 0
   thesisMaxHealth: 100
-  description: Demands are likely to detriment China sovereignity over HK
+  description: Demands are likely to promote separatism and subvert state sovereignty
+    over HK
   cn_description: "\u4E94\u5927\u8A34\u6C42\u6709\u5206\u88C2\u4E2D\u570B\uFF0C\u985B\u8986\u653F\u6B0A\u610F\u5716"
   zh_description: 

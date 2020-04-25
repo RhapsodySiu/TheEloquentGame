@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: MainlanderResourceConflict
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: MainlanderResourceConflict
+  description: "The Hong Kong Institute of Asia-Pacific Studies at the Chinese University
+    of Hong Kong polled 743 people aged 18 and above by telephone at the end of October
+    to gauge their views on new immigrants. \u201CThe negative attitudes of local
+    Hongkongers towards new immigrants from the mainland China largely came from worries
+    about the negative consequences on social and economic resources, but less from
+    discrimination originated from their identity,\u201D the institute said in the
+    report.\n\nhttps://www.scmp.com/news/hong-kong/education-community/article/2045204/hong-kong-media-vilification-mainland-chinese"
+  cn_description: 
+  zh_description: 

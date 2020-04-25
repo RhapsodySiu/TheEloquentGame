@@ -16,6 +16,6 @@ MonoBehaviour:
   thesisName: Violence
   isProponent: 0
   thesisMaxHealth: 100
-  description: Response to demand is likely to encourage xenophobia & violence
+  description: Response to the demands is likely to encourage xenophobia & violence
   cn_description: "\u6EFF\u8DB3\u8A34\u6C42\u53EA\u6703\u9F13\u52F5\u66B4\u529B\uFF0C\u6392\u4E2D\u884C\u70BA"
   zh_description: 

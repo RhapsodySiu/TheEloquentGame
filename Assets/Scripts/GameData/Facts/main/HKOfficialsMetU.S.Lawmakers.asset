@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: HKOfficialsMetU.S.Lawmakers
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: HKOfficialsMetU.S.Lawmakers
+  description: "Officials from Hong Kong flew to Montana last week for an under-the-radar
+    meeting with U.S. lawmakers about ongoing pro-democracy protests and congressional
+    legislation to protect freedom in Hong Kong, according to sources familiar with
+    the meeting. \r\n\r\nThe Hong Kong delegation included officials who approve of
+    the government\u2019s controversial extradition bill that originally kickstarted
+    the mass protests as well as those who support the pro-democracy movement. The
+    bill, put forward by Hong Kong, would allow China to detain and extradite people
+    who are wanted in territories Hong Kong does not have extradition agreements with,
+    including mainland China. \n\n\nhttps://www.thedailybeast.com/hong-kong-officials-met-with-us-lawmakers-about-punishing-china?fbclid=IwAR3isBBppsN2P6n6sQpil4R4bD0m-JUeRtShYuAu_XTK5TvojtOOTrexTbQ"
+  cn_description: 
+  zh_description: 

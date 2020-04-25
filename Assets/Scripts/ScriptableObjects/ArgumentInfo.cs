@@ -10,6 +10,10 @@ public class ArgumentInfo : ScriptableObject
 
     public bool IsProponentArgument = false;
 
+    // Hard code mechanism to prevent large workload in creating info - argument combination
+    [Tooltip("If true, argument info does not consider tactic in argument")]
+    public bool TacticInvariant;
+
     [Tooltip("The information text to display in GUI")]
     [TextArea(10, 10)]
     public string description;
@@ -17,6 +21,7 @@ public class ArgumentInfo : ScriptableObject
     public string cn_description;
     [TextArea(10, 10)]
     public string zh_description;
+
 
     public override string ToString()
     {

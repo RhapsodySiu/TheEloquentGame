@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: PoliceForceReport
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: PoliceForceReport
+  description: 'Even though the Basic Law grants Hong Kong residents the rights to
+    freedom of speech and freedom of assembly, the HKPF could impose undue restrictions
+    using their statutory powers. Since police officers enjoy extensive statutory
+    powers while performing their duties, it is not hard to conclude that when police
+    officers are suspected of abusing their powers or breaching the law while on duty,
+    there would hardly be any accessible channel for citizens to seek redress under
+    existing law. The problem would only be aggravated if the HKPF and high-ranking
+    officials continue to ignore the issue or even commend the police for their transgressions.
+
+
+    https://www.hkpfreport.org/executive-summary'
+  cn_description: 
+  zh_description: 

@@ -16,7 +16,8 @@ public class DataController : MonoBehaviour
 
     public List<Argument> tempArguments = new List<Argument>();
 
-    public Debate debate;
+    public List<Debate> debateList = new List<Debate>();
+    public int debateIdx = 0;
 
     private string gameDataFileName = "data.json";
 
@@ -41,6 +42,16 @@ public class DataController : MonoBehaviour
         }
     }
 
+    public void Init()
+    {
+        debateIdx = 0;
+    }
+
+    public void IncrementDebateIdx()
+    {
+        debateIdx += 1;
+    }
+
     public bool Test()
     {
         // Task 1: can add player argument
@@ -50,38 +61,43 @@ public class DataController : MonoBehaviour
 
     public void InitDebateStatus()
     {
-        debate.Init();
+        GetCurrentDebate().Init();
     }
 
     #region Getter
     public int GetCurrentRound()
     {
-        return debate.round;
+        return GetCurrentDebate().round;
+    }
+
+    public Debate GetCurrentDebate()
+    {
+        return debateList[debateIdx];
     }
 
     public bool IsTutorial()
     {
-        return debate.isTutorial;
+        return GetCurrentDebate().isTutorial;
     }
 
     public bool IsPlayerRound()
     {
-        return debate.isPlayerRound;
+        return GetCurrentDebate().isPlayerRound;
     }
 
     public bool IsPlayerWin()
     {
-        return debate.IsPlayerWin();
+        return GetCurrentDebate().IsPlayerWin();
     }
 
     public bool IsPlayerLose()
     {
-        return debate.IsPlayerLose();
+        return GetCurrentDebate().IsPlayerLose();
     }
 
     public bool IsArgumentInfoExists(Argument argument)
     {
-        return debate.definedArgumentInfoDict.ContainsKey(argument);
+        return GetCurrentDebate().definedArgumentInfoDict.ContainsKey(argument);
     }
 
     /* Check whether player made an argument 
@@ -89,22 +105,22 @@ public class DataController : MonoBehaviour
      */
     public bool DoesPlayerMadeArgument(Argument argument)
     {
-        return debate.IsPlayerArgumentExist(argument);
+        return GetCurrentDebate().IsPlayerArgumentExist(argument);
     }
 
     public bool DoesEnemyMadeArgument(Argument argument)
     {
-        return debate.IsEnemyArgumentExist(argument);
+        return GetCurrentDebate().IsEnemyArgumentExist(argument);
     }
 
     public Debater GetPlayer()
     {
-        return debate.player;
+        return GetCurrentDebate().player;
     }
 
     public Debater GetEnemy()
     {
-        return debate.enemy;
+        return GetCurrentDebate().enemy;
     }
 
     public void GetPlayerStatus()
@@ -124,19 +140,19 @@ public class DataController : MonoBehaviour
 
     public DebateFacts GetDebateFacts()
     {
-        return debate.debateFacts;
+        return GetCurrentDebate().debateFacts;
     }
 
     public Fact GetDebateFactByName(string factName)
     {
-        return debate.debateFactDict[factName];
+        return GetCurrentDebate().debateFactDict[factName];
     }
 
     public ArgumentInfo GetArgumentInfo(Argument argument)
     {
         ArgumentInfo value = new ArgumentInfo();
 
-        if (debate.definedArgumentInfoDict.TryGetValue(argument, out value))
+        if (GetCurrentDebate().definedArgumentInfoDict.TryGetValue(argument, out value))
         {
             return value;
         }
@@ -151,7 +167,7 @@ public class DataController : MonoBehaviour
     {
         ArgumentEffect value;
 
-        if (debate.definedArgumentEffectDict.TryGetValue(argument, out value))
+        if (GetCurrentDebate().definedArgumentEffectDict.TryGetValue(argument, out value))
         {
             return value;
         }
@@ -163,18 +179,18 @@ public class DataController : MonoBehaviour
 
     public Dictionary<Argument, ArgumentInfo> GetDefinedArgumentInfoDict()
     {
-        return debate.definedArgumentInfoDict;
+        return GetCurrentDebate().definedArgumentInfoDict;
     }
 
     public Dictionary<Argument, ArgumentEffect> GetDefinedArgumentEffectDict()
     {
-        return debate.definedArgumentEffectDict;
+        return GetCurrentDebate().definedArgumentEffectDict;
     }
 
     public void GenerateEnemyArgument()
     {
         // Add the enemy argument to temporary list
-        Tuple<ArgumentInfo, Argument, ArgumentEffect> result = debate.GenerateEnemyArgument();
+        Tuple<ArgumentInfo, Argument, ArgumentEffect> result = GetCurrentDebate().GenerateEnemyArgument();
         if (result != null)
         {
             tempArguments.Add(result.Item2);
@@ -193,78 +209,78 @@ public class DataController : MonoBehaviour
 
     public bool IsPlayerProponent()
     {
-        return debate.player.isProponent;
+        return GetCurrentDebate().player.isProponent;
     }
 
     public List<Argument> GetPlayerArguments()
     {
-        return debate.player.arguments;
+        return GetCurrentDebate().player.arguments;
     }
 
     public List<Argument> GetEnemyArguments()
     {
-        return debate.enemy.arguments;
+        return GetCurrentDebate().enemy.arguments;
     }
 
     public DebaterThesis[] GetPlayerTheses()
     {
-        return debate.player.thesisList;
+        return GetCurrentDebate().player.thesisList;
     }
 
-    public float GetPlayerMentalHealth()
+    public float GetPlayerConfidence()
     {
-        return debate.player.mentalHealth;
+        return GetCurrentDebate().player.mentalHealth;
     }
 
-    public float GetPlayerMaxMentalHealth()
+    public float GetPlayerMaxConfidence()
     {
-        return debate.player.mentalMaxHealth;
+        return GetCurrentDebate().player.mentalMaxHealth;
     }
 
-    public float GetEnemyMentalHealth()
+    public float GetEnemyConfidence()
     {
-        return debate.enemy.mentalHealth;
+        return GetCurrentDebate().enemy.mentalHealth;
     }
 
-    public float GetEnemyMaxMentalHealth()
+    public float GetEnemyMaxConfidence()
     {
-        return debate.enemy.mentalMaxHealth;
+        return GetCurrentDebate().enemy.mentalMaxHealth;
     }
 
     public float GetPlayerMaxThesesHealth()
     {
-        return debate.player.totalMaxThesesHealth;
+        return GetCurrentDebate().player.totalMaxThesesHealth;
     }
 
     public float GetPlayerThesesHealth()
     {
-        return debate.player.totalCurrentThesesHealth;
+        return GetCurrentDebate().player.totalCurrentThesesHealth;
     }
 
     public float GetEnemyrMaxThesesHealth()
     {
-        return debate.enemy.totalMaxThesesHealth;
+        return GetCurrentDebate().enemy.totalMaxThesesHealth;
     }
 
     public float GetEnemyThesesHealth()
     {
-        return debate.enemy.totalCurrentThesesHealth;
+        return GetCurrentDebate().enemy.totalCurrentThesesHealth;
     }
 
     public DebaterThesis[] GetEnemyTheses()
     {
-        return debate.enemy.thesisList;
+        return GetCurrentDebate().enemy.thesisList;
     }
 
 
     public Audience GetAudience()
     {
-        return debate.audience;
+        return GetCurrentDebate().audience;
     }
 
     public float GetAudienceSupport()
     {
-        return debate.audience.support;
+        return GetCurrentDebate().audience.support;
     }
 
     public List<Argument> GetTemporaryArguments()
@@ -278,14 +294,14 @@ public class DataController : MonoBehaviour
     #region Setter
     public void InitDebate()
     {
-        debate.Init();
+        GetCurrentDebate().Init();
     }
 
     public void SetPlayerSide(bool isProponent)
     {
         try
         {
-            debate.SetPlayerSide(isProponent);
+            GetCurrentDebate().SetPlayerSide(isProponent);
         } catch (System.Exception ex)
         {
             Debug.LogException(ex);
@@ -297,14 +313,14 @@ public class DataController : MonoBehaviour
     {
         try
         {
-            if (debate.player.thesisCount >= MAX_THESES)
+            if (GetCurrentDebate().player.thesisCount >= MAX_THESES)
             {
                 Debug.Log("Error in add player thesis: Player already have 3 or above theses");
                 return;
             }
 
             Thesis thesisToAdd = null;
-            foreach (Thesis thesis in debate.thesisAvailable)
+            foreach (Thesis thesis in GetCurrentDebate().thesisAvailable)
             {
                 if (thesisName == thesis.thesisName)
                 {
@@ -315,13 +331,13 @@ public class DataController : MonoBehaviour
 
             if (thesisToAdd != null)
             {
-                if (debate.player.isProponent != thesisToAdd.isProponent)
+                if (GetCurrentDebate().player.isProponent != thesisToAdd.isProponent)
                 {
                     Debug.LogError("Error in add player thesis: Player stand conflicts with thesis stand");
                     return;
                 }
 
-                debate.player.AddThesis(thesisToAdd);
+                GetCurrentDebate().player.AddThesis(thesisToAdd);
 
             }
             else
@@ -347,7 +363,7 @@ public class DataController : MonoBehaviour
         tempArguments.RemoveAt(0);
 
         // update player argument list
-        debate.player.arguments.Add(argumentMade);
+        GetCurrentDebate().player.arguments.Add(argumentMade);
 
         ArgumentEffect effect = GetArgumentEffect(argumentMade);
         if (effect != null)
@@ -365,25 +381,29 @@ public class DataController : MonoBehaviour
     // increment round count and toggle player round
     public void UpdateRound()
     {
-        debate.round += 1;
-        debate.isPlayerRound = !debate.isPlayerRound;
+        GetCurrentDebate().round += 1;
+        GetCurrentDebate().isPlayerRound = !GetCurrentDebate().isPlayerRound;
     }
 
+    /** 
+     * Apply argument effect to the debate status.
+     * Also apply change to the fungus flowchart
+     */
     public void UpdateDebateStat(ArgumentEffect effect)
     {
         blockToPlay = effect.conversationBlock;
         if (effect.toSelf)
         {
-            debate.player.UpdateStat(effect);
+            GetCurrentDebate().player.UpdateStat(effect);
             Debug.Log("Player status updated");
         }
         else
         {
-            debate.enemy.UpdateStat(effect);
+            GetCurrentDebate().enemy.UpdateStat(effect);
             Debug.Log("Enemy status updated");
         }
 
-        debate.audience.UpdateStat(effect);
+        GetCurrentDebate().audience.UpdateStat(effect);
         Debug.Log("Audience status updated");
     }
 
@@ -392,7 +412,7 @@ public class DataController : MonoBehaviour
     {
         try
         {
-            debate.player.mentalHealth = newValue;
+            GetCurrentDebate().player.mentalHealth = newValue;
         } catch (System.Exception ex)
         {
             Debug.LogException(ex);
@@ -412,7 +432,7 @@ public class DataController : MonoBehaviour
         {
             string dataAsJson = File.ReadAllText(filepath);
             Debate loadedDebate = JsonUtility.FromJson<Debate> (dataAsJson);
-            debate = loadedDebate;
+            debateList[debateIdx] = loadedDebate;
         } else
         {
             Debug.LogError("Cannot load game data!");

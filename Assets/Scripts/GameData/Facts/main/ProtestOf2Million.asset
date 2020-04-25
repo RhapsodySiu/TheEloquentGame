@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: ProtestOf2Million
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: ProtestOf2Million
+  description: "Nearly 2 million protesters flooded the streets of Hong Kong on Sunday,
+    organisers claimed, delivering a stunning repudiation of Chief Executive Carrie
+    Lam Cheng Yuet-ngor\u2019s governance and forcing a public apology out of the
+    city\u2019s leader over her campaign to bulldoze a controversial extradition bill
+    through the legislature. A day after Lam suspended her push for the bill, expecting
+    it to defuse a crisis that has seen violent clashes between mostly young protesters
+    and police, the centre of Hong Kong was brought to a complete standstill as the
+    masses marched to chastise her for refusing to withdraw the bill or apologise
+    when first asked to, and declaring that nothing short of her resignation would
+    satisfy them now.\n\nhttps://www.scmp.com/news/hong-kong/politics/article/3014737/nearly-2-million-people-take-streets-forcing-public-apology"
+  cn_description: 
+  zh_description: 

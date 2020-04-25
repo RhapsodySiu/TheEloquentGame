@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: ProtsetersThrowMolokov
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: ProtsetersThrowMolokov
+  description: 'Violence erupted this weekend around a besieged Hong Kong university,
+    as protesters threw petrol bombs and fired arrows at police in an attempt to keep
+    control of the campus. Hong Kong police appealed to protesters early Monday, local
+    time, to leave the scene of an intense stand-off and threatened to respond with
+    live bullets if protesters continue to use what they called "lethal weapons."
+    The warning came as a fiery clash between protesters and police outside the Hong
+    Kong Polytechnic University entered its second night. Protesters have been hurling
+    gasoline bombs while police have answered with tear gas and water cannons.
+
+
+    https://www.npr.org/2019/11/17/780268841/hong-kong-protests-intensify-with-molotov-cocktails-and-arrows'
+  cn_description: 
+  zh_description: 

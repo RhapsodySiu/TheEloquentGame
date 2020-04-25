@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: TravellersAvoidHK
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: TravellersAvoidHK
+  description: 'Hong Kong International Airport lost close to 1 million passengers
+    in November, the steepest numerical drop in any single month since violent anti-government
+    protests began in the city, official figures released on Sunday showed. In the
+    worst drop in more than a decade, the airport handled 5.02 million passengers,
+    some 969,000 fewer in November, a drop of 16.2 per cent compared to the same period
+    in 2018.
+
+
+    https://www.scmp.com/news/hong-kong/transport/article/3042176/travellers-avoiding-hong-kong-record-numbers-airport-posts'
+  cn_description: 
+  zh_description: 

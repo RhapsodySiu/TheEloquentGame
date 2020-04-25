@@ -16,6 +16,8 @@ MonoBehaviour:
   thesisName: ForeignForce
   isProponent: 0
   thesisMaxHealth: 100
-  description: HK's movement is basically a work of foreign force
-  cn_description: "\u9999\u6E2F\u904B\u52D5\u57FA\u672C\u4E0A\u70BA\u5916\u570B\u52E2\u529B\u767C\u8D77"
-  zh_description: 
+  description: 'The movement is merely a product of foreign force intervention
+
+'
+  cn_description: 
+  zh_description: "\u9999\u6E2F\u904B\u52D5\u57FA\u672C\u4E0A\u70BA\u5916\u570B\u52E2\u529B\u767C\u8D77"

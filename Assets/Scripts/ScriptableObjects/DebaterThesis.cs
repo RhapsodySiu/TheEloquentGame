@@ -18,6 +18,14 @@ public class DebaterThesis : ScriptableObject
 
     }
 
+    public void InitDebaterThesis()
+    {
+        defense = 0;
+        percentHealthBuff = 0;
+        absHealthBuff = 0;
+        currentHealth = maxHealth;
+    }
+
     public void AddThesis(Thesis t)
     {
         thesis = t;

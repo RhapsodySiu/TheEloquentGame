@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: ProtesterSetChineseOnFire
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: ProtesterSetChineseOnFire
+  description: "Lee\_Chi-cheung, 57, was left fighting for his life after the attack,
+    which\_occurred on November 11 after a dispute with a group of masked\_protesters
+    who had vandalised an MTR station in Ma On Shan in Hong Kong\u2019s New Territories.
+    According\_ to police, he witnessed the vandalism and chased after the protesters.
+    He was then attacked and suffered head injuries. As he walked away, he\_shouted
+    \u201CYou are not Chinese\u201D to the group. The protesters responded by\_yelling
+    \u201CWe are Hongkongers\u201D. He returned to confront them and a dispute\_ensued,
+    during which he was doused with flammable liquid and set\_alight.\n\nhttps://www.scmp.com/news/china/society/article/3038421/wife-hong-kong-man-set-fire-after-row-vandals-tells-chinese"
+  cn_description: 
+  zh_description: 

@@ -16,6 +16,6 @@ MonoBehaviour:
   thesisName: DemandPopularity
   isProponent: 1
   thesisMaxHealth: 100
-  description: Demands are of popularity.
+  description: The demands are of popularity and should be acknowledged
   cn_description: "\u8A34\u6C42\u70BA\u591A\u6578\u6C11\u610F\u6240\u81F3"
   zh_description: 

@@ -12,22 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b069ccbcd66e3624e917528b284a1ab4, type: 3}
   m_Name: li
   m_EditorClassIdentifier: 
-  thesis_count: 0
+  thesisCount: 3
   id: 4
   isProponent: 0
-  debaterName: 
+  debaterName: Li Seun Yue
   description: 
   thesisList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 74c66f4416054f54baaf83e2e2806fe2, type: 2}
+  - {fileID: 11400000, guid: f49f3e020c211a94b9137688170f09f8, type: 2}
+  - {fileID: 11400000, guid: d7972b35d64baaa4ca59c52cec0e3468, type: 2}
   totalCurrentThesesHealth: 0
   totalMaxThesesHealth: 0
   arguments: []
-  traits: 
+  traits: 00000000
   mentalMaxHealth: 100
   mentalHealth: 100
   actionPoint: 3
   basePow: 1
   baseInfluence: 1
-  baseRoast: 1
+  baseRoast: 1.1

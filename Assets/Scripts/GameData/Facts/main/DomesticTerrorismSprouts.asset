@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: DomesticTerrorismSprouts
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: DomesticTerrorismSprouts
+  description: "Secretary for Security John Lee Ka-chiu, said today there is a risk
+    of domestic terrorism sprouting in Hong Kong.\r\n\r\nSpeaking before attending
+    the Legislative Council meeting, Lee said since the first bomb case in July last
+    year, there were at least ten such cases, and one of them involves military explosives
+    and homemade bombs containing ten kilograms of explosives.\r\n\r\nHe said the
+    general public should be concerned and urged them to support the police in combating
+    violent acts.\r\n\r\nLee said he has requested the police and other law enforcement
+    agencies to step up their efforts, use strict laws to deal with illegal activities
+    when appropriate, including using anti-terrorism measures to freeze assets.\n\nhttps://www.thestandard.com.hk/breaking-news/section/4/146072/HK-at-risk-of-domestic-terrorism-sprouting,-John-Lee-says\n"
+  cn_description: 
+  zh_description: 

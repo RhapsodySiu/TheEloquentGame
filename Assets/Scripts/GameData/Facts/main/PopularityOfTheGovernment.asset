@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: PopularityOfTheGovernment
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: PopularityOfTheGovernment
+  description: "Survey Findings on HKSAR Government\u2019s Popularity in December
+    2019 Released by Hong Kong Institute of Asia-Pacific Studies at CUHK\n\nSatisfaction
+    with the HKSAR Government:  According to the survey, 10.6% of the 708 respondents
+    expressed satisfaction towards the HKSAR Government, 69.6% said they were dissatisfied,
+    and 19.4% answered \u2018in-between\u2019. When comparing the figures with that
+    from the same month last year, it was found that the percentage of satisfaction
+    in December 2019 (10.6%) was substantially lower than that of December 2018 (28.8%).
+    \ The difference in percentage distribution between December 2019 and December
+    2018 was statistically significant.\n\nRating of Chief Executive Carrie Lam:  The
+    survey in December 2019 indicated that the performance rating of Chief Executive
+    Carrie Lam (with a point scale ranging from 0 to 100, 50 as the passing mark)
+    stood at 22.2 on average, slightly lower than the rating for November (22.4).
+    When comparing her current rating (22.2) with that of December 2018 (52.7), the
+    mean difference of the two months was statistically significant.\n\n\nhttps://www.cpr.cuhk.edu.hk/en/press_detail.php?id=3207&t=survey-findings-on-hksar-government-s-popularity-in-december-2019-released-by-hong-kong-institute-of-asia-pacific-studies-at-cuhk"
+  cn_description: 
+  zh_description: 

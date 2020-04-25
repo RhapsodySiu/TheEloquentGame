@@ -11,6 +11,11 @@ public class Debate : ScriptableObject
     public Debater player;
     public Debater enemy;
 
+    public Debater enemyProponent;
+    public Debater enemyOpponent;
+
+    public bool isProponent;
+
     public bool isPlayerRound;
     public bool isTutorial;
 
@@ -42,11 +47,19 @@ public class Debate : ScriptableObject
     public int maxRound;
     public int round;
 
+    /**
+     * Init debate AFTER player side confirmed
+     */
     public void Init()
     {
         try
         {
             player.InitDebater(true);
+            if (!isTutorial)
+            {
+                enemy = isProponent ? enemyOpponent : enemyProponent;
+                SetPlayerSide(isProponent);
+            }
             enemy.InitDebater();
             audience.support = 0f;
             playerArgumentInfoHistory.Clear();

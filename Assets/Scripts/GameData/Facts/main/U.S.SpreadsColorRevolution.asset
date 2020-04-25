@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: U.S.SpreadsColorRevolution
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: U.S.SpreadsColorRevolution
+  description: "What\u2019s been going on for months in Hong Kong has all the earmarks
+    of a US orchestrated color revolution, aimed at destabilizing China by targeting
+    its soft Hong Kong underbelly. \n\nUS strategies to control other nations include
+    preemptive wars of aggression, old-fashioned coups, and color revolutions \u2014
+    what appears to be going on in Hong Kong.\r\n\r\nThis form of covert war first
+    played out in Belgrade, Serbia in 2000. What appeared to be a spontaneous political
+    uprising was developed by RAND Corporation strategist in the 1990s \u2014 the
+    concept of swarming.\n\nhttps://www.globalresearch.ca/civil-disobedience-hong-kong-us-color-revolution-attempt/5686298"
+  cn_description: 
+  zh_description: 

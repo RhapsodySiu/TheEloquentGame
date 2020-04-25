@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b069ccbcd66e3624e917528b284a1ab4, type: 3}
   m_Name: player
   m_EditorClassIdentifier: 
-  thesis_count: 0
+  thesisCount: 0
   id: 2
   isProponent: 1
   debaterName: Blue
@@ -22,13 +22,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 74c66f4416054f54baaf83e2e2806fe2, type: 2}
   - {fileID: 11400000, guid: f49f3e020c211a94b9137688170f09f8, type: 2}
   - {fileID: 11400000, guid: d7972b35d64baaa4ca59c52cec0e3468, type: 2}
-  totalCurrentThesesHealth: 700
-  totalMaxThesesHealth: 300
+  totalCurrentThesesHealth: 1000
+  totalMaxThesesHealth: 600
   arguments:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  traits: 
+  traits: 01000000
   mentalMaxHealth: 100
   mentalHealth: 100
   actionPoint: 3

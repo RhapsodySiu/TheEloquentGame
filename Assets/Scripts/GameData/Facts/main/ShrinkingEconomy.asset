@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: ShrinkingEconomy
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: ShrinkingEconomy
+  description: "Ten straight weeks of anti-government protests in Hong Kong are taking
+    a sharp toll on an economy already hit by the U.S.-China trade war. The protests
+    began as weekend marches, but have become a daily phenomenon. As police tear gas
+    has been countered by demonstrator petrol bombs, retail and tourism are taking
+    a hit. Global brands from Walt Disney to Prada have warned of the impact. Cathay
+    Pacific Airways and other airlines have canceled hundreds of flights after a sudden
+    airport shutdown this week.\r\n\r\nMore than $600 billion of stock market value
+    has been erased since early July, and analysts are expressing concern that property
+    values could slump. Gross domestic product expanded just 0.6% in the second quarter
+    and the continued unrest could raise the possibility of a recession, according
+    to Bloomberg Economics.\n\n\nhttps://www.bloomberg.com/graphics/2019-hong-kong-protests-economic-impact/"
+  cn_description: 
+  zh_description: 

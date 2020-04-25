@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: HongKongStatus
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: HongKongStatus
+  description: "In a part of the world familiar with conflict, dislocation and ruthless
+    ideological extremism, Hong Kong has long beckoned as an oasis of stability.\n\nIt
+    has served as a bridge between two rival powers nursing mutual suspicions, the
+    United States and China. It is Chinese territory yet governed by a legal system
+    inherited from the West, and intertwined with the global financial system.\n\nBut
+    now Hong Kong\u2019s status as neutral ground between mainland China and the outside
+    world is being threatened by a pair of momentous confrontations. As President
+    Trump increases tariffs on Chinese goods in his trade war, the value of Hong Kong
+    as a hub for commerce is being diminished. And as protesters filling  Hong Kong\u2019s
+    streets accuse China of breaching a deal that was supposed to protect the territory\u2019s
+    democratic norms, the endurance of its semiautonomous status appears in doubt.\n\n\nhttps://www.nytimes.com/2019/09/29/business/hong-kong-china-power.html"
+  cn_description: 
+  zh_description: 

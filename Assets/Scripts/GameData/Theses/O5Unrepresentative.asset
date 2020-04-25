@@ -16,6 +16,6 @@ MonoBehaviour:
   thesisName: Unrepresentative
   isProponent: 0
   thesisMaxHealth: 100
-  description: Advocators of demands are the minority and disregards majority's interest
+  description: Advocates of demands are the minority who disregards majority's interest
   cn_description: "\u8A34\u6C42\u8005\u53EA\u4F54\u5C11\u6578\uFF0C\u4E0D\u9867\u591A\u6578\u4EBA\u5229\u76CA"
   zh_description: 

@@ -16,6 +16,6 @@ MonoBehaviour:
   thesisName: Negativity
   isProponent: 0
   thesisMaxHealth: 100
-  description: The call for demand affacts society negatively
-  cn_description: "\u793A\u5A01\u8005\u8A34\u6C42\u53CA\u884C\u52D5\u8CA0\u9762\u5730\u5F71\u97FF\u6C11\u751F"
-  zh_description: 
+  description: The call for five demands damages the living of the public
+  cn_description: 
+  zh_description: "\u793A\u5A01\u8005\u8A34\u6C42\u53CA\u884C\u52D5\u8CA0\u9762\u5730\u5F71\u97FF\u6C11\u751F"

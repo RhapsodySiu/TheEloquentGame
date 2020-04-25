@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: MainlandSupportersConsequence
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: MainlandSupportersConsequence
+  description: 'At least a dozen mainlanders have been held or threatened by authorities
+    after having participated in the Hong Kong demonstrations or shared information
+    online that deviates from the government line concerning the semiautonomous territory.
+
+
+    https://www.scmp.com/news/china/politics/article/3040048/support-hong-kong-protests-china-has-consequences-some
+
+
+    https://www.latimes.com/world-nation/story/2019-09-07/mainland-chinese-support-hong-kong-protests'
+  cn_description: 
+  zh_description: 'https://www.scmp.com/news/china/politics/article/3040048/support-hong-kong-protests-china-has-consequences-some
+
+
+    https://www.latimes.com/world-nation/story/2019-09-07/mainland-chinese-support-hong-kong-protests'

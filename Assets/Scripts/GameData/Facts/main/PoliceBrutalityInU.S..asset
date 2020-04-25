@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9752792e4ddbae24c94ce78cdb70348e, type: 3}
+  m_Name: PoliceBrutalityInU.S.
+  m_EditorClassIdentifier: 
+  factId: 0
+  factName: PoliceBrutalityInU.S.
+  description: 'Police brutality in the United States, the unwarranted or excessive
+    and often illegal use of force against civilians by U.S. police officers. Forms
+    of police brutality have ranged from assault and battery (e.g., beatings) to mayhem,
+    torture, and murder. Some broader definitions of police brutality also encompass
+    harassment (including false arrest), intimidation, and verbal abuse, among other
+    forms of mistreatment.
+
+
+    https://www.britannica.com/topic/Police-Brutality-in-the-United-States-2064580'
+  cn_description: 
+  zh_description: 
