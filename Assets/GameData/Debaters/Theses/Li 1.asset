@@ -16,5 +16,5 @@ MonoBehaviour:
   defense: 0
   percentHealthBuff: 0
   absHealthBuff: 0
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 0
+  currentHealth: 0

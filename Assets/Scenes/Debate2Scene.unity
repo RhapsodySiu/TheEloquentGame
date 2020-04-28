@@ -6723,7 +6723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 0
   key: isProponent
-  value: 1
+  value: 0
 --- !u!114 &758942432
 MonoBehaviour:
   m_ObjectHideFlags: 2

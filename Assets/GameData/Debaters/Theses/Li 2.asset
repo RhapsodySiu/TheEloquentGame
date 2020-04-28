@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8eea27167265a7489afc31cdd566122, type: 3}
   m_Name: Li 2
   m_EditorClassIdentifier: 
-  thesis: {fileID: 11400000, guid: 642d880b08b0a694d8794db6d4f7ec99, type: 2}
+  thesis: {fileID: 0}
   defense: 0
   percentHealthBuff: 0
   absHealthBuff: 0
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 0
+  currentHealth: 0

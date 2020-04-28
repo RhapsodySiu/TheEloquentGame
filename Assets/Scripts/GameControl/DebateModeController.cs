@@ -329,6 +329,7 @@ public class DebateModeController : MonoBehaviour
                     Debug.Log("- Add argument '" + matchArgument.Item1.ArgumentName + "' into thesis, interactable = " + interactable + ", respondToOther=" + showPlayer);
                 }
             }
+            i += 1;
         }
     }
 
