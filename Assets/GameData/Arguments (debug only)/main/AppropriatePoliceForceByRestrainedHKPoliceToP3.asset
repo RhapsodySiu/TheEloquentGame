@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8eea27167265a7489afc31cdd566122, type: 3}
-  m_Name: Li 3
+  m_Script: {fileID: 11500000, guid: 01f0fa001e7e13e4ea0838b11a808659, type: 3}
+  m_Name: AppropriatePoliceForceByRestrainedHKPoliceToP3
   m_EditorClassIdentifier: 
+  argumentRespondName: 
+  thesisRespondName: 
+  tacticName: 
+  factName: 
+  fact: {fileID: 11400000, guid: b817a26f798bdd7498840bff6394022c, type: 2}
+  tactic: {fileID: 0}
   thesis: {fileID: 11400000, guid: b926efcfc3ebbdc4b8e35cf1219676a3, type: 2}
-  defense: 0
-  percentHealthBuff: 0
-  absHealthBuff: 0
-  maxHealth: 100
-  currentHealth: 100
+  argument: {fileID: 0}

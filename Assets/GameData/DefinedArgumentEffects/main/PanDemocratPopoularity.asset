@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b1dcfeb715890844bf15ef1d385baf0, type: 3}
-  m_Name: DefaultArgumentEffect
+  m_Name: PanDemocratPopoularity
   m_EditorClassIdentifier: 
   toSelf: 1
-  mentalHealthChange: -0.2
-  supportChange: 0
+  mentalHealthChange: 0
+  supportChange: 0.3
   ArgAttBuff: 0
   mentalAttBuff: 0
   influenceBuff: 0
   targetThesisId: 0
-  maxThesisHealthChange: 0
-  currentThesisHealthChange: -30
+  maxThesisHealthChange: 30
+  currentThesisHealthChange: 30
   defenseChange: 0
-  conversationBlock: DefaultArgument
+  conversationBlock: PanDemocratPopoularity

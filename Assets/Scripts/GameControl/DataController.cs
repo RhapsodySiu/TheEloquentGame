@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 using Fungus;
 using System;
 
@@ -468,6 +469,78 @@ public class DataController : MonoBehaviour
         {
             Debug.LogError("Cannot load game data!");
         }
+    }
+
+    [MenuItem("GameObject/Load Arguments from arguments.json")]
+    static void CreateArgumentFromJSON()
+    {
+        string argumentPath = Application.dataPath + "/" + "arguments.json";
+
+        if (!System.IO.File.Exists(argumentPath))
+        {
+            return;
+        }
+
+        string contents = System.IO.File.ReadAllText(argumentPath);
+        JsonWrapper wrapper = JsonUtility.FromJson<JsonWrapper>(contents);
+        ArgumentData argumentData = wrapper.argumentData;
+
+        foreach (SerializedArgument serializedArgument in argumentData.serializedArguments)
+        {
+            string argumentAssetFilename = serializedArgument.argumentName;
+            try
+            {
+                if (serializedArgument.fact != "" && serializedArgument.fact != null)
+                {
+                    argumentAssetFilename += "By" + serializedArgument.fact;
+                }
+                if (serializedArgument.toArgument)
+                {
+
+                    argumentAssetFilename += "Against" + serializedArgument.tactic;
+                }
+                argumentAssetFilename += "To" + serializedArgument.respondTo + ".asset";
+
+                Argument argumentBase = ScriptableObject.CreateInstance<Argument>();
+                argumentBase = ScriptableObject.CreateInstance<Argument>();
+
+                if (serializedArgument.fact != "" && serializedArgument.fact != null)
+                {
+                    Fact factBase = (Fact)AssetDatabase.LoadAssetAtPath("Assets/GameData/Facts/" + serializedArgument.fact + ".asset", typeof(Fact));
+                    argumentBase.fact = factBase;
+                }
+
+                if (serializedArgument.toArgument)
+                {
+                    ArgumentInfo argumentInfoBase = (ArgumentInfo)AssetDatabase.LoadAssetAtPath("Assets/GameData/DefinedArgumentInfos/main/" + serializedArgument.respondTo + ".asset", typeof(ArgumentInfo));
+                    argumentBase.argument = argumentInfoBase;
+                }
+                else
+                {
+                    Thesis thesisBase = (Thesis)AssetDatabase.LoadAssetAtPath("Assets/GameData/Theses/" + serializedArgument.respondTo + ".asset", typeof(Thesis));
+                    argumentBase.thesis = thesisBase;
+                }
+
+                // Create asset if not exist
+                if (!System.IO.File.Exists(Application.dataPath + "/GameData/Arguments (debug only)/" + argumentAssetFilename ))
+                {
+                    AssetDatabase.CreateAsset(argumentBase, "Assets/GameData/Arguments (debug only)/" + argumentAssetFilename);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("Error when trying create asset for " + argumentAssetFilename);
+                Debug.LogException(ex);
+                throw;
+            }
+        }
+        
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+        EditorUtility.FocusProjectWindow();
+        Debug.Log("Create assets successfully.");
+
     }
 
 }
