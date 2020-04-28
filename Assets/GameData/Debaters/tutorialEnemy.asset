@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b069ccbcd66e3624e917528b284a1ab4, type: 3}
+  m_Name: tutorialEnemy
+  m_EditorClassIdentifier: 
+  thesisCount: 0
+  id: 1
+  isProponent: 1
+  debaterName: ???
+  description: Who is it?
+  thesisList:
+  - {fileID: 11400000, guid: feab818ffbd986442ae5e4728bb506f4, type: 2}
+  totalCurrentThesesHealth: 100
+  totalMaxThesesHealth: 100
+  arguments:
+  - {fileID: 11400000, guid: 893600f012958a849a3c693a8835a95d, type: 2}
+  traits: 00000000
+  mentalMaxHealth: 1
+  mentalHealth: 0.9
+  actionPoint: 1
+  basePow: 1
+  baseInfluence: 1
+  baseRoast: 1.1

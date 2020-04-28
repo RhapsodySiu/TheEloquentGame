@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f0fa001e7e13e4ea0838b11a808659, type: 3}
+  m_Name: proArg1AddictionByAuthority
+  m_EditorClassIdentifier: 
+  argumentRespondName: 
+  thesisRespondName: 
+  tacticName: 
+  factName: 
+  fact: {fileID: 11400000, guid: 4c19814d0360c8b44bf731d6b6e7c864, type: 2}
+  tactic: {fileID: 11400000, guid: 2a0796b6e8dce084db02e42f0b7206b1, type: 2}
+  thesis: {fileID: 11400000, guid: 1d3fffef2a9d6da4d898d4196ac1d675, type: 2}
+  argument: {fileID: 0}

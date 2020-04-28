@@ -163,6 +163,11 @@ public class DataController : MonoBehaviour
         }
     }
 
+    /**
+     * Get the argument effect for an argument
+     * It searches the definedArgumentEffectDict of the Debate
+     * If no result is found, the default arguemnt effect is returned
+     */
     public ArgumentEffect GetArgumentEffect(Argument argument)
     {
         ArgumentEffect value;
@@ -173,7 +178,7 @@ public class DataController : MonoBehaviour
         }
         else
         {
-            return null;
+            return GetCurrentDebate().GetDefaultArgumentEffect();
         }
     }
 
@@ -197,6 +202,11 @@ public class DataController : MonoBehaviour
         }
     }
 
+    public void AddPlayerTemporaryArgument(Argument playerArgument)
+    {
+        tempArguments.Add(playerArgument);
+    }
+
     public TacticData GetTacticData()
     {
         return tacticData;
@@ -212,14 +222,14 @@ public class DataController : MonoBehaviour
         return GetCurrentDebate().player.isProponent;
     }
 
-    public List<Argument> GetPlayerArguments()
+    public List<Tuple<ArgumentInfo, Argument>> GetPlayerArguments()
     {
-        return GetCurrentDebate().player.arguments;
+        return GetCurrentDebate().GetPlayerArgumentInfos();
     }
 
-    public List<Argument> GetEnemyArguments()
+    public List<Tuple<ArgumentInfo, Argument>> GetEnemyArguments()
     {
-        return GetCurrentDebate().enemy.arguments;
+        return GetCurrentDebate().GetEnemyArgumentInfos();
     }
 
     public DebaterThesis[] GetPlayerTheses()
@@ -297,6 +307,12 @@ public class DataController : MonoBehaviour
         GetCurrentDebate().Init();
     }
 
+    public void InitMainDebate()
+    {
+        debateIdx = 1;
+        GetCurrentDebate().Init();
+    }
+
     public void SetPlayerSide(bool isProponent)
     {
         try
@@ -362,8 +378,23 @@ public class DataController : MonoBehaviour
         Argument argumentMade = tempArguments[0];
         tempArguments.RemoveAt(0);
 
-        // update player argument list
-        GetCurrentDebate().player.arguments.Add(argumentMade);
+        if (IsPlayerRound())
+        {
+            GetCurrentDebate().player.arguments.Add(argumentMade);
+        } else
+        {
+            GetCurrentDebate().enemy.arguments.Add(argumentMade);
+        }
+        
+        // search if the argument is defined
+        ArgumentInfo argumentInfo = GetCurrentDebate().GetArgumentInfo(argumentMade);
+        if (argumentInfo != null)
+        {
+            GetCurrentDebate().AddArgumentRecord(argumentMade, argumentInfo);
+        } else
+        {
+            Debug.Log("Cannot get argumentInfo for " + argumentMade);
+        }
 
         ArgumentEffect effect = GetArgumentEffect(argumentMade);
         if (effect != null)

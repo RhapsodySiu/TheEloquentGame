@@ -30,8 +30,8 @@ public class Debater : ScriptableObject
     public List<Argument> arguments = new List<Argument> ();
 
     public Trait[] traits;
-    public float mentalMaxHealth = 100;
-    public float mentalHealth = 100;
+    public float mentalMaxHealth = 1.0f;
+    public float mentalHealth = 1.0f;
     public int actionPoint = 3;
 
     public float basePow = 1f;
@@ -48,10 +48,11 @@ public class Debater : ScriptableObject
 
     public void InitDebater(bool clearThesis = false)
     {
-        thesisCount = 0;
+        Debug.Log("clear thesis: " + clearThesis);
         // detach thesis from debater thesis if clearThesis = true. Otherwise, reset debater thesis
         if (clearThesis)
         {
+            thesisCount = 0;
             totalCurrentThesesHealth = 0;
             totalMaxThesesHealth = 0;
             foreach (DebaterThesis debaterThesis in thesisList)

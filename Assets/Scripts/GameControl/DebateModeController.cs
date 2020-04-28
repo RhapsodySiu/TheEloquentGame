@@ -12,6 +12,7 @@ public class DebateModeController : MonoBehaviour
 
     public Canvas ActionGUI;
     public Canvas TacticGUI;
+    
     public Canvas FactGUI;
     public Canvas ThesesGUI;
     public Canvas OverviewGUI;
@@ -21,6 +22,8 @@ public class DebateModeController : MonoBehaviour
     public Text DebugText;
 
     public List<Argument> PlayerTemporaryArgumentList = new List<Argument>();
+
+    private ThesisPanel[] thesisPanels;
 
     private Debate currentDebate;
     
@@ -36,6 +39,12 @@ public class DebateModeController : MonoBehaviour
             // Get defined arguments and divided into player arguments and enemy arguments
             
         }
+
+        thesisPanels = ThesesGUI.gameObject.GetComponentsInChildren<ThesisPanel>();
+        if (thesisPanels.Length != 3)
+        {
+            Debug.LogError("Thesis panel list length does not match");
+        }
     }
 
     #region GameLogic
@@ -46,6 +55,14 @@ public class DebateModeController : MonoBehaviour
         UpdateDebugText();
         dataController.InitDebate();
         Debug.Log("Start the debate");
+    }
+
+    /**
+     * Called by fungus block as a shortcut to prepare main debate.
+     */
+    public void InitMainDebate()
+    {
+        dataController.InitMainDebate();
     }
 
     /* Create arguments for enemy and stack them in temporary arguments */
@@ -65,6 +82,21 @@ public class DebateModeController : MonoBehaviour
         // MakeArgument();
     }
 
+    /**
+     * Load PlayerTemporaryArgumentList to dataController's temporary argument list
+     */
+    public void LoadPlayerArguments()
+    {
+        foreach (Argument argument in PlayerTemporaryArgumentList)
+        {
+            if (argument.argument != null || argument.thesis != null)
+            {
+                dataController.AddPlayerTemporaryArgument(argument);
+                Debug.Log("Load " + argument + " to temporary argument list");
+            }
+        }
+    }
+
     public void StartRound()
     {
         Debug.Log("Play fungus start round block");
@@ -75,6 +107,7 @@ public class DebateModeController : MonoBehaviour
     {
         // update debug info
         UpdateDebugText();
+        UpdateFlowChartStatus();
 
         Debug.Log("Check if there is winner");
         if (dataController.IsPlayerWin())
@@ -107,6 +140,7 @@ public class DebateModeController : MonoBehaviour
     public void UpdateRound()
     {
         Debug.Log("Update round.");
+        UpdateFlowChartStatus();
         dataController.UpdateRound();
         flowchart.SetIntegerVariable("round", dataController.GetCurrentRound());
         flowchart.SetBooleanVariable("isPlayerRound", dataController.IsPlayerRound());
@@ -124,7 +158,7 @@ public class DebateModeController : MonoBehaviour
         flowchart.SetFloatVariable("confidence", dataController.GetPlayerConfidence());
         flowchart.SetFloatVariable("enemyHealth", dataController.GetEnemyThesesHealth() / dataController.GetEnemyrMaxThesesHealth());
         flowchart.SetFloatVariable("enemyConfidence", dataController.GetEnemyConfidence());
-        flowchart.SetIntegerVariable("round", 1);
+        flowchart.SetIntegerVariable("round", dataController.GetCurrentRound());
         flowchart.SetBooleanVariable("isPlayerRound", dataController.IsPlayerRound());
     }
 
@@ -146,29 +180,16 @@ public class DebateModeController : MonoBehaviour
 
     }
 
+    /**
+     * Called by fungus blocked to add player selected thesis into record
+     */
     public void AddPlayerThesis(string thesisName)
     {
         Debug.Log("Add debater thesis to player");
         dataController.AddPlayerThesis(thesisName);
+        UpdateDebugText();
     }
 
-    public void AddPlayerArgument(string arg)
-    {
-        //Debug.Log("Try to add argument '" + arg + "' into player argument list.");
-        dataController.AddPlayerThesis(arg);
-    }
-
-
-    public void PlayAIMove()
-    {
-
-        flowchart.ExecuteBlock("OpponentMove1");
-    } 
-
-    public void MakePlayerRound()
-    {
-        
-    }
 
     /*
      * Check if the player can fire the arguments.
@@ -262,47 +283,53 @@ public class DebateModeController : MonoBehaviour
     public void DrawThesesMenu(bool showPlayer)
     {
         DebaterThesis[] debaterTheses = null;
-        List<Argument> playerArguments = dataController.GetPlayerArguments();
-        List<Argument> enemyArguments = null;
+        List<Tuple<ArgumentInfo, Argument>> playerArguments = dataController.GetPlayerArguments();
+        Debug.Log("Arguments player made=" + playerArguments.Count);
+        List<Tuple<ArgumentInfo, Argument>> enemyArguments = dataController.GetEnemyArguments();
+        Debug.Log("Arguments enemy made=" + enemyArguments.Count);
+        // Debug.Log("Enemy argument: " + enemyArguments[0].Item1 + " " + enemyArguments[0].Item2);
 
         if (showPlayer)
         {
+            Debug.Log("Thesis menu[show player=True]");
+            // get arguments and theses related to player
             debaterTheses = dataController.GetPlayerTheses();
         } else
         {
-            List<string> enemyArgumentsResponded = new List<string> ();
-            foreach (Argument argument in playerArguments)
-            {
-                ArgumentInfo info = dataController.GetArgumentInfo(argument);
-                if (info.name != "")
-                {
-                    enemyArgumentsResponded.Add(info.name);
-                }
-            }
+            Debug.Log("Thesis menu[show player=False]");
+            // get arguments and theses related to enemy
             debaterTheses = dataController.GetEnemyTheses();
-            enemyArguments = dataController.GetEnemyArguments();
+        }
 
-            // display which enemy argument has been refuted
-            foreach (Argument argument in enemyArguments)
+        int i = 0;
+        foreach (DebaterThesis debaterThesis in debaterTheses)
+        {
+            if (debaterThesis != null && debaterThesis.thesis != null)
             {
-                ArgumentInfo info = dataController.GetArgumentInfo(argument);
-                if (enemyArgumentsResponded.Contains(info.name))
+                Debug.Log("Updating thesis '" + debaterThesis.thesis.thesisName + "'");
+                // set thesis content
+                thesisPanels[i].SetDebaterThesis(debaterThesis);
+                thesisPanels[i].ClearArguments();
+
+                // set argument content
+                List<Tuple<ArgumentInfo, Argument>> matchArguments = playerArguments.FindAll(x => x.Item2.thesis.thesisName == debaterThesis.thesis.thesisName);
+                foreach (Tuple<ArgumentInfo, Argument> matchArgument in matchArguments)
                 {
-                    Debug.Log("Player already responded to argument " + info.name + ", should disable clickable property");
+                    // cannot respond to own arguments
+                    thesisPanels[i].AddArgument(matchArgument.Item1, false, !showPlayer);
+                    Debug.Log("- Add argument '" + matchArgument.Item1.ArgumentName + "' into thesis, interactable = false, respondToOther="+ !showPlayer);
+                }
+
+                matchArguments = enemyArguments.FindAll(x => x.Item2.thesis == debaterThesis.thesis);
+                foreach (Tuple<ArgumentInfo, Argument> matchArgument in matchArguments)
+                {
+                    // check if the argument is interactable (unresponded enemy argument)
+                    bool interactable = !playerArguments.Exists(x => x.Item1 == matchArgument.Item1);
+                    thesisPanels[i].AddArgument(matchArgument.Item1, interactable, showPlayer);
+                    Debug.Log("- Add argument '" + matchArgument.Item1.ArgumentName + "' into thesis, interactable = " + interactable + ", respondToOther=" + showPlayer);
                 }
             }
         }
-        foreach (DebaterThesis thesis in debaterTheses)
-        {
-            Debug.Log("Draw debater thesis of " + (showPlayer ? "player" : "enemy"));
-        }
-
-        foreach (Argument argument in playerArguments)
-        {
-            ArgumentInfo info = dataController.GetArgumentInfo(argument);
-            Debug.Log("Draw debater arguments: " + info.name);
-        }
-
     }
 
     // Open interactive mode: player can use Consult button, in particular

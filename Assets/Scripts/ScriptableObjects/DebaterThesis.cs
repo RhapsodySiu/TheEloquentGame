@@ -13,10 +13,6 @@ public class DebaterThesis : ScriptableObject
     public int maxHealth;
     public int currentHealth;
 
-    public DebaterThesis()
-    {
-
-    }
 
     public void InitDebaterThesis()
     {
