@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f0fa001e7e13e4ea0838b11a808659, type: 3}
+  m_Name: SlipperySlopeProponent_ByNone_ToO3Violence
+  m_EditorClassIdentifier: 
+  argumentRespondName: 
+  thesisRespondName: 
+  tacticName: 
+  factName: 
+  fact: {fileID: 11400000, guid: 11e19f08b0dd2df428d49995e8c098a9, type: 2}
+  tactic: {fileID: 11400000, guid: f3d106d548f641e4ea09e08216528ed1, type: 2}
+  thesis: {fileID: 11400000, guid: 266d2c9497973144693c4f941f740eb8, type: 2}
+  argument: {fileID: 0}

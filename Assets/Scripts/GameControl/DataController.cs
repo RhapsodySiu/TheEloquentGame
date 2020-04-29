@@ -9,7 +9,7 @@ using System;
 
 public class DataController : MonoBehaviour
 {
-
+    public const string ARGUMENT_ASSET_PATH = "Assets/GameData/Arguments (debug only)/";
     public const int MAX_THESES = 3;
 
     public TacticData tacticData;
@@ -488,26 +488,30 @@ public class DataController : MonoBehaviour
         foreach (SerializedArgument serializedArgument in argumentData.serializedArguments)
         {
             string argumentAssetFilename = serializedArgument.argumentName;
+            Debug.Log("Saving " + argumentAssetFilename);
             try
             {
                 if (serializedArgument.fact != "" && serializedArgument.fact != null)
                 {
-                    argumentAssetFilename += "By" + serializedArgument.fact;
+                    argumentAssetFilename += "_By" + serializedArgument.fact;
                 }
-                if (serializedArgument.toArgument)
+                if (serializedArgument.toArgument && serializedArgument.tactic != null)
                 {
 
-                    argumentAssetFilename += "Against" + serializedArgument.tactic;
+                    argumentAssetFilename += "_Against" + serializedArgument.tactic;
                 }
-                argumentAssetFilename += "To" + serializedArgument.respondTo + ".asset";
+                argumentAssetFilename += "_To" + serializedArgument.respondTo + ".asset";
 
                 Argument argumentBase = ScriptableObject.CreateInstance<Argument>();
                 argumentBase = ScriptableObject.CreateInstance<Argument>();
 
-                if (serializedArgument.fact != "" && serializedArgument.fact != null)
+                Fact factBase = (Fact)AssetDatabase.LoadAssetAtPath("Assets/GameData/Facts/main/" + serializedArgument.fact + ".asset", typeof(Fact));
+                argumentBase.fact = factBase;
+
+                if (serializedArgument.tactic != null && serializedArgument.tactic != "")
                 {
-                    Fact factBase = (Fact)AssetDatabase.LoadAssetAtPath("Assets/GameData/Facts/" + serializedArgument.fact + ".asset", typeof(Fact));
-                    argumentBase.fact = factBase;
+                    Tactic tacticBase = (Tactic)AssetDatabase.LoadAssetAtPath("Assets/GameData/Tactics/" + serializedArgument.tactic + ".asset", typeof(Tactic));
+                    argumentBase.tactic = tacticBase;
                 }
 
                 if (serializedArgument.toArgument)
@@ -522,9 +526,9 @@ public class DataController : MonoBehaviour
                 }
 
                 // Create asset if not exist
-                if (!System.IO.File.Exists(Application.dataPath + "/GameData/Arguments (debug only)/" + argumentAssetFilename ))
+                if (!System.IO.File.Exists(Application.dataPath + "/GameData/Arguments (debug only)/main/" + argumentAssetFilename ))
                 {
-                    AssetDatabase.CreateAsset(argumentBase, "Assets/GameData/Arguments (debug only)/" + argumentAssetFilename);
+                    AssetDatabase.CreateAsset(argumentBase, ARGUMENT_ASSET_PATH + "main/" + argumentAssetFilename);
                 }
                 
             }
@@ -543,4 +547,76 @@ public class DataController : MonoBehaviour
 
     }
 
+    /**
+     * Create defined argument info set from arguments for the main debate
+     */
+    [MenuItem("GameObject/Create ArgumentInfo_Effect set by name")]
+    static void PopulateArgumentInfoEffectSet()
+    {
+        DirectoryInfo dir = new DirectoryInfo(ARGUMENT_ASSET_PATH + "main/");
+        FileInfo[] argumentAssets = dir.GetFiles("*.asset");
+
+        // create generated defined argument info/effect set object
+        DefinedArgumentInfos definedArgumentInfoSet = ScriptableObject.CreateInstance<DefinedArgumentInfos>();
+        DefinedArgumentEffects definedArgumentEffectSet = ScriptableObject.CreateInstance<DefinedArgumentEffects>();
+        List<DefinedArgumentInfo> definedArgumentInfos = new List<DefinedArgumentInfo>();
+        List<DefinedArgumentEffect> definedArgumentEffects = new List<DefinedArgumentEffect>();
+        foreach (FileInfo argumentAsset in argumentAssets)
+        {
+            string filename = argumentAsset.Name;
+            try
+            {
+                
+                Argument argument = (Argument)AssetDatabase.LoadAssetAtPath(ARGUMENT_ASSET_PATH + "main/" + filename, typeof(Argument));
+
+                string argumentName = filename.Split(new string[] { "_By" }, StringSplitOptions.None)[0];
+                // Try to load corresponding argument effect and info in their folders by argumentName
+                ArgumentInfo argumentInfo = (ArgumentInfo)AssetDatabase.LoadAssetAtPath("Assets/GameData/DefinedArgumentInfos/main/" + argumentName + ".asset", typeof(ArgumentInfo));
+                ArgumentEffect argumentEffect = (ArgumentEffect)AssetDatabase.LoadAssetAtPath("Assets/GameData/DefinedArgumentEffects/main/" + argumentName + ".asset", typeof(ArgumentEffect));
+                DefinedArgumentInfo definedArgumentInfo;
+                DefinedArgumentEffect definedArgumentEffect;
+                definedArgumentInfo.argument = argument;
+                definedArgumentInfo.argumentInfo = argumentInfo;
+                definedArgumentEffect.argument = argument;
+                definedArgumentEffect.argumentEffect = argumentEffect;
+
+                definedArgumentInfos.Add(definedArgumentInfo);
+                definedArgumentEffects.Add(definedArgumentEffect);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("Error when handling argument " + filename);
+                Debug.LogException(ex);
+            }
+
+        }
+
+        // save the generated assets
+        definedArgumentInfoSet.definedArgumentInfos = definedArgumentInfos.ToArray();
+        definedArgumentEffectSet.definedArguments = definedArgumentEffects.ToArray();
+
+        AssetDatabase.CreateAsset(definedArgumentInfoSet, "Assets/generated_main_defined_argument_infos.asset");
+        AssetDatabase.CreateAsset(definedArgumentEffectSet, "Assets/generated_main_defined_argument_effects.asset");
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+        EditorUtility.FocusProjectWindow();
+        Debug.Log("Create assets successfully.");
+    }
+
+    [MenuItem("GameObject/Create sample argument data")]
+    static void CreateSampleJsonData()
+    {
+        SerializedArgument serializedArgument = new SerializedArgument();
+        serializedArgument.argumentName = "Argument name";
+        serializedArgument.fact = "Fact name";
+        serializedArgument.tactic = "Tactic name";
+        serializedArgument.toArgument = false;
+        JsonWrapper jsonWrapper = new JsonWrapper(); 
+        ArgumentData argumentData = new ArgumentData();
+        argumentData.serializedArguments.Add(serializedArgument);
+        jsonWrapper.argumentData = argumentData;
+
+        string contents = JsonUtility.ToJson(jsonWrapper, true);
+        System.IO.File.WriteAllText(Application.dataPath + "/test.json", contents);
+    }
 }

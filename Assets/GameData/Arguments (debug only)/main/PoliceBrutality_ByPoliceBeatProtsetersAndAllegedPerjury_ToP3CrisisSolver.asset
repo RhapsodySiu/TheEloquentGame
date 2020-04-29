@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f0fa001e7e13e4ea0838b11a808659, type: 3}
+  m_Name: PoliceBrutality_ByPoliceBeatProtsetersAndAllegedPerjury_ToP3CrisisSolver
+  m_EditorClassIdentifier: 
+  argumentRespondName: 
+  thesisRespondName: 
+  tacticName: 
+  factName: 
+  fact: {fileID: 11400000, guid: b4c37df3a474a774ca5ff96a25634f4e, type: 2}
+  tactic: {fileID: 0}
+  thesis: {fileID: 11400000, guid: b926efcfc3ebbdc4b8e35cf1219676a3, type: 2}
+  argument: {fileID: 0}

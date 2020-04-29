@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f0fa001e7e13e4ea0838b11a808659, type: 3}
+  m_Name: PressControl_ByMainlandSupportersConsequence_AgainstAppealToPurity_ToUnlawfulProtesters
+  m_EditorClassIdentifier: 
+  argumentRespondName: 
+  thesisRespondName: 
+  tacticName: 
+  factName: 
+  fact: {fileID: 11400000, guid: 96f6abf554c590c43bc13e2621f6d2be, type: 2}
+  tactic: {fileID: 11400000, guid: 25d5340939cacec4bab32b519911c124, type: 2}
+  thesis: {fileID: 0}
+  argument: {fileID: 11400000, guid: 9c01a05142dd85e43ac9f5ee61c7ea4a, type: 2}

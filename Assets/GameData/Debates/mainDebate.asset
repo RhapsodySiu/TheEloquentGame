@@ -32,8 +32,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b926efcfc3ebbdc4b8e35cf1219676a3, type: 2}
   - {fileID: 11400000, guid: 187d5e6a63734894197d6ff8234b5e35, type: 2}
   - {fileID: 11400000, guid: 19ff8dcac0a39ce40a8c2207ab2703b8, type: 2}
-  definedEffectAsset: {fileID: 11400000, guid: 0005d204888bea448a519ed548716241, type: 2}
-  definedInfoAsset: {fileID: 11400000, guid: 670de8ac21e65f544ab58fe88c35c98b, type: 2}
+  definedEffectAsset: {fileID: 11400000, guid: 1a65a292da2144d4a9ccb2cf8dd4f1ae, type: 2}
+  definedInfoAsset: {fileID: 11400000, guid: d5cfbe5309f3f4a4aa569811485c07ca, type: 2}
   defalutInvalidArgumentEffect: {fileID: 11400000, guid: db53644dfe3c640479232b0912043147,
     type: 2}
   maxRound: 5

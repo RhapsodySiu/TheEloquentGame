@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f0fa001e7e13e4ea0838b11a808659, type: 3}
+  m_Name: IndependenceAllegation_ByCommissionerCommentedSeparatism_ToO4China
+  m_EditorClassIdentifier: 
+  argumentRespondName: 
+  thesisRespondName: 
+  tacticName: 
+  factName: 
+  fact: {fileID: 11400000, guid: c1da6adef19ce4e41912f9ad6a2f3e12, type: 2}
+  tactic: {fileID: 0}
+  thesis: {fileID: 11400000, guid: 5e719d8ccc4ae0142a92c9a9b470df0b, type: 2}
+  argument: {fileID: 0}
