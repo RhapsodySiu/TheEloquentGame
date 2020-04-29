@@ -13,15 +13,23 @@ An AVG unity game project built on Fungus framework.
 Very, very simple gameplay is added to demonstrate the overall settings of the game.
 In order to play the game without error, you should start the game at the `Persistent` scene.
 
+## Debug
+To load the debate mode properly, please start the game at `Persistent` scene.
+In the `DataController` object of that scene, input the debate scene name in the DebugScene field such that the game will start at the beginning of that scene.
+
 ## Project structure
 See class diagram and flowchart for more details
 
 ## TODO
 - Endless refactoring
-- UI Design
+- ~~UI Design~~
 - UI Programming
-- Enemy AI
+- ~~Enemy AI~~
 - Visual effect (Scene transition, expressing tension...)
-- Debate game objects
+- ~~Debate game objects~~
 - Debate mode conversation
-- New functionality/mechanism
+- ~~New functionality/mechanism~~
+- Game report
+- 1 min game trailer
+- readme file
+- presentation slides
