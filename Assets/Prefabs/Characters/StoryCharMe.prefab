@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3676746845720488242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3676746845720488240}
+  - component: {fileID: 3676746845720488241}
+  m_Layer: 0
+  m_Name: StoryCharMe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3676746845720488240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676746845720488242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3676746845720488241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676746845720488242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Me
+  nameColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
+  soundEffect: {fileID: 8300000, guid: f637c5ce9d10e45c7855ed89bfc6b97e, type: 3}
+  portraits:
+  - {fileID: 21300000, guid: 5eadccde7c14d934c8641fd8f54878f7, type: 3}
+  - {fileID: 21300000, guid: e9a1ddbf759424843926829bc21b3367, type: 3}
+  - {fileID: 21300000, guid: 1138b03a61c21a34b9e883bc0fc0513e, type: 3}
+  - {fileID: 21300000, guid: 9b9163ef4dcb43143ba80e0b448dac27, type: 3}
+  - {fileID: 21300000, guid: 4b65602a68a66c34b87ae5b06ab8398b, type: 3}
+  - {fileID: 21300000, guid: 9abad0fefbe99624d8ce16fc3aa8389f, type: 3}
+  portraitsFace: 2
+  setSayDialog: {fileID: 0}
+  description: 

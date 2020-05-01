@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccc1564c2a9d0dc4db1aece2d227a265, type: 3}
+  m_Name: StrawMan
+  m_EditorClassIdentifier: 
+  tacticId: 5
+  tacticType: 2
+  tacticName: StrawMan
+  description: 'A straw man is an informal argument based on giving the impression
+    of refuting an opponent''s argument, while actually refuting an argument that
+    was not presented by that opponent. A handy way to burden other debaters with
+    a possible side effect of loss in credibility of one self.
+
+
+    https://en.wikipedia.org/wiki/Straw_man'
+  zh_description: "\u7A3B\u8349\u4EBA\u662F\u4E00\u7A2E\u975E\u6B63\u5F0F\u8AD6\u8B49\uFF0C\u57FA\u65BC\u7D66\u89C0\u773E\u8AD6\u8005\u5DF2\u7D93\u53CD\u99C1\u5C0D\u624B\u8AD6\u9EDE\u7684\u5370\u8C61\uFF0C\u4F46\u5BE6\u969B\u4E0A\u53EA\u662F\u53CD\u99C1\u4E86\u8A72\u5C0D\u624B\u6C92\u6709\u63D0\u51FA\u7684\u8AD6\u9EDE\u3002\u80FD\u5920\u65B9\u4FBF\u5730\u5E36\u7D66\u5176\u4ED6\u8FAF\u8AD6\u8005\u56DE\u61C9\u7684\u8CA0\u64D4\uFF0C\u4F46\u540C\u6642\u6709\u53EF\u80FD\u4F7F\u8AD6\u8005\u81EA\u8EAB\u55AA\u5931\u516C\u4FE1\u529B\u3002"
+  cn_description: "\u7A3B\u8349\u4EBA\u662F\u4E00\u79CD\u975E\u6B63\u5F0F\u8BBA\u8BC1\uFF0C\u57FA\u4E8E\u7ED9\u89C2\u4F17\u8BBA\u8005\u5DF2\u7ECF\u53CD\u9A73\u5BF9\u624B\u8BBA\u70B9\u7684\u5370\u8C61\uFF0C\u4F46\u5B9E\u9645\u4E0A\u53EA\u662F\u53CD\u9A73\u4E86\u8BE5\u5BF9\u624B\u6CA1\u6709\u63D0\u51FA\u7684\u8BBA\u70B9\u3002\u80FD\u591F\u65B9\u4FBF\u5730\u5E26\u7ED9\u5176\u4ED6\u8FA9\u8BBA\u8005\u56DE\u5E94\u7684\u8D1F\u62C5\uFF0C\u4F46\u540C\u65F6\u6709\u53EF\u80FD\u4F7F\u8BBA\u8005\u81EA\u8EAB\u4E27\u5931\u516C\u4FE1\u529B\u3002"
