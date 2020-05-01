@@ -26,9 +26,9 @@ public class Argument : ScriptableObject
     {
         if (thesis != null)
         {
-            return "Argument[Thesis to respond=" + thesis.thesisName + ", tactic=" + tactic.tacticName + ", fact=" + (fact == null ? "None" : fact.factName) + "]";
+            return "Thesis to respond: " + thesis.thesisName + "\n Tactic: " + tactic.tacticName + "\n Fact: " + (fact == null ? "None" : fact.factName) ;
         }
-        return "Argument[Argument to respond=" + argument.ArgumentName + ", tactic=" + tactic.tacticName + ", fact=" + (fact == null ? "None" : fact.factName) + "]";
+        return "Argument to respond: " + argument.ArgumentName + "\n Tactic: " + tactic.tacticName + "\n Fact: " + (fact == null ? "None" : fact.factName) ;
     }
 }
 

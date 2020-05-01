@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ed73121bb978a409c93caad5e23be2, type: 3}
+  m_Name: DefaultAudience
+  m_EditorClassIdentifier: 
+  audienceId: 0
+  audienceName: Default
+  publicSupport: 0
+  support: 0
+  ideology:
+    eudaimoniaView: -0.29
+    lifePassionView: 0.24
+    religionView: -0.93
+    desireView: -0.34
+    realityView: -0.19
+    economyView: -0.32
+    nationView: -0.29
+    politicView: -0.37
+    worldView: -0.16
+    societyView: -0.48
+    genderView: -0.03
+    raceView: -0.4
+    conductView: -0.34
+    idView: -0.4
+    hierarchyView: -0.08
+    diplomacyView: -0.69
+    natureView: -0.27
+    knowledgeView: 0.27
+    altitude: 0.24

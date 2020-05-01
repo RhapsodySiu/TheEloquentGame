@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832322ac18b6bb6429731ac92ca0ba3f, type: 3}
+  m_Name: tutorialDebate
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: c30a0fa8bfb5a284c9b340c7e3902a2f, type: 2}
+  enemy: {fileID: 11400000, guid: cddb98f9ae91a9e4d934a3ca7374ae22, type: 2}
+  isPlayerRound: 1
+  isTutorial: 1
+  audience: {fileID: 11400000, guid: d04d1d55d488962419a79089359dd8b6, type: 2}
+  debateFacts: {fileID: 11400000, guid: f1de772247605774f93d38de933ebd94, type: 2}
+  thesisAvailable:
+  - {fileID: 11400000, guid: 7048b713e2829314ea9d28d3be4fb057, type: 2}
+  - {fileID: 11400000, guid: 1d3fffef2a9d6da4d898d4196ac1d675, type: 2}
+  definedEffectAsset: {fileID: 11400000, guid: a046865cd9f23f946a8824252b9dd3a0, type: 2}
+  definedInfoAsset: {fileID: 11400000, guid: 67446f5dcd24e204d95ec0d7a67d9744, type: 2}
+  maxRound: 0
+  round: 1

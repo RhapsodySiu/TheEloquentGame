@@ -10,13 +10,15 @@ public class ArgumentInfoBtn : MonoBehaviour
     private bool interactable;
     // whether the argument is against another debater thesis
     private bool respondToOther;
-
+    public ActionListPanel actionlistpanel;
+    public Component[] argumentbtn;
     private Button button;
-
     // Start is called before the first frame update
     void Start()
     {
         button = gameObject.GetComponent<Button>();
+        actionlistpanel = Object.FindObjectOfType<ActionListPanel>();
+        argumentbtn = actionlistpanel.GetComponentsInChildren<ArgumentButton>();
         if (argumentInfo != null)
         {
             gameObject.GetComponentInChildren<Text>().text = argumentInfo.GetDescription("en");
@@ -37,7 +39,12 @@ public class ArgumentInfoBtn : MonoBehaviour
 
     public void OnClick()
     {
-        // when clicked, pass the argumentInfo it holds to action menu argument field and close menu
+        foreach(ArgumentButton arg in argumentbtn){
+           if(arg.btn.interactable == false){
+            arg.getArgumentInfo(argumentInfo);
+            arg.updateSubActionBtn();
+            }
+        }
     }
 
     public void SetRespondToOther(bool respondToOther)

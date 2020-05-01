@@ -20,10 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story2Scene.unity
     guid: 562111ee17ccb694782e80e016c6833a
-  - enabled: 0
-    path: Assets/Scenes/_Debate2Scene.unity
-    guid: 2ba5cea0263298149aae9abb36e3f452
   - enabled: 1
     path: Assets/Scenes/Debate2Scene.unity
-    guid: 794bbe9fb5ff0cf4eb640f43a0fbdd90
+    guid: 2ba5cea0263298149aae9abb36e3f452
   m_configObjects: {}

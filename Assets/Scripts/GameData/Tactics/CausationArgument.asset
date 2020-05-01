@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccc1564c2a9d0dc4db1aece2d227a265, type: 3}
+  m_Name: CausationArgument
+  m_EditorClassIdentifier: 
+  tacticId: 2
+  tacticType: 0
+  tacticName: CausationArgument
+  description: 'Make a argument by inferring casual relationship between subjects
+    deductively. Its argumentative strength depends on the facts and reasoning. May
+    suffer from post hoc fallacy if inproper inferrence is made.
+
+
+    http://faculty.uncfsu.edu/jyoung/causal_arguments.htm'
+  zh_description: "\u901A\u904E\u6F14\u7E79\u5730\u63A8\u65B7\u5C0D\u8C61\u4E4B\u9593\u7684\u56E0\u679C\u95DC\u4FC2\u4F86\u9032\u884C\u8AD6\u8B49\u3002\u5B83\u7684\u8AD6\u8B49\u529B\u5EA6\u53D6\u6C7A\u65BC\u6240\u63D0\u4F9B\u7684\u4E8B\u5BE6\u548C\u63A8\u7406\u3002\u5982\u679C\u63A8\u8AD6\u4E0D\u7576\uFF0C\u53EF\u80FD\u6703\u5C0E\u81F4\u4E8B\u5F8C\u8B2C\u8AA4\u3002"
+  cn_description: "\u901A\u8FC7\u6F14\u7ECE\u5730\u63A8\u65AD\u5BF9\u8C61\u4E4B\u95F4\u7684\u56E0\u679C\u5173\u7CFB\u6765\u8FDB\u884C\u8BBA\u8BC1\u3002\u5B83\u7684\u8BBA\u8BC1\u529B\u5EA6\u53D6\u51B3\u4E8E\u6240\u63D0\u4F9B\u7684\u4E8B\u5B9E\u548C\u63A8\u7406\u3002\u5982\u679C\u63A8\u8BBA\u4E0D\u5F53\uFF0C\u53EF\u80FD\u4F1A\u5BFC\u81F4\u4E8B\u540E\u8C2C\u8BEF\u3002"

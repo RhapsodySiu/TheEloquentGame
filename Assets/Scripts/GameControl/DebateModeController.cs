@@ -7,17 +7,19 @@ using System;
 
 public class DebateModeController : MonoBehaviour
 {
+    public Audience defaultAudience;
     public Flowchart flowchart;
     private DataController dataController;
 
     public Canvas ActionGUI;
     public Canvas TacticGUI;
-    
     public Canvas FactGUI;
     public Canvas ThesesGUI;
     public Canvas OverviewGUI;
     public Canvas MainGUI;
 
+    public StatusPanel statusPanel;
+    public AudiencePanel audiencePanel;
     public bool DebugMode;
     public Text DebugText;
 
@@ -26,7 +28,7 @@ public class DebateModeController : MonoBehaviour
     private ThesisPanel[] thesisPanels;
 
     private Debate currentDebate;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,9 +39,8 @@ public class DebateModeController : MonoBehaviour
         } else
         {
             // Get defined arguments and divided into player arguments and enemy arguments
-            
-        }
 
+        }
         thesisPanels = ThesesGUI.gameObject.GetComponentsInChildren<ThesisPanel>();
         if (thesisPanels.Length != 3)
         {
@@ -57,14 +58,13 @@ public class DebateModeController : MonoBehaviour
         Debug.Log("Start the debate");
     }
 
-    /**
+        /**
      * Called by fungus block as a shortcut to prepare main debate.
      */
     public void InitMainDebate()
     {
         dataController.InitMainDebate();
     }
-
     /* Create arguments for enemy and stack them in temporary arguments */
     public void GenerateEnemyArguments()
     {
@@ -82,9 +82,6 @@ public class DebateModeController : MonoBehaviour
         // MakeArgument();
     }
 
-    /**
-     * Load PlayerTemporaryArgumentList to dataController's temporary argument list
-     */
     public void LoadPlayerArguments()
     {
         foreach (Argument argument in PlayerTemporaryArgumentList)
@@ -99,6 +96,7 @@ public class DebateModeController : MonoBehaviour
 
     public void StartRound()
     {
+        DrawStatusPanel();
         Debug.Log("Play fungus start round block");
         flowchart.ExecuteBlock("StartRound");
     }
@@ -128,7 +126,7 @@ public class DebateModeController : MonoBehaviour
     public void UpdateDebugText()
     {
         Debug.Log("Update debug panel");
-        DebugText.text = "Player proponent=" +  dataController.IsPlayerProponent() + 
+        DebugText.text = "Player proponent=" +  dataController.IsPlayerProponent() +
                          "\nPlayer confidence=" + dataController.GetPlayerConfidence() +
                          "\nPopularity=" + dataController.GetAudienceSupport() +
                          "\nPlayer convincingness=" + dataController.GetPlayerThesesHealth() +
@@ -136,6 +134,7 @@ public class DebateModeController : MonoBehaviour
                          "\nIs player round=" + dataController.IsPlayerRound();
 
     }
+
 
     public void UpdateRound()
     {
@@ -190,7 +189,6 @@ public class DebateModeController : MonoBehaviour
         UpdateDebugText();
     }
 
-
     /*
      * Check if the player can fire the arguments.
      * First it ensures all arguments are responding to either a thesis or an enemy argument, and have a tactic attached to them
@@ -214,7 +212,6 @@ public class DebateModeController : MonoBehaviour
     #endregion
 
     #region Setter
-
     /**
      * Finish the current debate. Increment debate index in dataController
      */
@@ -269,15 +266,23 @@ public class DebateModeController : MonoBehaviour
 
     public void DrawStatusPanel()
     {
-        float playerMentalHealth = dataController.GetPlayerConfidence();
-        float playerMaxMentalHealth = dataController.GetPlayerMaxConfidence();
-        float enemyMentalHealth = dataController.GetEnemyConfidence();
-        float enemyMaxMentalHealth = dataController.GetEnemyMaxConfidence();
-        float playerThesisHealth = dataController.GetPlayerThesesHealth();
-        float playerMaxThesisHealth = dataController.GetPlayerMaxThesesHealth();
-        float enemyThesisHealth = dataController.GetEnemyThesesHealth();
-        float enemyMaxThesisHealth = dataController.GetEnemyrMaxThesesHealth();
-        float publicSupport = dataController.GetAudienceSupport();
+        // float playerMentalHealth = dataController.GetPlayerMentalHealth();
+        // float playerMaxMentalHealth = dataController.GetPlayerMaxMentalHealth();
+        // float enemyMentalHealth = dataController.GetEnemyMentalHealth();
+        // float enemyMaxMentalHealth = dataController.GetEnemyMaxMentalHealth();
+        // float playerThesisHealth = dataController.GetPlayerThesesHealth();
+        // float playerMaxThesisHealth = dataController.GetPlayerMaxThesesHealth();
+        // float enemyThesisHealth = dataController.GetEnemyThesesHealth();
+        // float enemyMaxThesisHealth = dataController.GetEnemyrMaxThesesHealth();
+        // float publicSupport = dataController.GetAudienceSupport();
+
+        // statusPanel = FindObjectOfType<StatusPanel>();
+        // statusPanel.setConfidence(playerMentalHealth);
+        // statusPanel.setMaxConfidence(playerMaxMentalHealth);
+        // statusPanel.setPopularity(playerThesisHealth);
+        // statusPanel.setMaxPopularity(playerMaxThesisHealth);
+        // statusPanel.setConvincingness(publicSupport);
+
     }
 
     public void DrawThesesMenu(bool showPlayer)
@@ -331,6 +336,12 @@ public class DebateModeController : MonoBehaviour
             }
             i += 1;
         }
+    }
+
+    public void DrawOverviewMenu()
+    {
+        audiencePanel = FindObjectOfType<AudiencePanel>();
+        audiencePanel.setIdeologySlider(defaultAudience);
     }
 
     // Open interactive mode: player can use Consult button, in particular
@@ -398,6 +409,7 @@ public class DebateModeController : MonoBehaviour
     {
         Debug.Log("Toggle info menu");
         OverviewGUI.gameObject.SetActive(!OverviewGUI.gameObject.activeSelf);
+        DrawOverviewMenu();
     }
 
     public void OnClickedConserveBtn()
@@ -451,7 +463,7 @@ public class DebateModeController : MonoBehaviour
 
     public void OnClickedToggleDebaterBtn(bool showPlayer)
     {
-        DrawThesesMenu(!showPlayer);
+        //DrawThesesMenu(!showPlayer);
     }
 
     public void OnClickedThesisBtn()

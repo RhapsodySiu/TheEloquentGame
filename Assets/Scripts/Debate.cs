@@ -27,10 +27,10 @@ public class Debate : ScriptableObject
     public Thesis[] thesisAvailable;
     public Dictionary<Argument, ArgumentEffect> definedArgumentEffectDict = new Dictionary<Argument, ArgumentEffect>();
     public Dictionary<Argument, ArgumentInfo> definedArgumentInfoDict = new Dictionary<Argument, ArgumentInfo>();
-    
+
     public DefinedArgumentEffects definedEffectAsset;
     public DefinedArgumentInfos definedInfoAsset;
- 
+
     // Arguments that player/enemy made
     private List<Tuple<ArgumentInfo, Argument>> playerArgumentInfoHistory = new List<Tuple<ArgumentInfo, Argument>>();
     private List<Tuple<ArgumentInfo, Argument>> enemyArgumentInfoHistory = new List<Tuple<ArgumentInfo, Argument>>();
@@ -172,9 +172,9 @@ public class Debate : ScriptableObject
     }
 
     /*
-     * Draw random argument from availableEnemyArguments. 
-     * The argument drawn must fulfill two condition 1) Its ArgumentInfo's never in enemy history; 
-     * 2) The argument/thesis to which it responds exists. 
+     * Draw random argument from availableEnemyArguments.
+     * The argument drawn must fulfill two condition 1) Its ArgumentInfo's never in enemy history;
+     * 2) The argument/thesis to which it responds exists.
      * If the ArgumentInfo is already in enemy history, remove the item.
      * TODO: Use better datatype eg Dictionary to manage items
     */
@@ -209,7 +209,7 @@ public class Debate : ScriptableObject
                         }
                     }
                     availableEnemyArguments.RemoveAll(t => t.Item1 == argumentInfo);
-                    
+
                 }
 
                 Debug.Log("GenerateEnemyArgument: get arugment info = " + argumentInfo);
@@ -269,7 +269,7 @@ public class Debate : ScriptableObject
                 enemy.arguments.Add(argument);
 
                 definedArgumentEffectDict.TryGetValue(argument, out argumentEffect);
-                return new Tuple<ArgumentInfo, Argument, ArgumentEffect>(argumentInfo, argument, argumentEffect);   
+                return new Tuple<ArgumentInfo, Argument, ArgumentEffect>(argumentInfo, argument, argumentEffect);
             }
         } catch (System.Exception ex)
         {
@@ -347,7 +347,7 @@ public class Debate : ScriptableObject
         {
             return argumentInfo;
         }
-        
+
         return null;
     }
 
@@ -361,7 +361,7 @@ public class Debate : ScriptableObject
                 return true;
             }
         }
-        
+
         return false;
     }
 

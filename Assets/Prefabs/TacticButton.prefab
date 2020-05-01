@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 7923789545805367201}
   - component: {fileID: 7923789545805367200}
   - component: {fileID: 7478835873834447790}
+  - component: {fileID: 6837083589989261194}
   m_Layer: 5
   m_Name: TacticButton
   m_TagString: Untagged
@@ -217,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tacticDisplayed: {fileID: 11400000, guid: 10319a0195ccf574880c37273f215bfa, type: 2}
-  isSelected: 0
+  argumentbtn: []
 --- !u!114 &7478835873834447790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,3 +239,32 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &6837083589989261194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7923789545805367214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7923789545805367200}
+          m_MethodName: setTacticText
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  delegates: []
