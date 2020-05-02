@@ -26,14 +26,14 @@ public class Speedometer : MonoBehaviour {
     public float maxValue;
     public float currentValue;
 
-    private int labelAmount = 4;
+    public int labelAmount = 5;
     public float targetValue = 0;
     private void Awake() {
         needleTranform = transform.Find("needle");
         speedLabelTemplateTransform = transform.Find("speedLabelTemplate");
         speedLabelTemplateTransform.gameObject.SetActive(false);
 
-        currentValue = -1f;
+        currentValue = 0f;
         maxValue = 1f;
         targetValue = 0f;
         CreateSpeedLabels();
@@ -52,7 +52,7 @@ public class Speedometer : MonoBehaviour {
             currentValue -= 1f * Time.deltaTime;
         }
 
-        currentValue = Mathf.Clamp(currentValue, -1f, 1);
+        currentValue = Mathf.Clamp(currentValue, 0f, maxValue);
     }
 
     private void CreateSpeedLabels() {
@@ -61,10 +61,10 @@ public class Speedometer : MonoBehaviour {
 
         for (int i = 0; i <= labelAmount; i++) {
             Transform speedLabelTransform = Instantiate(speedLabelTemplateTransform, transform);
-            float labelSpeedNormalized = (float)i / labelAmount ;
+            float labelSpeedNormalized = (float)i / labelAmount;
             float speedLabelAngle = ZERO_SPEED_ANGLE - labelSpeedNormalized * totalAngleSize;
             speedLabelTransform.eulerAngles = new Vector3(0, 0, speedLabelAngle);
-            speedLabelTransform.Find("speedText").GetComponent<Text>().text = (-1+ labelSpeedNormalized* (maxValue - currentValue)).ToString();
+            speedLabelTransform.Find("speedText").GetComponent<Text>().text = (labelSpeedNormalized * maxValue).ToString();
             speedLabelTransform.Find("speedText").eulerAngles = Vector3.zero;
             speedLabelTransform.gameObject.SetActive(true);
         }
@@ -73,6 +73,21 @@ public class Speedometer : MonoBehaviour {
     }
 
     private float GetSpeedRotation() {
-        return 90 - currentValue * 90;
+        float totalAngleSize = ZERO_SPEED_ANGLE - MAX_SPEED_ANGLE;
+
+        float speedNormalized = currentValue / maxValue;
+
+        return ZERO_SPEED_ANGLE - speedNormalized * totalAngleSize;
+    }
+
+
+    public void setMaxValue(float i){
+        maxValue = i;
+    }
+    public void setlabelAmount(int i){
+        labelAmount = i;
+    }
+    public void settargetValue(float i){
+        targetValue = i;
     }
 }

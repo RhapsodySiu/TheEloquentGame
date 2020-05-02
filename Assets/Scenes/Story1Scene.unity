@@ -319,11 +319,22 @@ PrefabInstance:
       propertyPath: TrailModule.widthOverTrail.maxCurve.m_Curve.Array.data[1].outWeight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6535582803157487404, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2adc9d9da63c1944bb04cf3c8e98806, type: 3}
 --- !u!4 &160636419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6535582803157487403, guid: f2adc9d9da63c1944bb04cf3c8e98806,
+    type: 3}
+  m_PrefabInstance: {fileID: 160636418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &160636420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6535582803157487406, guid: f2adc9d9da63c1944bb04cf3c8e98806,
     type: 3}
   m_PrefabInstance: {fileID: 160636418}
   m_PrefabAsset: {fileID: 0}
@@ -1000,6 +1011,7 @@ GameObject:
   - component: {fileID: 2106140631}
   - component: {fileID: 2106140666}
   - component: {fileID: 2106140665}
+  - component: {fileID: 2106140667}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1090,7 +1102,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 2106140650}
   selectedCommands:
-  - {fileID: 2106140643}
+  - {fileID: 2106140667}
   variables:
   - {fileID: 2106140649}
   description: 
@@ -1638,6 +1650,7 @@ MonoBehaviour:
   - {fileID: 2106140656}
   - {fileID: 2106140639}
   - {fileID: 2106140638}
+  - {fileID: 2106140667}
   - {fileID: 2106140655}
   - {fileID: 2106140637}
   - {fileID: 2106140636}
@@ -2003,6 +2016,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 51
   indentLevel: 0
+--- !u!114 &2106140667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106140626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 53
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 160636420}
+  targetComponentAssemblyName: UnityEngine.ParticleSystem, UnityEngine.ParticleSystemModule,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: ParticleSystem
+  targetMethod: Play
+  targetMethodText: 'Play (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1001 &3676746846443296687
 PrefabInstance:
   m_ObjectHideFlags: 0
