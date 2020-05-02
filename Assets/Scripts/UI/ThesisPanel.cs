@@ -48,15 +48,43 @@ public class ThesisPanel : MonoBehaviour
         UpdateArgumentListDisplay();
     }
 
-    // Update is called once per frame
-    void Update()
+    /**
+     * Decide which button(s) is/are interactable.
+     * Thesis info buttons are always interactable (at least in this demo)
+     * For arguments that are not yet responded, they are interactable
+     * Player cannot respond to their own arguments
+     */
+    public void EnableInteraction()
     {
+        if (thesisInfoBtn == null)
+        {
+            thesisInfoBtn = gameObject.GetComponentInChildren<ThesisInfoBtn>();
+        }
         
+        thesisInfoBtn.interactable = true;
+
+        thesisArgumentsPanel.UpdateArgumentInteraction();
+    }
+
+    public void DisableInteraction()
+    {
+        if (thesisInfoBtn == null)
+        {
+            thesisInfoBtn = gameObject.GetComponentInChildren<ThesisInfoBtn>();
+        }
+        thesisInfoBtn.interactable = true;
+
+        thesisArgumentsPanel.DisableInteraction();
     }
 
     public void SetDebaterThesis(DebaterThesis debaterThesis)
     {
         this.debaterThesis = debaterThesis;
+        if (thesisInfoBtn == null)
+        {
+            thesisInfoBtn = gameObject.GetComponentInChildren<ThesisInfoBtn>();
+        }
+
         thesisInfoBtn.SetThesisInfo(debaterThesis);
     }
 
@@ -112,9 +140,15 @@ public class ThesisPanel : MonoBehaviour
 
     public void ClearArguments()
     {
+        if (thesisArgumentsPanel == null)
+        {
+            thesisArgumentsPanel = gameObject.GetComponentInChildren<ThesisArgumentsPanel>();
+        }
+        argumentInfoBtnDatas.Clear();
         foreach (Transform child in thesisArgumentsPanel.transform)
         {
             GameObject.Destroy(child.gameObject);
+            Debug.Log("Destroy child game object");
         }
     }
 }

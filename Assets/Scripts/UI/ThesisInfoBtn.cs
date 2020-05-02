@@ -9,14 +9,16 @@ public class ThesisInfoBtn : MonoBehaviour
     public bool interactable;
 
     private Button button;
+    private DebateModeController debateModeController;
 
     // Start is called before the first frame update
     void Start()
     {
         button = gameObject.GetComponent<Button>();
+        debateModeController = GameObject.FindObjectOfType<DebateModeController>();
         if (thesis != null)
         {
-            gameObject.GetComponentInChildren<Text>().text = thesis.GetDescription("en");
+            gameObject.GetComponentInChildren<Text>().text = thesis.GetDescription("en") + "\n100/100";
         }
     }
 
@@ -34,6 +36,14 @@ public class ThesisInfoBtn : MonoBehaviour
 
     public void OnClick()
     {
-        // If clicked, set the thesis in action menu to the thesis this btn holds.
+        // only toggle action menu when interactable
+        if (interactable && thesis != null)
+        {
+            Debug.Log("Ask debateModeController to add thesis to action menu");
+            debateModeController.OnClickedThesisBtn(thesis);
+        } else
+        {
+            Debug.Log("Not interactable or null thesis, ignore click");
+        }
     }
 }

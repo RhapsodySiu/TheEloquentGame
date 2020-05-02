@@ -339,17 +339,75 @@ public class Debate : ScriptableObject
 
     /**
      * Given an argument, check if the corresponding argument info exists
+     * 
      */
-    public ArgumentInfo GetArgumentInfo(Argument argument)
+    public (ArgumentInfo, ArgumentEffect) GetArgumentResult(Argument argument)
     {
-        ArgumentInfo argumentInfo;
-        if (definedArgumentInfoDict.TryGetValue(argument, out argumentInfo))
+        ArgumentInfo argumentInfo = null;
+        ArgumentEffect argumentEffect = null;
+        foreach (KeyValuePair<Argument, ArgumentInfo> entry in definedArgumentInfoDict)
         {
-            return argumentInfo;
+            if (entry.Key.argument == argument.argument && entry.Key.thesis == argument.thesis && entry.Key.fact == argument.fact)
+            {
+                // check if is player round / enemy round
+                if (isPlayerRound)
+                {
+                    if (entry.Value.IsProponentArgument != player.isProponent) continue; 
+                } else
+                {
+                    if (entry.Value.IsProponentArgument != enemy.isProponent) continue;
+                }
+                // if tactic invariant, return this result
+                if (entry.Value.TacticInvariant)
+                {
+                    argumentInfo = entry.Value;
+                    definedArgumentEffectDict.TryGetValue(entry.Key, out argumentEffect);
+                    break;
+                } else
+                {
+                    if (entry.Key.tactic == argument.tactic)
+                    {
+                        argumentInfo = entry.Value;
+                        definedArgumentEffectDict.TryGetValue(entry.Key, out argumentEffect);
+                        break;
+                    }
+                }
+            }
         }
-
-        return null;
+        if (argumentEffect == null)
+        {
+            argumentEffect = GetDefaultArgumentEffect();
+        }
+        Debug.Log("Query=" + argument + ", result=" + argumentInfo);
+        return (argumentInfo, argumentEffect);
     }
+
+    //public ArgumentEffect GetArgumentEffect(Argument argument)
+    //{
+    //    ArgumentEffect argumentEffect = null;
+    //    foreach (KeyValuePair<Argument, ArgumentEffect> entry in definedArgumentEffectDict)
+    //    {
+    //        if (entry.Key.argument == argument.argument && entry.Key.thesis == argument.thesis && entry.Key.fact == argument.fact)
+    //        {
+    //            // if tactic invariant, return this result
+    //            if (entry.Value.TacticInvariant)
+    //            {
+    //                argumentEffect = entry.Value;
+    //                break;
+    //            }
+    //            else
+    //            {
+    //                if (entry.Key.tactic == argument.tactic)
+    //                {
+    //                    argumentEffect = entry.Value;
+    //                    break;
+    //                }
+    //            }
+    //        }
+    //    }
+    //    Debug.Log("Query=" + argument + ", result=" + argumentEffect);
+    //    return argumentEffect;
+    //}
 
     public bool IsPlayerArgumentExist(Argument argument)
     {

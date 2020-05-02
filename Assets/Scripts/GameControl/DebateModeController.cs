@@ -18,14 +18,22 @@ public class DebateModeController : MonoBehaviour
     public Canvas OverviewGUI;
     public Canvas MainGUI;
 
-    public StatusPanel statusPanel;
-    public AudiencePanel audiencePanel;
+    // public StatusPanel statusPanel;
+    // public AudiencePanel audiencePanel;
     public bool DebugMode;
     public Text DebugText;
 
     public List<Argument> PlayerTemporaryArgumentList = new List<Argument>();
 
     private ThesisPanel[] thesisPanels;
+    public ActionListPanel actionListPanel;
+    private Component[] argumentBtns;
+    private bool editMode;
+
+    public ConvincingnessScript convincingness;
+    public PopularityScript popularity;
+    // TODO: use another component
+    public ConvincingnessScript confidence;
 
     private Debate currentDebate;
 
@@ -33,6 +41,19 @@ public class DebateModeController : MonoBehaviour
     void Start()
     {
         dataController = FindObjectOfType<DataController>();
+        if (actionListPanel == null)
+        {
+            Debug.LogError("Cannot find reference to action list panel");
+        }
+        // EMPTY TEMPORARY ARGUMENTS
+        foreach (Argument arg in PlayerTemporaryArgumentList)
+        {
+            arg.argument = null;
+            arg.thesis = null;
+            arg.fact = null;
+            arg.tactic = null;
+            Debug.Log("Empty temporary argument");
+        }
         if (dataController == null)
         {
             Debug.LogError("Cannot get reference of DataController. You should load the Persistent scene.");
@@ -106,6 +127,7 @@ public class DebateModeController : MonoBehaviour
         // update debug info
         UpdateDebugText();
         UpdateFlowChartStatus();
+        DrawStatusPanel();
 
         Debug.Log("Check if there is winner");
         if (dataController.IsPlayerWin())
@@ -165,7 +187,7 @@ public class DebateModeController : MonoBehaviour
     public void MakeArgument()
     {
         // flowchart.ExecuteBlock("DefaultArgument");
-        Debug.Log("Make argument");
+        // Debug.Log("Make argument");
         while (dataController.tempArguments.Count != 0)
         {
             Debug.Log("Call datacontroller to apply temp argument");
@@ -264,18 +286,24 @@ public class DebateModeController : MonoBehaviour
         Debater player = dataController.GetPlayer();
     }
 
+    /**
+     * Update status panel figures
+     */
     public void DrawStatusPanel()
     {
-        // float playerMentalHealth = dataController.GetPlayerMentalHealth();
-        // float playerMaxMentalHealth = dataController.GetPlayerMaxMentalHealth();
+        float playerConfidence = dataController.GetPlayerConfidence();
+        float playerMaxConfidence = dataController.GetPlayerMaxConfidence();
         // float enemyMentalHealth = dataController.GetEnemyMentalHealth();
         // float enemyMaxMentalHealth = dataController.GetEnemyMaxMentalHealth();
-        // float playerThesisHealth = dataController.GetPlayerThesesHealth();
-        // float playerMaxThesisHealth = dataController.GetPlayerMaxThesesHealth();
+        float playerThesisHealth = dataController.GetPlayerThesesHealth();
+        float playerMaxThesisHealth = dataController.GetPlayerMaxThesesHealth();
         // float enemyThesisHealth = dataController.GetEnemyThesesHealth();
         // float enemyMaxThesisHealth = dataController.GetEnemyrMaxThesesHealth();
-        // float publicSupport = dataController.GetAudienceSupport();
+        float publicSupport = dataController.GetAudienceSupport();
 
+        confidence.targetValue = playerConfidence / playerMaxConfidence;
+        popularity.targetValue = publicSupport;
+        convincingness.targetValue = playerThesisHealth / playerMaxThesisHealth;
         // statusPanel = FindObjectOfType<StatusPanel>();
         // statusPanel.setConfidence(playerMentalHealth);
         // statusPanel.setMaxConfidence(playerMaxMentalHealth);
@@ -305,6 +333,7 @@ public class DebateModeController : MonoBehaviour
             // get arguments and theses related to enemy
             debaterTheses = dataController.GetEnemyTheses();
         }
+        Debug.Log("Length of theses = " + debaterTheses.Length);
 
         int i = 0;
         foreach (DebaterThesis debaterThesis in debaterTheses)
@@ -330,6 +359,10 @@ public class DebateModeController : MonoBehaviour
                 {
                     // check if the argument is interactable (unresponded enemy argument)
                     bool interactable = !playerArguments.Exists(x => x.Item1 == matchArgument.Item1);
+                    if (!editMode)
+                    {
+                        interactable = false;
+                    }
                     thesisPanels[i].AddArgument(matchArgument.Item1, interactable, showPlayer);
                     Debug.Log("- Add argument '" + matchArgument.Item1.ArgumentName + "' into thesis, interactable = " + interactable + ", respondToOther=" + showPlayer);
                 }
@@ -340,8 +373,8 @@ public class DebateModeController : MonoBehaviour
 
     public void DrawOverviewMenu()
     {
-        audiencePanel = FindObjectOfType<AudiencePanel>();
-        audiencePanel.setIdeologySlider(defaultAudience);
+        //audiencePanel = FindObjectOfType<AudiencePanel>();
+        //audiencePanel.setIdeologySlider(defaultAudience);
     }
 
     // Open interactive mode: player can use Consult button, in particular
@@ -393,9 +426,33 @@ public class DebateModeController : MonoBehaviour
 
     #region EventHandler
     /* Main menu */
+
+        /**
+         * Open Theses menu through Action menu
+         * ThesisInfoBtn and ArgumentInfoBtn are interactable in this method
+         */
     public void OnClickedToggleThesesBtn()
     {
-        Debug.Log("Toggle thesis menu");
+        Debug.Log("Toggle thesis menu from action menu, enable interaction");
+        ThesesGUI.gameObject.SetActive(!ThesesGUI.gameObject.activeSelf);
+        if (ThesesGUI.gameObject.activeSelf)
+        {
+            editMode = true;
+            DrawThesesMenu(true);
+            foreach (ThesisPanel thesisPanel in thesisPanels)
+            {
+                thesisPanel.EnableInteraction();
+            }
+        }
+    }
+
+    /**
+     * Simply toggle thesis menu without handling interaction
+     */
+    public void ToggleThesesMenu()
+    {
+        editMode = false;
+        DrawThesesMenu(true);
         ThesesGUI.gameObject.SetActive(!ThesesGUI.gameObject.activeSelf);
     }
 
@@ -403,6 +460,10 @@ public class DebateModeController : MonoBehaviour
     {
         Debug.Log("Toggle argument menu");
         ActionGUI.gameObject.SetActive(!ActionGUI.gameObject.activeSelf);
+        if (ActionGUI.gameObject.activeSelf)
+        {
+            ClearActionMenuArguments();
+        }
     }
 
     public void OnClickedToggleOverviewBtn()
@@ -423,10 +484,42 @@ public class DebateModeController : MonoBehaviour
     {
         Debug.Log("Make arguments");
         // Load items into temporary arguments
-
+        if (argumentBtns == null)
+        {
+            argumentBtns = actionListPanel.GetComponentsInChildren<ArgumentButton>();
+        }
+        int i = 0;
+        foreach (ArgumentButton argumentButton in argumentBtns)
+        {
+            if (argumentButton.thesis != null || argumentButton.arg != null)
+            {
+                // only argument bar with respond to field is added to argument list.
+                PlayerTemporaryArgumentList[i].tactic = argumentButton.tactic;
+                PlayerTemporaryArgumentList[i].fact = argumentButton.fact;
+                PlayerTemporaryArgumentList[i].argument = argumentButton.arg;
+                PlayerTemporaryArgumentList[i].thesis = argumentButton.thesis;
+                i += 1;
+            }
+        }
+        LoadPlayerArguments();
+        // close action menu
+        OnClickedToggleActionBtn();
         // Make argument
         MakeArgument();
 
+    }
+
+    public void ClearActionMenuArguments()
+    {
+        Debug.Log("Action list panel" + actionListPanel);
+        if (argumentBtns == null)
+        {
+            argumentBtns = actionListPanel.GetComponentsInChildren<ArgumentButton>();
+        }
+        foreach (ArgumentButton argumentButton in argumentBtns)
+        {
+            argumentButton.Clear();
+        }
     }
 
     public void toggleFactMenu()
@@ -454,21 +547,51 @@ public class DebateModeController : MonoBehaviour
         Debug.Log("Add thesis/argument responded to active temporary argument list, close argument menu and toggle thesis menu");
     }
 
-    public void OnClickedArgumentInfo()
+    public void OnClickedArgumentInfo(ArgumentInfo argumentInfo)
     {
+        if (argumentBtns == null)
+        {
+            argumentBtns = actionListPanel.GetComponentsInChildren<ArgumentButton>();
+        }
+        foreach (ArgumentButton arg in argumentBtns)
+        {
+            if (!arg.IsInteractable())
+            {
+                arg.getArgumentInfo(argumentInfo);
+                arg.updateSubActionBtn();
+            }
+        }
         Debug.Log("Change active temporary argument in UI");
+        ToggleThesesMenu();
     }
 
     /* Thesis menu */
 
     public void OnClickedToggleDebaterBtn(bool showPlayer)
     {
-        //DrawThesesMenu(!showPlayer);
+        DrawThesesMenu(!showPlayer);
     }
 
-    public void OnClickedThesisBtn()
+    public void OnClickedThesisBtn(Thesis thesis)
     {
+        if (actionListPanel == null)
+        {
+            actionListPanel = GameObject.FindObjectOfType<ActionListPanel>();
+        }
+        if (argumentBtns == null)
+        {
+            argumentBtns = actionListPanel.GetComponentsInChildren<ArgumentButton>();
+        }
+        foreach (ArgumentButton arg in argumentBtns)
+        {
+            if (!arg.IsInteractable())
+            {
+                arg.getThesis(thesis);
+                arg.updateSubActionBtn();
+            }
+        }
         Debug.Log("Add this thesis to active temp argument menu, close thesis menu and toggle argument menu");
+        ToggleThesesMenu();
     }
 
     public void OnClickedArgumentBtn()

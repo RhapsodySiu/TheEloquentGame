@@ -21,8 +21,6 @@ MonoBehaviour:
     pretium nibh. '
   thesisList:
   - {fileID: 11400000, guid: 387fd5d6e65d2d24c881064f060ab0a4, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
   totalCurrentThesesHealth: 100
   totalMaxThesesHealth: 100
   arguments:

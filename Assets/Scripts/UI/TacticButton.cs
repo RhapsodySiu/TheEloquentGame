@@ -6,27 +6,33 @@ using UnityEngine.EventSystems;
 
 public class TacticButton : MonoBehaviour
 {
-    private ActionListPanel actionlistpanel;
     public Tactic tacticDisplayed;
-    public Component[] argumentbtn;
+    private ActionListPanel actionlistpanel;
+    private Component[] argumentbtn;
+    private DebateModeController debateModeController;
     // Start is called before the first frame update
     void Start()
     {
         actionlistpanel = Object.FindObjectOfType<ActionListPanel>();
         argumentbtn = actionlistpanel.GetComponentsInChildren<ArgumentButton>();
+        debateModeController = GameObject.FindObjectOfType<DebateModeController>();
         gameObject.GetComponentInChildren<Text>().text = tacticDisplayed.tacticType + ": " + tacticDisplayed.tacticName;
     }
 
     public void OnClicked()
     {
-        foreach(ArgumentButton arg in argumentbtn){
-           if(arg.btn.interactable == false){
-            arg.getTactic(tacticDisplayed);
-            arg.updateSubActionBtn();
+        foreach(ArgumentButton arg in argumentbtn)
+        {
+           if(!arg.IsInteractable())
+            {
+                arg.getTactic(tacticDisplayed);
+                arg.updateSubActionBtn();
+                break;
             }
+
         }
 
-        //update argument with
+        debateModeController.toggleTacticMenu();
     }
 
     public void setTacticText(){

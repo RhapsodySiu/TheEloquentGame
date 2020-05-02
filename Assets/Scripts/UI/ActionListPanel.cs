@@ -25,21 +25,21 @@ public class ActionListPanel : MonoBehaviour
                 {
                     Arg2.Dehighlight();
                     Arg3.Dehighlight();
-                    Debug.LogError("dehighlighting 2 and 3");
+                    Debug.Log("dehighlighting 2 and 3");
                  }
                  break;
             case "Arg2":
                 {
                     Arg3.Dehighlight();
                     Arg1.Dehighlight();
-                    Debug.LogError("dehighlighting 1 and 3");
+                    Debug.Log("dehighlighting 1 and 3");
                  }
                  break;
             case "Arg3":
                 {
                     Arg2.Dehighlight();
                     Arg1.Dehighlight();
-                    Debug.LogError("dehighlighting 1 and 2");
+                    Debug.Log("dehighlighting 1 and 2");
                  }
                  break;
         }

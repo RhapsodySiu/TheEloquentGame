@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class ArgumentButton : MonoBehaviour
 {
-    public Button btn;
-    public ActionListPanel actionlistpanel;
+    private Button btn;
+    private ActionListPanel actionlistpanel;
     public Sprite highlight;
     public Sprite dehighlight;
-
 
     public SwitchSubActionBtn sub1;
     public SwitchSubActionBtn sub2;
     public SwitchSubActionBtn sub3;
+    private Text txt;
     private string respondName;
     private string tacticName;
     private string factName;
@@ -28,6 +28,7 @@ public class ArgumentButton : MonoBehaviour
         respondName = "None";
         tacticName = "None";
         factName = "None";
+        txt = transform.Find("Text").GetComponent<Text>();
         actionlistpanel = Object.FindObjectOfType<ActionListPanel>();
         btn = transform.GetComponent<Button>();
         setArgumentText();
@@ -43,9 +44,22 @@ public class ArgumentButton : MonoBehaviour
 
     }
 
-    public void setArgumentText(){
-        Text txt = transform.Find("Text").GetComponent<Text>();
-        txt.text = "Argument to respond: " + respondName + "\n Tactic: " + tacticName + "\n Fact: " + factName;
+    public void setArgumentText()
+    {
+        string newText = "";
+        if (respondName != "None" && respondName != null)
+        {
+            newText += "Argument to respond: " + respondName;
+        }
+        if (tacticName != "None" && tacticName != null)
+        {
+            newText += "\n Tactic: " + tacticName;
+        }
+        if (factName != "None" && factName != null)
+        {
+            newText += "\n Fact: " + factName;
+        }
+        txt.text = newText;
     }
 
     public void Highlight(){
@@ -57,7 +71,7 @@ public class ArgumentButton : MonoBehaviour
     public void Dehighlight(){
         transform.GetComponent<Image>().sprite = dehighlight;
         btn.interactable = true;
-        Debug.LogError("dehighlighting");
+        Debug.Log("dehighlighting");
     }
 
     public void updateSubActionBtn(){
@@ -86,5 +100,22 @@ public class ArgumentButton : MonoBehaviour
         this.thesis = null;
         this.arg = argument;
         this.respondName = argument.ArgumentName;
+    }
+
+    public bool IsInteractable()
+    {
+        return this.btn.interactable;
+    }
+
+    public void Clear()
+    {
+        respondName = "None";
+        tacticName = "None";
+        factName = "None";
+        tactic = null;
+        fact = null;
+        arg = null;
+        thesis = null;
+        updateSubActionBtn();
     }
 }

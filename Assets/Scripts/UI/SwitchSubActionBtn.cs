@@ -8,21 +8,16 @@ public class SwitchSubActionBtn : MonoBehaviour
     // Start is called before the first frame update
     private Button btn;
     private DebateModeController controller;
-    private DataController data;
+    // private DataController data;
     void Start()
     {
+        btn = gameObject.GetComponent<Button>();
         controller = Object.FindObjectOfType<DebateModeController>();
-        data = Object.FindObjectOfType<DataController>();
+        // data = Object.FindObjectOfType<DataController>();
         if (btn == null)
         {
             Debug.LogError("SwitchSubActionBtn: cannot find button component");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void setText(string t)
@@ -41,10 +36,10 @@ public class SwitchSubActionBtn : MonoBehaviour
                 else setText(argument.argument.ArgumentName);
                 break;
             case "TACTIC":
-                setText(argument.tactic.tacticName);
+                if (argument.tactic != null) setText(argument.tactic.tacticName);
                 break;
             case "FACT":
-                setText(argument.fact.factName);
+                if (argument.fact != null) setText(argument.fact.factName);
                 break;
         }
     }

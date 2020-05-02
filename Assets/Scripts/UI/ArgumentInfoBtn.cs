@@ -10,15 +10,13 @@ public class ArgumentInfoBtn : MonoBehaviour
     private bool interactable;
     // whether the argument is against another debater thesis
     private bool respondToOther;
-    public ActionListPanel actionlistpanel;
-    public Component[] argumentbtn;
+    private DebateModeController debateModeController;
     private Button button;
     // Start is called before the first frame update
     void Start()
     {
         button = gameObject.GetComponent<Button>();
-        actionlistpanel = Object.FindObjectOfType<ActionListPanel>();
-        argumentbtn = actionlistpanel.GetComponentsInChildren<ArgumentButton>();
+        debateModeController = FindObjectOfType<DebateModeController>();
         if (argumentInfo != null)
         {
             gameObject.GetComponentInChildren<Text>().text = argumentInfo.GetDescription("en");
@@ -39,11 +37,12 @@ public class ArgumentInfoBtn : MonoBehaviour
 
     public void OnClick()
     {
-        foreach(ArgumentButton arg in argumentbtn){
-           if(arg.btn.interactable == false){
-            arg.getArgumentInfo(argumentInfo);
-            arg.updateSubActionBtn();
-            }
+        if (interactable)
+        {
+            debateModeController.OnClickedArgumentInfo(argumentInfo);
+        } else
+        {
+            Debug.Log("Cannot add argument info as it is NOT interactable");
         }
     }
 

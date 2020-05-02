@@ -149,39 +149,21 @@ public class DataController : MonoBehaviour
         return GetCurrentDebate().debateFactDict[factName];
     }
 
-    public ArgumentInfo GetArgumentInfo(Argument argument)
-    {
-        ArgumentInfo value = new ArgumentInfo();
-
-        if (GetCurrentDebate().definedArgumentInfoDict.TryGetValue(argument, out value))
-        {
-            return value;
-        }
-        else
-        {
-            // TODO: generate argument information if no info is found
-            return value;
-        }
-    }
+    //public ArgumentInfo GetArgumentInfo(Argument argument)
+    //{
+    //    ArgumentInfo value = GetCurrentDebate().GetArgumentInfo(argument);
+    //    return value;
+    //}
 
     /**
      * Get the argument effect for an argument
      * It searches the definedArgumentEffectDict of the Debate
      * If no result is found, the default arguemnt effect is returned
      */
-    public ArgumentEffect GetArgumentEffect(Argument argument)
-    {
-        ArgumentEffect value;
-
-        if (GetCurrentDebate().definedArgumentEffectDict.TryGetValue(argument, out value))
-        {
-            return value;
-        }
-        else
-        {
-            return GetCurrentDebate().GetDefaultArgumentEffect();
-        }
-    }
+    //public ArgumentEffect GetArgumentEffect(Argument argument)
+    //{
+    //    return GetCurrentDebate().GetDefaultArgumentEffect();
+    //}
 
     public Dictionary<Argument, ArgumentInfo> GetDefinedArgumentInfoDict()
     {
@@ -381,33 +363,33 @@ public class DataController : MonoBehaviour
 
         if (IsPlayerRound())
         {
+            Debug.Log("Argument made by player:" + argumentMade.ToString());
             GetCurrentDebate().player.arguments.Add(argumentMade);
         } else
         {
             GetCurrentDebate().enemy.arguments.Add(argumentMade);
         }
-        
+
         // search if the argument is defined
-        ArgumentInfo argumentInfo = GetCurrentDebate().GetArgumentInfo(argumentMade);
-        if (argumentInfo != null)
+        (ArgumentInfo, ArgumentEffect) query = GetCurrentDebate().GetArgumentResult(argumentMade);
+        if (query.Item1 != null)
         {
-            GetCurrentDebate().AddArgumentRecord(argumentMade, argumentInfo);
+            GetCurrentDebate().AddArgumentRecord(argumentMade, query.Item1);
         } else
         {
             Debug.Log("Cannot get argumentInfo for " + argumentMade);
         }
-
-        ArgumentEffect effect = GetArgumentEffect(argumentMade);
-        if (effect != null)
+;
+        if (query.Item2 != null)
         {
-            UpdateDebateStat(effect);
+            UpdateDebateStat(query.Item2);
         } else
         {
             Debug.LogError("Received null argument effect during applying temporary argument");
         }
 
-        Debug.Log("Applied debate effect, return conversation block " + effect.conversationBlock);
-        return effect.conversationBlock;
+        Debug.Log("Applied debate effect, return conversation block " + query.Item2.conversationBlock);
+        return query.Item2.conversationBlock;
     }
 
     // increment round count and toggle player round

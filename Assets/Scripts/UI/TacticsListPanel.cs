@@ -13,7 +13,10 @@ public class TacticsListPanel : MonoBehaviour
         {
             GameObject btn = Instantiate(tacticBtnPrefab);
             btn.GetComponent<TacticButton>().tacticDisplayed = tactic;
-            btn.transform.parent = gameObject.transform;
+            btn.transform.SetParent(gameObject.transform);
+            // prevent distortion
+            btn.transform.localPosition = Vector3.zero;
+            btn.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         }
     }
 
