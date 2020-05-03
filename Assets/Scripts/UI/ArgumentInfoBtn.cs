@@ -7,6 +7,8 @@ public class ArgumentInfoBtn : MonoBehaviour
 {
 
     public ArgumentInfo argumentInfo;
+    public Sprite enemyArgumentImage;
+    public Sprite defaultArgumentImage;
     private bool interactable;
     // whether the argument is against another debater thesis
     private bool respondToOther;
@@ -55,10 +57,10 @@ public class ArgumentInfoBtn : MonoBehaviour
         }
         if (respondToOther)
         {
-            button.image.color = new Color(1.0f, 0.95f, 0.95f);
+            button.GetComponent<Image>().sprite = enemyArgumentImage;
         } else
         {
-            button.image.color = Color.white;
+            button.GetComponent<Image>().sprite = defaultArgumentImage;
         }
     }
 

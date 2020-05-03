@@ -309,7 +309,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6ec9f0e633f9a5d4c9f727344592c680, type: 2}
   - {fileID: 11400000, guid: 4781b193419b76c4cb12967a6c15e943, type: 2}
   debateIdx: 0
-  debugScene: MenuScene
+  debugScene: Debate1Scene
   blockToPlay: 
 --- !u!4 &560611307
 Transform:

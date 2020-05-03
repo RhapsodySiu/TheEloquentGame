@@ -141,6 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   argumentInfo: {fileID: 0}
+  enemyArgumentImage: {fileID: 21300000, guid: 798338d03a792f249b346f13cd1250e0, type: 3}
+  defaultArgumentImage: {fileID: 21300000, guid: 5eb8a8034faf9a3409be4e420cbcb766,
+    type: 3}
 --- !u!114 &3483088518032012804
 MonoBehaviour:
   m_ObjectHideFlags: 0

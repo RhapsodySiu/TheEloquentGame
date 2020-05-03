@@ -1012,6 +1012,9 @@ GameObject:
   - component: {fileID: 2106140666}
   - component: {fileID: 2106140665}
   - component: {fileID: 2106140667}
+  - component: {fileID: 2106140668}
+  - component: {fileID: 2106140669}
+  - component: {fileID: 2106140670}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1102,7 +1105,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 2106140650}
   selectedCommands:
-  - {fileID: 2106140667}
+  - {fileID: 2106140670}
   variables:
   - {fileID: 2106140649}
   description: 
@@ -1307,7 +1310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 44
   indentLevel: 0
-  storyText: No, we are going down!
+  storyText: '....No, we are going down!'
   description: 
   character: {fileID: 285003204}
   portrait: {fileID: 0}
@@ -1397,8 +1400,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 41
   indentLevel: 0
-  soundClip: {fileID: 8300000, guid: cb3ec025926620d4d9e603c710d98f81, type: 3}
-  volume: 0.63
+  soundClip: {fileID: 8300000, guid: 53ae3765517931d44956e8811509b03b, type: 3}
+  volume: 0.82
   waitUntilFinished: 0
 --- !u!114 &2106140642
 MonoBehaviour:
@@ -1636,6 +1639,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 2106140661}
+  - {fileID: 2106140668}
   - {fileID: 2106140664}
   - {fileID: 2106140663}
   - {fileID: 2106140665}
@@ -1652,6 +1656,7 @@ MonoBehaviour:
   - {fileID: 2106140638}
   - {fileID: 2106140667}
   - {fileID: 2106140655}
+  - {fileID: 2106140669}
   - {fileID: 2106140637}
   - {fileID: 2106140636}
   - {fileID: 2106140635}
@@ -1661,6 +1666,7 @@ MonoBehaviour:
   - {fileID: 2106140634}
   - {fileID: 2106140632}
   - {fileID: 2106140631}
+  - {fileID: 2106140670}
   - {fileID: 2106140666}
   - {fileID: 2106140654}
 --- !u!114 &2106140651
@@ -1793,9 +1799,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 34
   indentLevel: 0
-  duration: 1
+  duration: 3
   fadeOut: 1
-  targetView: {fileID: 171541282}
+  targetView: {fileID: 1497865598}
   waitUntilFinished: 1
   fadeColor: {r: 0.754717, g: 0.2171591, b: 0.2171591, a: 1}
   fadeTexture: {fileID: 0}
@@ -2044,6 +2050,73 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &2106140668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106140626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 54
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 2
+  durationOLD: 0
+--- !u!114 &2106140669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106140626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 55
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 285003204}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: dc510f84f0c1e0944a6eae2951d1ab41, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 929479407}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &2106140670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106140626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207aecf668a0345388087ccf522f9957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 56
+  indentLevel: 0
+  duration: 2
+  targetAlpha: 1
+  waitUntilFinished: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeTexture: {fileID: 0}
 --- !u!1001 &3676746846443296687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2216,6 +2289,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharDriver
       objectReference: {fileID: 0}
+    - target: {fileID: 6127215039196268164, guid: 550aac1c94aa31f498476e5586bd6211,
+        type: 3}
+      propertyPath: portraits.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127215039196268164, guid: 550aac1c94aa31f498476e5586bd6211,
+        type: 3}
+      propertyPath: portraits.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: dc510f84f0c1e0944a6eae2951d1ab41,
+        type: 3}
     - target: {fileID: 6127215039196268165, guid: 550aac1c94aa31f498476e5586bd6211,
         type: 3}
       propertyPath: m_LocalPosition.x

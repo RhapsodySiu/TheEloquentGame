@@ -90,33 +90,42 @@ public class ThesisPanel : MonoBehaviour
 
     public void AddArgument(ArgumentInfo argumentInfo, bool interactable, bool respondtToOther)
     {
+        // Check if no duplicate argument info, if already exist, return
+        //foreach (ArgumentInfoBtnData data in argumentInfoBtnDatas)
+        //{
+        //    if (data.argumentInfo.ArgumentName == argumentInfo.ArgumentName)
+        //    {
+        //        Debug.Log("Encounter repeat argument info, skip drawing argument info butotn");
+        //        return;
+        //    }
+        //}
         ArgumentInfoBtnData argumentInfoBtnData;
         argumentInfoBtnData.argumentInfo = argumentInfo;
         argumentInfoBtnData.interactable = interactable;
         argumentInfoBtnData.respondToOther = respondtToOther;
         argumentInfoBtnDatas.Add(argumentInfoBtnData);
-        UpdateArgumentListDisplay();
+        // UpdateArgumentListDisplay();
     }
 
-    public void DeleteArgument(ArgumentInfo argumentInfo)
-    {
-        bool found = false;
-        int idxToRemove = 0;
-        for (int i = 0; i < argumentInfoBtnDatas.Count; ++i)
-        {
-            if (argumentInfoBtnDatas[i].argumentInfo == argumentInfo)
-            {
-                found = true;
-                idxToRemove = i;
-                break;
-            }
-        }
-        if (found)
-        {
-            argumentInfoBtnDatas.RemoveAt(idxToRemove);
-            UpdateArgumentListDisplay();
-        }
-    }
+    //public void DeleteArgument(ArgumentInfo argumentInfo)
+    //{
+    //    bool found = false;
+    //    int idxToRemove = 0;
+    //    for (int i = 0; i < argumentInfoBtnDatas.Count; ++i)
+    //    {
+    //        if (argumentInfoBtnDatas[i].argumentInfo == argumentInfo)
+    //        {
+    //            found = true;
+    //            idxToRemove = i;
+    //            break;
+    //        }
+    //    }
+    //    if (found)
+    //    {
+    //        argumentInfoBtnDatas.RemoveAt(idxToRemove);
+    //        UpdateArgumentListDisplay();
+    //    }
+    //}
 
     /**
      * Update the display of argument list
@@ -125,6 +134,7 @@ public class ThesisPanel : MonoBehaviour
      */
     public void UpdateArgumentListDisplay()
     {
+        Debug.Log("Argument(s) to add = " + argumentInfoBtnDatas.Count);
         foreach ( ArgumentInfoBtnData argumentInfoBtnData in argumentInfoBtnDatas)
         {
             GameObject btn = Instantiate(argumentInfoBtnPrefab);
@@ -144,11 +154,14 @@ public class ThesisPanel : MonoBehaviour
         {
             thesisArgumentsPanel = gameObject.GetComponentInChildren<ThesisArgumentsPanel>();
         }
+        Debug.Log("Original argument size = " + argumentInfoBtnDatas.Count);
         argumentInfoBtnDatas.Clear();
+        int i = 0;
         foreach (Transform child in thesisArgumentsPanel.transform)
         {
+            i += 1;
             GameObject.Destroy(child.gameObject);
-            Debug.Log("Destroy child game object");
         }
+        Debug.Log("Destroy child game object = " + i);
     }
 }

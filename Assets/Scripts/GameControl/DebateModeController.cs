@@ -18,6 +18,8 @@ public class DebateModeController : MonoBehaviour
     public Canvas OverviewGUI;
     public Canvas MainGUI;
 
+    public AudioSource updateStatusSound;
+
     // public StatusPanel statusPanel;
     // public AudiencePanel audiencePanel;
     public bool DebugMode;
@@ -127,6 +129,10 @@ public class DebateModeController : MonoBehaviour
         // update debug info
         UpdateDebugText();
         UpdateFlowChartStatus();
+        if (updateStatusSound != null)
+        {
+            updateStatusSound.Play();
+        }
         DrawStatusPanel();
 
         Debug.Log("Check if there is winner");
@@ -253,6 +259,7 @@ public class DebateModeController : MonoBehaviour
     {
         Debug.Log(newValue);
         dataController.UpdatePlayerConfidence(newValue);
+        DrawStatusPanel();
         Debug.Log("New player confidence = " + newValue);
     }
 
@@ -346,11 +353,13 @@ public class DebateModeController : MonoBehaviour
                 thesisPanels[i].ClearArguments();
 
                 // set argument content
+                int j = 0;
                 List<Tuple<ArgumentInfo, Argument>> matchArguments = playerArguments.FindAll(x => x.Item2.thesis.thesisName == debaterThesis.thesis.thesisName);
                 foreach (Tuple<ArgumentInfo, Argument> matchArgument in matchArguments)
                 {
                     // cannot respond to own arguments
                     thesisPanels[i].AddArgument(matchArgument.Item1, false, !showPlayer);
+                    j += 1;
                     Debug.Log("- Add argument '" + matchArgument.Item1.ArgumentName + "' into thesis, interactable = false, respondToOther="+ !showPlayer);
                 }
 
@@ -364,10 +373,13 @@ public class DebateModeController : MonoBehaviour
                         interactable = false;
                     }
                     thesisPanels[i].AddArgument(matchArgument.Item1, interactable, showPlayer);
+                    j += 1;
                     Debug.Log("- Add argument '" + matchArgument.Item1.ArgumentName + "' into thesis, interactable = " + interactable + ", respondToOther=" + showPlayer);
                 }
+                Debug.Log("Total argument added to this thesis = " + j);
             }
             i += 1;
+            thesisPanels[i].UpdateArgumentListDisplay();
         }
     }
 
