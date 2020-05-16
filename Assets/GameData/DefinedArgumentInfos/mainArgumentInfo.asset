@@ -106,13 +106,13 @@ MonoBehaviour:
   - argument: {fileID: 11400000, guid: 1ff4b057fc1c2f74f86980ce3f0e20ae, type: 2}
     argumentInfo: {fileID: 11400000, guid: 190c44609d6b5f34ba98582712154578, type: 2}
   - argument: {fileID: 11400000, guid: 4dbb2b620f3f4a542a4a3e9dab7fdfb7, type: 2}
-    argumentInfo: {fileID: 0}
+    argumentInfo: {fileID: 11400000, guid: 0f5043e48e10d1445821a7e0b3ce7826, type: 2}
   - argument: {fileID: 11400000, guid: c50fc092eba91684eae90752b2dcafa2, type: 2}
-    argumentInfo: {fileID: 0}
+    argumentInfo: {fileID: 11400000, guid: 0f5043e48e10d1445821a7e0b3ce7826, type: 2}
   - argument: {fileID: 11400000, guid: dcf1e12b5d469b642b852c50c789d551, type: 2}
-    argumentInfo: {fileID: 0}
+    argumentInfo: {fileID: 11400000, guid: b3c7c0e19fd1a9443a7ae9e9846f307c, type: 2}
   - argument: {fileID: 11400000, guid: d734422cc1ca94046a56f5c6284bda3e, type: 2}
-    argumentInfo: {fileID: 0}
+    argumentInfo: {fileID: 11400000, guid: b3c7c0e19fd1a9443a7ae9e9846f307c, type: 2}
   - argument: {fileID: 11400000, guid: 78562a92770859241a8836edfccb81ab, type: 2}
     argumentInfo: {fileID: 11400000, guid: a2671f6461bd85d4d9457b48d5436f4f, type: 2}
   - argument: {fileID: 11400000, guid: a09512f1b81125c4fb19bc2091579c31, type: 2}

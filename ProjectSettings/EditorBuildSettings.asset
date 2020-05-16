@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Persistent.unity
     guid: 9bd97b550a51f6a47a3bb59b0a7073f3
   - enabled: 1
-    path: Assets/Scenes/MenuScene.unity
-    guid: 070a3f470a63e94498166ea13e0b4240
-  - enabled: 1
     path: Assets/Scenes/Story1Scene.unity
     guid: d723cc9a9374627408c13d7e7ed7c453
   - enabled: 1
@@ -22,5 +19,11 @@ EditorBuildSettings:
     guid: 562111ee17ccb694782e80e016c6833a
   - enabled: 1
     path: Assets/Scenes/Debate2Scene.unity
-    guid: 2ba5cea0263298149aae9abb36e3f452
+    guid: 794bbe9fb5ff0cf4eb640f43a0fbdd90
+  - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: 070a3f470a63e94498166ea13e0b4240
+  - enabled: 1
+    path: Assets/Scenes/CreditScene.unity
+    guid: 614803f33c681d24f82e4ac60fdab9ef
   m_configObjects: {}

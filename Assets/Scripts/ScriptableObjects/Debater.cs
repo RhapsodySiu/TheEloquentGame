@@ -48,7 +48,7 @@ public class Debater : ScriptableObject
 
     public void InitDebater(bool clearThesis = false)
     {
-        Debug.Log("clear thesis: " + clearThesis);
+        // Debug.Log("clear thesis: " + clearThesis);
         // detach thesis from debater thesis if clearThesis = true. Otherwise, reset debater thesis
         if (clearThesis)
         {
@@ -114,7 +114,7 @@ public class Debater : ScriptableObject
             {
                 totalMaxThesesHealth += debaterThesis.maxHealth;
                 totalCurrentThesesHealth += debaterThesis.currentHealth;
-                Debug.Log("Debater " + debaterName + " increases convincingness to " + totalCurrentThesesHealth);
+                //Debug.Log("Debater " + debaterName + " increases convincingness to " + totalCurrentThesesHealth);
             }
         }
     }
@@ -126,14 +126,23 @@ public class Debater : ScriptableObject
         basePow += effect.ArgAttBuff;
         baseInfluence += effect.influenceBuff;
 
-        foreach (DebaterThesis thesis in thesisList)
-        {
-            if (thesis.thesis.thesisId == effect.targetThesisId)
-            {
-                thesis.absHealthBuff += effect.maxThesisHealthChange;
-                thesis.currentHealth += effect.currentThesisHealthChange;
-                thesis.defense += effect.defenseChange;
-            }
-        }
+        // TODO: Instead of affecting overall convincingness, the argument should affect specific thesis only
+        totalCurrentThesesHealth += effect.currentThesisHealthChange;
+        totalMaxThesesHealth += effect.maxThesisHealthChange;
+
+        // Debug
+        Debug.Log("Debater " + debaterName + " mentalHealth change=" + effect.mentalHealthChange);
+        Debug.Log("Debater " + debaterName + " current convincingness change=" + effect.currentThesisHealthChange);
+        Debug.Log("Debater " + debaterName + " max convincingness change=" + effect.maxThesisHealthChange);
+
+        //foreach (DebaterThesis thesis in thesisList)
+        //{
+        //    if (thesis.thesis.thesisId == effect.targetThesisId)
+        //    {
+        //        thesis.absHealthBuff += effect.maxThesisHealthChange;
+        //        thesis.currentHealth += effect.currentThesisHealthChange;
+        //        thesis.defense += effect.defenseChange;
+        //    }
+        //}
     }
 }

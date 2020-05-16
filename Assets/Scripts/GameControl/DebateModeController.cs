@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Fungus;
 using System;
+using TMPro;
 
 public class DebateModeController : MonoBehaviour
 {
@@ -17,8 +18,10 @@ public class DebateModeController : MonoBehaviour
     public Canvas ThesesGUI;
     public Canvas OverviewGUI;
     public Canvas MainGUI;
+    public Canvas AlertDialog;
 
-    public AudioSource updateStatusSound;
+    public AudioSource fireArgumentSound;
+    //public AudioSource updateStatusSound;
 
     // public StatusPanel statusPanel;
     // public AudiencePanel audiencePanel;
@@ -54,7 +57,7 @@ public class DebateModeController : MonoBehaviour
             arg.thesis = null;
             arg.fact = null;
             arg.tactic = null;
-            Debug.Log("Empty temporary argument");
+            // Debug.Log("Empty temporary argument");
         }
         if (dataController == null)
         {
@@ -76,9 +79,17 @@ public class DebateModeController : MonoBehaviour
     /* Called by fungus block to initiate variables and gui for game */
     public void InitDebate()
     {
-        UpdateDebugText();
-        dataController.InitDebate();
-        Debug.Log("Start the debate");
+        // UpdateDebugText();
+        if (dataController != null)
+        {
+            dataController.InitDebate();
+            // update isProponent in flowchart menu
+            flowchart.SetBooleanVariable("isProponent", dataController.IsPlayerProponent());
+            Debug.Log("Update flowchart variable isProponent=" + dataController.IsPlayerProponent());
+        } else
+        {
+            Debug.LogWarning("Cannot find reference of dataController.");
+        }
     }
 
         /**
@@ -87,6 +98,8 @@ public class DebateModeController : MonoBehaviour
     public void InitMainDebate()
     {
         dataController.InitMainDebate();
+        flowchart.SetBooleanVariable("isProponent", dataController.IsPlayerProponent());
+        Debug.Log("Set Flowchart isProponent=" + dataController.IsPlayerProponent());
     }
     /* Create arguments for enemy and stack them in temporary arguments */
     public void GenerateEnemyArguments()
@@ -100,7 +113,7 @@ public class DebateModeController : MonoBehaviour
         {
             dataController.GenerateEnemyArgument();
         }
-        Debug.Log("Enemy argument loaded into temporary argument");
+        //Debug.Log("Enemy argument loaded into temporary argument");
         // Make argument
         // MakeArgument();
     }
@@ -120,7 +133,7 @@ public class DebateModeController : MonoBehaviour
     public void StartRound()
     {
         DrawStatusPanel();
-        Debug.Log("Play fungus start round block");
+        //Debug.Log("Play fungus start round block");
         flowchart.ExecuteBlock("StartRound");
     }
 
@@ -129,13 +142,9 @@ public class DebateModeController : MonoBehaviour
         // update debug info
         UpdateDebugText();
         UpdateFlowChartStatus();
-        if (updateStatusSound != null)
-        {
-            updateStatusSound.Play();
-        }
         DrawStatusPanel();
 
-        Debug.Log("Check if there is winner");
+        //Debug.Log("Check if there is winner");
         if (dataController.IsPlayerWin())
         {
             Debug.Log("player win");
@@ -153,7 +162,7 @@ public class DebateModeController : MonoBehaviour
 
     public void UpdateDebugText()
     {
-        Debug.Log("Update debug panel");
+        // Debug.Log("Update debug panel");
         DebugText.text = "Player proponent=" +  dataController.IsPlayerProponent() +
                          "\nPlayer confidence=" + dataController.GetPlayerConfidence() +
                          "\nPopularity=" + dataController.GetAudienceSupport() +
@@ -166,12 +175,13 @@ public class DebateModeController : MonoBehaviour
 
     public void UpdateRound()
     {
-        Debug.Log("Update round.");
+        //Debug.Log("Update round.");
         UpdateFlowChartStatus();
         dataController.UpdateRound();
         flowchart.SetIntegerVariable("round", dataController.GetCurrentRound());
+        Debug.Log("Current round=" + dataController.GetCurrentRound());
         flowchart.SetBooleanVariable("isPlayerRound", dataController.IsPlayerRound());
-        Debug.Log("Back to interaction block");
+        // Debug.Log("Back to interaction block");
         flowchart.ExecuteBlock("Interaction");
     }
 
@@ -181,12 +191,13 @@ public class DebateModeController : MonoBehaviour
     public void UpdateFlowChartStatus()
     {
         flowchart.SetFloatVariable("support", dataController.GetAudienceSupport());
-        flowchart.SetFloatVariable("health", dataController.GetPlayerThesesHealth() / dataController.GetPlayerMaxThesesHealth());
+        flowchart.SetFloatVariable("health", dataController.GetPlayerFloatThesesHealth());
         flowchart.SetFloatVariable("confidence", dataController.GetPlayerConfidence());
-        flowchart.SetFloatVariable("enemyHealth", dataController.GetEnemyThesesHealth() / dataController.GetEnemyrMaxThesesHealth());
+        flowchart.SetFloatVariable("enemyHealth", dataController.GetEnemyFloatThesesHealth());
         flowchart.SetFloatVariable("enemyConfidence", dataController.GetEnemyConfidence());
         flowchart.SetIntegerVariable("round", dataController.GetCurrentRound());
         flowchart.SetBooleanVariable("isPlayerRound", dataController.IsPlayerRound());
+        // Debug.Log("Flowchart stat updated");
     }
 
     /* Push an argument from temporary argument list, if empty, execute end round block */
@@ -194,15 +205,27 @@ public class DebateModeController : MonoBehaviour
     {
         // flowchart.ExecuteBlock("DefaultArgument");
         // Debug.Log("Make argument");
+        
         while (dataController.tempArguments.Count != 0)
         {
             Debug.Log("Call datacontroller to apply temp argument");
             string blockToExecute = dataController.ApplyTempArgument();
 
             flowchart.ExecuteBlock(blockToExecute);
+
+            // Update stat after applying an argument
+            UpdateFlowChartStatus();
+        }
+        foreach (Argument arg in PlayerTemporaryArgumentList)
+        {
+            arg.argument = null;
+            arg.thesis = null;
+            arg.fact = null;
+            arg.tactic = null;
+            // Debug.Log("Empty temporary argument");
         }
 
-        Debug.Log("Empty temporary argument, run fungus EndRound block");
+        //Debug.Log("Empty temporary argument, run fungus EndRound block");
         flowchart.ExecuteBlock("EndRound");
 
     }
@@ -212,7 +235,7 @@ public class DebateModeController : MonoBehaviour
      */
     public void AddPlayerThesis(string thesisName)
     {
-        Debug.Log("Add debater thesis to player");
+        //Debug.Log("Add debater thesis to player");
         dataController.AddPlayerThesis(thesisName);
         UpdateDebugText();
     }
@@ -252,15 +275,38 @@ public class DebateModeController : MonoBehaviour
     public void SetPlayerSide(bool isProponent)
     {
         Debug.Log("Set player side: isProponent=" + isProponent);
-        dataController.SetPlayerSide(isProponent);
+        if (dataController != null)
+        {
+            dataController.SetPlayerSide(isProponent);
+        } else
+        {
+            Debug.LogWarning("SetPlayerSide: Reference of DataController not found");
+        }
+        
     }
 
+    /**
+     * Utility to update player confidence in fungus block
+     */
     public void UpdatePlayerConfidence(float newValue)
     {
-        Debug.Log(newValue);
+        //Debug.Log(newValue);
         dataController.UpdatePlayerConfidence(newValue);
+        UpdateFlowChartStatus();
         DrawStatusPanel();
         Debug.Log("New player confidence = " + newValue);
+    }
+
+    /**
+     *  Utility to update support in fungus block
+     */
+    public void UpdateSupport(float newValue)
+    {
+        //Debug.Log(newValue);
+        dataController.UpdateSupport(newValue);
+        UpdateFlowChartStatus();
+        DrawStatusPanel();
+        Debug.Log("New support = " + newValue);
     }
 
     #endregion
@@ -323,10 +369,19 @@ public class DebateModeController : MonoBehaviour
     public void DrawThesesMenu(bool showPlayer)
     {
         DebaterThesis[] debaterTheses = null;
-        List<Tuple<ArgumentInfo, Argument>> playerArguments = dataController.GetPlayerArguments();
-        Debug.Log("Arguments player made=" + playerArguments.Count);
-        List<Tuple<ArgumentInfo, Argument>> enemyArguments = dataController.GetEnemyArguments();
-        Debug.Log("Arguments enemy made=" + enemyArguments.Count);
+        List<Tuple<ArgumentInfo, Argument>> playerArguments = new List<Tuple<ArgumentInfo, Argument>>();
+        List<Tuple<ArgumentInfo, Argument>> enemyArguments = new List<Tuple<ArgumentInfo, Argument>>();
+        if (dataController.GetPlayerArguments() != null)
+        {
+            playerArguments = dataController.GetPlayerArguments();
+            Debug.Log("Arguments player made=" + playerArguments.Count);
+        }
+        
+        if (dataController.GetEnemyArguments() != null)
+        {
+            enemyArguments = dataController.GetEnemyArguments();
+            //Debug.Log("Arguments enemy made=" + enemyArguments.Count);
+        }
         // Debug.Log("Enemy argument: " + enemyArguments[0].Item1 + " " + enemyArguments[0].Item2);
 
         if (showPlayer)
@@ -340,21 +395,26 @@ public class DebateModeController : MonoBehaviour
             // get arguments and theses related to enemy
             debaterTheses = dataController.GetEnemyTheses();
         }
-        Debug.Log("Length of theses = " + debaterTheses.Length);
+        // Debug.Log("Length of theses = " + debaterTheses.Length);
 
         int i = 0;
         foreach (DebaterThesis debaterThesis in debaterTheses)
         {
             if (debaterThesis != null && debaterThesis.thesis != null)
             {
-                Debug.Log("Updating thesis '" + debaterThesis.thesis.thesisName + "'");
+                //Debug.Log("Updating thesis '" + debaterThesis.thesis.thesisName + "'");
                 // set thesis content
                 thesisPanels[i].SetDebaterThesis(debaterThesis);
                 thesisPanels[i].ClearArguments();
 
                 // set argument content
                 int j = 0;
-                List<Tuple<ArgumentInfo, Argument>> matchArguments = playerArguments.FindAll(x => x.Item2.thesis.thesisName == debaterThesis.thesis.thesisName);
+                List<Tuple<ArgumentInfo, Argument>> matchArguments = playerArguments.FindAll(x => x.Item2.thesis == debaterThesis.thesis);
+                //x => x.Item2.thesis != null && (x.Item2.thesis.thesisName == debaterThesis.thesis.thesisName)
+                if (matchArguments == null)
+                {
+                    Debug.Log("Null return for playerArguments");
+                }
                 foreach (Tuple<ArgumentInfo, Argument> matchArgument in matchArguments)
                 {
                     // cannot respond to own arguments
@@ -364,6 +424,10 @@ public class DebateModeController : MonoBehaviour
                 }
 
                 matchArguments = enemyArguments.FindAll(x => x.Item2.thesis == debaterThesis.thesis);
+                if (matchArguments == null)
+                {
+                    Debug.Log("Null return for enemyArguments");
+                }
                 foreach (Tuple<ArgumentInfo, Argument> matchArgument in matchArguments)
                 {
                     // check if the argument is interactable (unresponded enemy argument)
@@ -374,12 +438,12 @@ public class DebateModeController : MonoBehaviour
                     }
                     thesisPanels[i].AddArgument(matchArgument.Item1, interactable, showPlayer);
                     j += 1;
-                    Debug.Log("- Add argument '" + matchArgument.Item1.ArgumentName + "' into thesis, interactable = " + interactable + ", respondToOther=" + showPlayer);
+                    //Debug.Log("- Add argument '" + matchArgument.Item1.ArgumentName + "' into thesis, interactable = " + interactable + ", respondToOther=" + showPlayer);
                 }
-                Debug.Log("Total argument added to this thesis = " + j);
+                //Debug.Log("Total argument added to this thesis = " + j);
             }
-            i += 1;
             thesisPanels[i].UpdateArgumentListDisplay();
+            i += 1;
         }
     }
 
@@ -445,7 +509,7 @@ public class DebateModeController : MonoBehaviour
          */
     public void OnClickedToggleThesesBtn()
     {
-        Debug.Log("Toggle thesis menu from action menu, enable interaction");
+        //Debug.Log("Toggle thesis menu from action menu, enable interaction");
         ThesesGUI.gameObject.SetActive(!ThesesGUI.gameObject.activeSelf);
         if (ThesesGUI.gameObject.activeSelf)
         {
@@ -470,7 +534,7 @@ public class DebateModeController : MonoBehaviour
 
     public void OnClickedToggleActionBtn()
     {
-        Debug.Log("Toggle argument menu");
+        //Debug.Log("Toggle argument menu");
         ActionGUI.gameObject.SetActive(!ActionGUI.gameObject.activeSelf);
         if (ActionGUI.gameObject.activeSelf)
         {
@@ -480,7 +544,7 @@ public class DebateModeController : MonoBehaviour
 
     public void OnClickedToggleOverviewBtn()
     {
-        Debug.Log("Toggle info menu");
+        //Debug.Log("Toggle info menu");
         OverviewGUI.gameObject.SetActive(!OverviewGUI.gameObject.activeSelf);
         DrawOverviewMenu();
     }
@@ -494,7 +558,7 @@ public class DebateModeController : MonoBehaviour
 
     public void OnClickedMakeArgumentsBtn()
     {
-        Debug.Log("Make arguments");
+        
         // Load items into temporary arguments
         if (argumentBtns == null)
         {
@@ -513,7 +577,62 @@ public class DebateModeController : MonoBehaviour
                 i += 1;
             }
         }
+        Debug.Log("Make arguments="+i);
+        if (i == 0)
+        {
+            // no action if no concrete argument
+            toggleAlertDialog("No valid argument is made");
+            return;
+        } else if (i > 1)
+        {
+            // TODO: support multiple arguments
+            // For now, an alert is shown if more than 1 argument is made.
+            toggleAlertDialog("Multiple arguments are not supported in current level.");
+            return;
+        }
+
+        // validate argument in tutorial mode
+        if (dataController.IsTutorial())
+        {
+            // TODO: No hardcode alert
+            if (dataController.GetCurrentRound() == 1)
+            {
+               if (PlayerTemporaryArgumentList[0].thesis == null || PlayerTemporaryArgumentList[0].thesis.thesisName != "SmartphoneIsBeneficialToTeenagerDevelopment")
+                {
+                    toggleAlertDialog("Please make argument on your own thesis");
+                    return;
+                }
+                if (PlayerTemporaryArgumentList[0].fact == null || PlayerTemporaryArgumentList[0].fact.factName != "MobileProductivity")
+                {
+                    toggleAlertDialog("Please select the correct fact");
+                    return;
+                }
+            }
+            else if (dataController.GetCurrentRound() == 3)
+            {
+                if (PlayerTemporaryArgumentList[0].argument == null || PlayerTemporaryArgumentList[0].argument.ArgumentName != "YouAreAddictedAsWell")
+                {
+                    toggleAlertDialog("Please make argument on enemy argument against your thesis");
+                    return;
+                }
+                if (PlayerTemporaryArgumentList[0].tactic == null || PlayerTemporaryArgumentList[0].tactic.tacticName != "GuiltByAssociation")
+                {
+                    toggleAlertDialog("Please select the tactic that the enemy argument used");
+                    return;
+                }
+                if (PlayerTemporaryArgumentList[0].fact != null)
+                {
+                    toggleAlertDialog("Fact is not needed for this argument");
+                    return;
+                }
+            }
+        }
+
         LoadPlayerArguments();
+        if (fireArgumentSound != null)
+        {
+            fireArgumentSound.Play();
+        }
         // close action menu
         OnClickedToggleActionBtn();
         // Make argument
@@ -523,7 +642,7 @@ public class DebateModeController : MonoBehaviour
 
     public void ClearActionMenuArguments()
     {
-        Debug.Log("Action list panel" + actionListPanel);
+        //Debug.Log("Action list panel" + actionListPanel);
         if (argumentBtns == null)
         {
             argumentBtns = actionListPanel.GetComponentsInChildren<ArgumentButton>();
@@ -531,6 +650,24 @@ public class DebateModeController : MonoBehaviour
         foreach (ArgumentButton argumentButton in argumentBtns)
         {
             argumentButton.Clear();
+        }
+    }
+
+    public void toggleAlertDialog(string alertText = "")
+    {
+        if (AlertDialog != null)
+        {
+            
+            AlertDialog.gameObject.SetActive(!AlertDialog.gameObject.activeSelf);
+            TextMeshProUGUI warningText = AlertDialog.gameObject.GetComponentInChildren<TextMeshProUGUI>();
+
+            if (warningText != null)
+            {
+                warningText.text = alertText;
+            } else
+            {
+                Debug.LogError("Cannot find TextMeshProUGUI component in AlertDialog");
+            }
         }
     }
 
@@ -602,7 +739,7 @@ public class DebateModeController : MonoBehaviour
                 arg.updateSubActionBtn();
             }
         }
-        Debug.Log("Add this thesis to active temp argument menu, close thesis menu and toggle argument menu");
+        //Debug.Log("Add this thesis to active temp argument menu, close thesis menu and toggle argument menu");
         ToggleThesesMenu();
     }
 

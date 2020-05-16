@@ -37,7 +37,7 @@ public class Thesis : ScriptableObject
     public bool Equals(Thesis other)
     {
         if (other == null) return false;
-        return (this.thesisName == other.thesisName && this.thesisId == other.thesisId);
+        return (this.thesisName == other.thesisName);
     }
 
     public string GetDescription(string language)

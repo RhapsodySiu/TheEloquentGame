@@ -12,25 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b069ccbcd66e3624e917528b284a1ab4, type: 3}
   m_Name: player
   m_EditorClassIdentifier: 
-  thesisCount: 0
+  thesisCount: 3
   id: 2
   isProponent: 1
-  debaterName: Blue
-  description: ' Id consectetur purus ut faucibus pulvinar elementum. Dignissim cras
-    tincidunt lobortis feugiat vivamus at augue eget arcu. '
+  debaterName: Mou Sum
+  description: A student of mishap involving into a strange curse. Involuntarily engaged
+    in debates of the Lost Spirit.
   thesisList:
-  - {fileID: 11400000, guid: 74c66f4416054f54baaf83e2e2806fe2, type: 2}
-  - {fileID: 11400000, guid: f49f3e020c211a94b9137688170f09f8, type: 2}
-  - {fileID: 11400000, guid: d7972b35d64baaa4ca59c52cec0e3468, type: 2}
-  totalCurrentThesesHealth: 1000
-  totalMaxThesesHealth: 600
-  arguments:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: a77e40156d1cde74985fe60cd4ffcebf, type: 2}
+  - {fileID: 11400000, guid: 216309fc1d9623847b1ce752cc2992dc, type: 2}
+  - {fileID: 11400000, guid: f5361b70f101f614ba938eafde045cfb, type: 2}
+  totalCurrentThesesHealth: 300
+  totalMaxThesesHealth: 300
+  arguments: []
   traits: 01000000
-  mentalMaxHealth: 100
-  mentalHealth: 100
+  mentalMaxHealth: 1
+  mentalHealth: 1
   actionPoint: 3
   basePow: 1
   baseInfluence: 1

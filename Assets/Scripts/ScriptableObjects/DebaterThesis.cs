@@ -27,7 +27,7 @@ public class DebaterThesis : ScriptableObject
         thesis = t;
         maxHealth = thesis.thesisMaxHealth;
         currentHealth = maxHealth;
-        Debug.Log("current health = " + currentHealth.ToString());
+        //Debug.Log("current health = " + currentHealth.ToString());
     }
 
     public override string ToString()

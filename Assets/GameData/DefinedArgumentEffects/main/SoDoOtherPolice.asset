@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSelf: 0
   mentalHealthChange: -0.2
-  supportChange: -0.3
+  supportChange: -0.6
   ArgAttBuff: 0
   mentalAttBuff: 0
   influenceBuff: 0

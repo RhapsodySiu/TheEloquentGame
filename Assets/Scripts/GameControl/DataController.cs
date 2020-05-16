@@ -28,7 +28,7 @@ public class DataController : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-
+        debateIdx = 0;
         if (tacticData != null)
         {
             foreach (Tactic tactic in tacticData.tacitcs)
@@ -175,6 +175,9 @@ public class DataController : MonoBehaviour
         return GetCurrentDebate().definedArgumentEffectDict;
     }
 
+    /**
+     * Generate temporary arguments and store it in temporary arguments list of data controller
+     */
     public void GenerateEnemyArgument()
     {
         // Add the enemy argument to temporary list
@@ -240,6 +243,24 @@ public class DataController : MonoBehaviour
         return GetCurrentDebate().enemy.mentalMaxHealth;
     }
 
+    public float GetPlayerFloatThesesHealth()
+    {
+        if (GetPlayerMaxThesesHealth() > 0.0f)
+        {
+            return GetPlayerThesesHealth() / GetPlayerMaxThesesHealth();
+        }
+        return 0f;
+    }
+
+    public float GetEnemyFloatThesesHealth()
+    {
+        if (GetEnemyMaxThesesHealth() > 0.0f)
+        {
+            return GetEnemyThesesHealth() / GetEnemyMaxThesesHealth();
+        }
+        return 0f;
+    }
+
     public float GetPlayerMaxThesesHealth()
     {
         return GetCurrentDebate().player.totalMaxThesesHealth;
@@ -250,7 +271,7 @@ public class DataController : MonoBehaviour
         return GetCurrentDebate().player.totalCurrentThesesHealth;
     }
 
-    public float GetEnemyrMaxThesesHealth()
+    public float GetEnemyMaxThesesHealth()
     {
         return GetCurrentDebate().enemy.totalMaxThesesHealth;
     }
@@ -287,6 +308,7 @@ public class DataController : MonoBehaviour
     #region Setter
     public void InitDebate()
     {
+        SetPlayerSide(false);
         GetCurrentDebate().Init();
     }
 
@@ -294,12 +316,18 @@ public class DataController : MonoBehaviour
     {
         debateIdx = 1;
         GetCurrentDebate().Init();
+        GetCurrentDebate().isPlayerRound = false;
     }
 
+    /**
+     * Since only main debate allows select side, the current debate is hardcode
+     */
     public void SetPlayerSide(bool isProponent)
     {
         try
         {
+            // TODO: avoid hardcode debateidx
+            // debateIdx = 1;
             GetCurrentDebate().SetPlayerSide(isProponent);
         } catch (System.Exception ex)
         {
@@ -359,11 +387,21 @@ public class DataController : MonoBehaviour
             return null;
         }
         Argument argumentMade = tempArguments[0];
+
+        if (argumentMade == null)
+        {
+            Debug.LogError("Cannot find argument from temporary argument list");
+            return "DefaultArgumentBlock";
+        } else
+        {
+            //Debug.Log("Argument made:");
+            //Debug.Log(argumentMade);
+        }
         tempArguments.RemoveAt(0);
 
         if (IsPlayerRound())
         {
-            Debug.Log("Argument made by player:" + argumentMade.ToString());
+            //Debug.Log("Argument made by player:" + argumentMade);
             GetCurrentDebate().player.arguments.Add(argumentMade);
         } else
         {
@@ -372,6 +410,7 @@ public class DataController : MonoBehaviour
 
         // search if the argument is defined
         (ArgumentInfo, ArgumentEffect) query = GetCurrentDebate().GetArgumentResult(argumentMade);
+        //Debug.Log("ArgumentEffect returned = " + query.Item2);
         if (query.Item1 != null)
         {
             GetCurrentDebate().AddArgumentRecord(argumentMade, query.Item1);
@@ -385,7 +424,10 @@ public class DataController : MonoBehaviour
             UpdateDebateStat(query.Item2);
         } else
         {
-            Debug.LogError("Received null argument effect during applying temporary argument");
+            Debug.LogError("Received null argument effect during applying temporary argument, return default effect");
+            ArgumentEffect effect = GetCurrentDebate().GetDefaultArgumentEffect();
+            UpdateDebateStat(effect);
+            return effect.conversationBlock;
         }
 
         Debug.Log("Applied debate effect, return conversation block " + query.Item2.conversationBlock);
@@ -406,19 +448,19 @@ public class DataController : MonoBehaviour
     public void UpdateDebateStat(ArgumentEffect effect)
     {
         blockToPlay = effect.conversationBlock;
-        if (effect.toSelf)
+        if (effect.toSelf && IsPlayerRound() || !effect.toSelf && !IsPlayerRound())
         {
             GetCurrentDebate().player.UpdateStat(effect);
-            Debug.Log("Player status updated");
+            //Debug.Log("Player status updated");
         }
         else
         {
             GetCurrentDebate().enemy.UpdateStat(effect);
-            Debug.Log("Enemy status updated");
+            //Debug.Log("Enemy status updated");
         }
 
         GetCurrentDebate().audience.UpdateStat(effect);
-        Debug.Log("Audience status updated");
+        //Debug.Log("Audience status updated");
     }
 
     // For adjusting value without argument
@@ -434,7 +476,19 @@ public class DataController : MonoBehaviour
         
     }
 
-    
+    public void UpdateSupport(float newValue)
+    {
+        try
+        {
+            GetCurrentDebate().audience.support = newValue;
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogException(ex);
+        }
+
+    }
+
     #endregion
 
 
@@ -453,152 +507,152 @@ public class DataController : MonoBehaviour
         }
     }
 
-    [MenuItem("GameObject/Load Arguments from arguments.json")]
-    static void CreateArgumentFromJSON()
-    {
-        string argumentPath = Application.dataPath + "/" + "arguments.json";
+    //[MenuItem("GameObject/Load Arguments from arguments.json")]
+    //static void CreateArgumentFromJSON()
+    //{
+    //    string argumentPath = Application.dataPath + "/" + "arguments.json";
 
-        if (!System.IO.File.Exists(argumentPath))
-        {
-            return;
-        }
+    //    if (!System.IO.File.Exists(argumentPath))
+    //    {
+    //        return;
+    //    }
 
-        string contents = System.IO.File.ReadAllText(argumentPath);
-        JsonWrapper wrapper = JsonUtility.FromJson<JsonWrapper>(contents);
-        ArgumentData argumentData = wrapper.argumentData;
+    //    string contents = System.IO.File.ReadAllText(argumentPath);
+    //    JsonWrapper wrapper = JsonUtility.FromJson<JsonWrapper>(contents);
+    //    ArgumentData argumentData = wrapper.argumentData;
 
-        foreach (SerializedArgument serializedArgument in argumentData.serializedArguments)
-        {
-            string argumentAssetFilename = serializedArgument.argumentName;
-            Debug.Log("Saving " + argumentAssetFilename);
-            try
-            {
-                if (serializedArgument.fact != "" && serializedArgument.fact != null)
-                {
-                    argumentAssetFilename += "_By" + serializedArgument.fact;
-                }
-                if (serializedArgument.toArgument && serializedArgument.tactic != null)
-                {
+    //    foreach (SerializedArgument serializedArgument in argumentData.serializedArguments)
+    //    {
+    //        string argumentAssetFilename = serializedArgument.argumentName;
+    //        Debug.Log("Saving " + argumentAssetFilename);
+    //        try
+    //        {
+    //            if (serializedArgument.fact != "" && serializedArgument.fact != null)
+    //            {
+    //                argumentAssetFilename += "_By" + serializedArgument.fact;
+    //            }
+    //            if (serializedArgument.toArgument && serializedArgument.tactic != null)
+    //            {
 
-                    argumentAssetFilename += "_Against" + serializedArgument.tactic;
-                }
-                argumentAssetFilename += "_To" + serializedArgument.respondTo + ".asset";
+    //                argumentAssetFilename += "_Against" + serializedArgument.tactic;
+    //            }
+    //            argumentAssetFilename += "_To" + serializedArgument.respondTo + ".asset";
 
-                Argument argumentBase = ScriptableObject.CreateInstance<Argument>();
-                argumentBase = ScriptableObject.CreateInstance<Argument>();
+    //            Argument argumentBase = ScriptableObject.CreateInstance<Argument>();
+    //            argumentBase = ScriptableObject.CreateInstance<Argument>();
 
-                Fact factBase = (Fact)AssetDatabase.LoadAssetAtPath("Assets/GameData/Facts/main/" + serializedArgument.fact + ".asset", typeof(Fact));
-                argumentBase.fact = factBase;
+    //            Fact factBase = (Fact)AssetDatabase.LoadAssetAtPath("Assets/GameData/Facts/main/" + serializedArgument.fact + ".asset", typeof(Fact));
+    //            argumentBase.fact = factBase;
 
-                if (serializedArgument.tactic != null && serializedArgument.tactic != "")
-                {
-                    Tactic tacticBase = (Tactic)AssetDatabase.LoadAssetAtPath("Assets/GameData/Tactics/" + serializedArgument.tactic + ".asset", typeof(Tactic));
-                    argumentBase.tactic = tacticBase;
-                }
+    //            if (serializedArgument.tactic != null && serializedArgument.tactic != "")
+    //            {
+    //                Tactic tacticBase = (Tactic)AssetDatabase.LoadAssetAtPath("Assets/GameData/Tactics/" + serializedArgument.tactic + ".asset", typeof(Tactic));
+    //                argumentBase.tactic = tacticBase;
+    //            }
 
-                if (serializedArgument.toArgument)
-                {
-                    ArgumentInfo argumentInfoBase = (ArgumentInfo)AssetDatabase.LoadAssetAtPath("Assets/GameData/DefinedArgumentInfos/main/" + serializedArgument.respondTo + ".asset", typeof(ArgumentInfo));
-                    argumentBase.argument = argumentInfoBase;
-                }
-                else
-                {
-                    Thesis thesisBase = (Thesis)AssetDatabase.LoadAssetAtPath("Assets/GameData/Theses/" + serializedArgument.respondTo + ".asset", typeof(Thesis));
-                    argumentBase.thesis = thesisBase;
-                }
+    //            if (serializedArgument.toArgument)
+    //            {
+    //                ArgumentInfo argumentInfoBase = (ArgumentInfo)AssetDatabase.LoadAssetAtPath("Assets/GameData/DefinedArgumentInfos/main/" + serializedArgument.respondTo + ".asset", typeof(ArgumentInfo));
+    //                argumentBase.argument = argumentInfoBase;
+    //            }
+    //            else
+    //            {
+    //                Thesis thesisBase = (Thesis)AssetDatabase.LoadAssetAtPath("Assets/GameData/Theses/" + serializedArgument.respondTo + ".asset", typeof(Thesis));
+    //                argumentBase.thesis = thesisBase;
+    //            }
 
-                // Create asset if not exist
-                if (!System.IO.File.Exists(Application.dataPath + "/GameData/Arguments (debug only)/main/" + argumentAssetFilename ))
-                {
-                    AssetDatabase.CreateAsset(argumentBase, ARGUMENT_ASSET_PATH + "main/" + argumentAssetFilename);
-                }
+    //            // Create asset if not exist
+    //            if (!System.IO.File.Exists(Application.dataPath + "/GameData/Arguments (debug only)/main/" + argumentAssetFilename ))
+    //            {
+    //                AssetDatabase.CreateAsset(argumentBase, ARGUMENT_ASSET_PATH + "main/" + argumentAssetFilename);
+    //            }
                 
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError("Error when trying create asset for " + argumentAssetFilename);
-                Debug.LogException(ex);
-                throw;
-            }
-        }
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            Debug.LogError("Error when trying create asset for " + argumentAssetFilename);
+    //            Debug.LogException(ex);
+    //            throw;
+    //        }
+    //    }
         
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-        EditorUtility.FocusProjectWindow();
-        Debug.Log("Create assets successfully.");
+    //    AssetDatabase.SaveAssets();
+    //    AssetDatabase.Refresh();
+    //    EditorUtility.FocusProjectWindow();
+    //    Debug.Log("Create assets successfully.");
 
-    }
+    //}
 
     /**
      * Create defined argument info set from arguments for the main debate
      */
-    [MenuItem("GameObject/Create ArgumentInfo_Effect set by name")]
-    static void PopulateArgumentInfoEffectSet()
-    {
-        DirectoryInfo dir = new DirectoryInfo(ARGUMENT_ASSET_PATH + "main/");
-        FileInfo[] argumentAssets = dir.GetFiles("*.asset");
+    //[MenuItem("GameObject/Create ArgumentInfo_Effect set by name")]
+    //static void PopulateArgumentInfoEffectSet()
+    //{
+    //    DirectoryInfo dir = new DirectoryInfo(ARGUMENT_ASSET_PATH + "main/");
+    //    FileInfo[] argumentAssets = dir.GetFiles("*.asset");
 
-        // create generated defined argument info/effect set object
-        DefinedArgumentInfos definedArgumentInfoSet = ScriptableObject.CreateInstance<DefinedArgumentInfos>();
-        DefinedArgumentEffects definedArgumentEffectSet = ScriptableObject.CreateInstance<DefinedArgumentEffects>();
-        List<DefinedArgumentInfo> definedArgumentInfos = new List<DefinedArgumentInfo>();
-        List<DefinedArgumentEffect> definedArgumentEffects = new List<DefinedArgumentEffect>();
-        foreach (FileInfo argumentAsset in argumentAssets)
-        {
-            string filename = argumentAsset.Name;
-            try
-            {
+    //    // create generated defined argument info/effect set object
+    //    DefinedArgumentInfos definedArgumentInfoSet = ScriptableObject.CreateInstance<DefinedArgumentInfos>();
+    //    DefinedArgumentEffects definedArgumentEffectSet = ScriptableObject.CreateInstance<DefinedArgumentEffects>();
+    //    List<DefinedArgumentInfo> definedArgumentInfos = new List<DefinedArgumentInfo>();
+    //    List<DefinedArgumentEffect> definedArgumentEffects = new List<DefinedArgumentEffect>();
+    //    foreach (FileInfo argumentAsset in argumentAssets)
+    //    {
+    //        string filename = argumentAsset.Name;
+    //        try
+    //        {
                 
-                Argument argument = (Argument)AssetDatabase.LoadAssetAtPath(ARGUMENT_ASSET_PATH + "main/" + filename, typeof(Argument));
+    //            Argument argument = (Argument)AssetDatabase.LoadAssetAtPath(ARGUMENT_ASSET_PATH + "main/" + filename, typeof(Argument));
 
-                string argumentName = filename.Split(new string[] { "_By" }, StringSplitOptions.None)[0];
-                // Try to load corresponding argument effect and info in their folders by argumentName
-                ArgumentInfo argumentInfo = (ArgumentInfo)AssetDatabase.LoadAssetAtPath("Assets/GameData/DefinedArgumentInfos/main/" + argumentName + ".asset", typeof(ArgumentInfo));
-                ArgumentEffect argumentEffect = (ArgumentEffect)AssetDatabase.LoadAssetAtPath("Assets/GameData/DefinedArgumentEffects/main/" + argumentName + ".asset", typeof(ArgumentEffect));
-                DefinedArgumentInfo definedArgumentInfo;
-                DefinedArgumentEffect definedArgumentEffect;
-                definedArgumentInfo.argument = argument;
-                definedArgumentInfo.argumentInfo = argumentInfo;
-                definedArgumentEffect.argument = argument;
-                definedArgumentEffect.argumentEffect = argumentEffect;
+    //            string argumentName = filename.Split(new string[] { "_By" }, StringSplitOptions.None)[0];
+    //            // Try to load corresponding argument effect and info in their folders by argumentName
+    //            ArgumentInfo argumentInfo = (ArgumentInfo)AssetDatabase.LoadAssetAtPath("Assets/GameData/DefinedArgumentInfos/main/" + argumentName + ".asset", typeof(ArgumentInfo));
+    //            ArgumentEffect argumentEffect = (ArgumentEffect)AssetDatabase.LoadAssetAtPath("Assets/GameData/DefinedArgumentEffects/main/" + argumentName + ".asset", typeof(ArgumentEffect));
+    //            DefinedArgumentInfo definedArgumentInfo;
+    //            DefinedArgumentEffect definedArgumentEffect;
+    //            definedArgumentInfo.argument = argument;
+    //            definedArgumentInfo.argumentInfo = argumentInfo;
+    //            definedArgumentEffect.argument = argument;
+    //            definedArgumentEffect.argumentEffect = argumentEffect;
 
-                definedArgumentInfos.Add(definedArgumentInfo);
-                definedArgumentEffects.Add(definedArgumentEffect);
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError("Error when handling argument " + filename);
-                Debug.LogException(ex);
-            }
+    //            definedArgumentInfos.Add(definedArgumentInfo);
+    //            definedArgumentEffects.Add(definedArgumentEffect);
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            Debug.LogError("Error when handling argument " + filename);
+    //            Debug.LogException(ex);
+    //        }
 
-        }
+    //    }
 
-        // save the generated assets
-        definedArgumentInfoSet.definedArgumentInfos = definedArgumentInfos.ToArray();
-        definedArgumentEffectSet.definedArguments = definedArgumentEffects.ToArray();
+    //    // save the generated assets
+    //    definedArgumentInfoSet.definedArgumentInfos = definedArgumentInfos.ToArray();
+    //    definedArgumentEffectSet.definedArguments = definedArgumentEffects.ToArray();
 
-        AssetDatabase.CreateAsset(definedArgumentInfoSet, "Assets/generated_main_defined_argument_infos.asset");
-        AssetDatabase.CreateAsset(definedArgumentEffectSet, "Assets/generated_main_defined_argument_effects.asset");
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-        EditorUtility.FocusProjectWindow();
-        Debug.Log("Create assets successfully.");
-    }
+    //    AssetDatabase.CreateAsset(definedArgumentInfoSet, "Assets/generated_main_defined_argument_infos.asset");
+    //    AssetDatabase.CreateAsset(definedArgumentEffectSet, "Assets/generated_main_defined_argument_effects.asset");
+    //    AssetDatabase.SaveAssets();
+    //    AssetDatabase.Refresh();
+    //    EditorUtility.FocusProjectWindow();
+    //    Debug.Log("Create assets successfully.");
+    //}
 
-    [MenuItem("GameObject/Create sample argument data")]
-    static void CreateSampleJsonData()
-    {
-        SerializedArgument serializedArgument = new SerializedArgument();
-        serializedArgument.argumentName = "Argument name";
-        serializedArgument.fact = "Fact name";
-        serializedArgument.tactic = "Tactic name";
-        serializedArgument.toArgument = false;
-        JsonWrapper jsonWrapper = new JsonWrapper(); 
-        ArgumentData argumentData = new ArgumentData();
-        argumentData.serializedArguments.Add(serializedArgument);
-        jsonWrapper.argumentData = argumentData;
+    //[MenuItem("GameObject/Create sample argument data")]
+    //static void CreateSampleJsonData()
+    //{
+    //    SerializedArgument serializedArgument = new SerializedArgument();
+    //    serializedArgument.argumentName = "Argument name";
+    //    serializedArgument.fact = "Fact name";
+    //    serializedArgument.tactic = "Tactic name";
+    //    serializedArgument.toArgument = false;
+    //    JsonWrapper jsonWrapper = new JsonWrapper(); 
+    //    ArgumentData argumentData = new ArgumentData();
+    //    argumentData.serializedArguments.Add(serializedArgument);
+    //    jsonWrapper.argumentData = argumentData;
 
-        string contents = JsonUtility.ToJson(jsonWrapper, true);
-        System.IO.File.WriteAllText(Application.dataPath + "/test.json", contents);
-    }
+    //    string contents = JsonUtility.ToJson(jsonWrapper, true);
+    //    System.IO.File.WriteAllText(Application.dataPath + "/test.json", contents);
+    //}
 }

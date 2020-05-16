@@ -15,6 +15,7 @@ public class Audience : ScriptableObject
 
     public void UpdateStat(ArgumentEffect effect)
     {
+        Debug.Log("Audience support change=" + effect.supportChange);
         support += effect.supportChange;
     }
 }

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1dcfeb715890844bf15ef1d385baf0, type: 3}
   m_Name: StrawmanProponent
   m_EditorClassIdentifier: 
-  toSelf: 1
-  mentalHealthChange: 0
-  supportChange: 0.3
+  toSelf: 0
+  mentalHealthChange: -0.2
+  supportChange: 0.5
   ArgAttBuff: 0
   mentalAttBuff: 0
   influenceBuff: 0
   targetThesisId: 0
-  maxThesisHealthChange: 40
-  currentThesisHealthChange: 40
+  maxThesisHealthChange: 0
+  currentThesisHealthChange: -70
   defenseChange: 0
   conversationBlock: StrawmanProponent

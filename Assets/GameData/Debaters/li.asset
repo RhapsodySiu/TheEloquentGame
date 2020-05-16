@@ -21,12 +21,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 74c66f4416054f54baaf83e2e2806fe2, type: 2}
   - {fileID: 11400000, guid: f49f3e020c211a94b9137688170f09f8, type: 2}
   - {fileID: 11400000, guid: d7972b35d64baaa4ca59c52cec0e3468, type: 2}
-  totalCurrentThesesHealth: 0
-  totalMaxThesesHealth: 0
+  totalCurrentThesesHealth: 300
+  totalMaxThesesHealth: 300
   arguments: []
   traits: 00000000
-  mentalMaxHealth: 100
-  mentalHealth: 100
+  mentalMaxHealth: 1
+  mentalHealth: 1
   actionPoint: 3
   basePow: 1
   baseInfluence: 1

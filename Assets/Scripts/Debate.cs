@@ -52,15 +52,18 @@ public class Debate : ScriptableObject
      */
     public void Init()
     {
+        Debug.Log("InitDebate player isProponent=" + player.isProponent);
         try
         {
             round = 0;
             isPlayerRound = false;
+            // player.isProponent = isProponent;
             player.InitDebater(true);
             if (!isTutorial)
             {
-                enemy = isProponent ? enemyOpponent : enemyProponent;
-                SetPlayerSide(isProponent);
+                enemy = player.isProponent ? enemyOpponent : enemyProponent;
+                // SetPlayerSide(isProponent);
+                //Debug.Log("Set player isProponent=" + isProponent);
                 Debug.Log("Set " + enemy + " to enemy");
             }
             enemy.InitDebater(false);
@@ -92,12 +95,12 @@ public class Debate : ScriptableObject
             {
                 if (argumentInfo.IsProponentArgument == player.isProponent)
                 {
-                    Debug.Log("Add " + argumentInfo + " to player available move");
+                    // Debug.Log("Add " + argumentInfo + " to player available move");
                     availablePlayerArguments.Add((argumentInfo, argument));
                 }
                 else
                 {
-                    Debug.Log("Add " + argumentInfo + " to enemy available move");
+                    // Debug.Log("Add " + argumentInfo + " to enemy available move");
                     availableEnemyArguments.Add((argumentInfo, argument));
                 }
             }
@@ -145,30 +148,20 @@ public class Debate : ScriptableObject
     {
         if (argumentInfo.IsProponentArgument == player.isProponent)
         {
-            Debug.Log("Add argument info '" + argumentInfo.ArgumentName + "' to player history");
+            Debug.Log("Add argument info '" + argumentInfo.ArgumentName + "' to player history, previous lengt="+ playerArgumentInfoHistory.Count); 
             playerArgumentInfoHistory.Add(new Tuple<ArgumentInfo, Argument>(argumentInfo, argumentMade));
-            // player.arguments.Add(argumentMade);
         } else
         {
-            Debug.Log("Add argument info '" + argumentInfo.ArgumentName + "' to enemy history");
+            Debug.Log("Add argument info '" + argumentInfo.ArgumentName + "' to enemy history, previous length=" + enemyArgumentInfoHistory.Count);
             enemyArgumentInfoHistory.Add(new Tuple<ArgumentInfo, Argument>(argumentInfo, argumentMade));
-            // enemy.arguments.Add(argumentMade);
         }
     }
 
     public void SetPlayerSide(bool isProponent)
     {
         player.isProponent = isProponent;
-        if (player.isProponent)
-        {
-            // set enemy as opponent
-            enemy.isProponent = false;
-        }
-        else
-        {
-            // set enemy as proponent
-            enemy.isProponent = true;
-        }
+        this.isProponent = isProponent;
+        Debug.Log("Set player isProponent=" + isProponent);
     }
 
     /*
@@ -240,13 +233,13 @@ public class Debate : ScriptableObject
                 // Check if the argument/thesis to which it responds exists.
                 if (argument.thesis != null && (player.HasThesis(argument.thesis) || enemy.HasThesis(argument.thesis)))
                 {
-                    Debug.Log("Found corresponding thesis info, candidate selected");
+                    //Debug.Log("Found corresponding thesis info, candidate selected");
                     foundArgument = true;
                     break;
                 }
                 else if (argument.argument != null && playerArgumentInfoHistory.Any(argumentTuple => argumentTuple.Item1 == argument.argument))
                 {
-                    Debug.Log("Found corresponding argument info, candidate selected");
+                    //Debug.Log("Found corresponding argument info, candidate selected");
                     foundArgument = true;
                     break;
                 }
@@ -261,12 +254,12 @@ public class Debate : ScriptableObject
             {
                 Debug.Log("Argument selected: " + argumentInfo);
                 // if suitable argument is found, remove all available arguments having the same argument info
-                Debug.Log("Removed relative argument infos");
+                //Debug.Log("Removed relative argument infos");
                 availableEnemyArguments.RemoveAll(t => t.Item1 == argumentInfo);
                 // update enemy history and enemy argument record
                 Tuple<ArgumentInfo, Argument> history = new Tuple<ArgumentInfo, Argument>(argumentInfo, argument);
-                enemyArgumentInfoHistory.Add(history);
-                enemy.arguments.Add(argument);
+                // enemyArgumentInfoHistory.Add(history);
+                // enemy.arguments.Add(argument);
 
                 definedArgumentEffectDict.TryGetValue(argument, out argumentEffect);
                 return new Tuple<ArgumentInfo, Argument, ArgumentEffect>(argumentInfo, argument, argumentEffect);
@@ -345,30 +338,110 @@ public class Debate : ScriptableObject
     {
         ArgumentInfo argumentInfo = null;
         ArgumentEffect argumentEffect = null;
+        Debug.Log("Get argument result for " + argument + ", playerRound=" + isPlayerRound + ", definedArgumentInfoDict length=" + definedArgumentInfoDict.Count);
         foreach (KeyValuePair<Argument, ArgumentInfo> entry in definedArgumentInfoDict)
         {
-            if (entry.Key.argument == argument.argument && entry.Key.thesis == argument.thesis && entry.Key.fact == argument.fact)
+            bool respondMatched = false;
+            bool tacticMatched = false;
+            bool factMatched = false;
+            bool standMatched = false;
+            // Since enemy AI often fails to match move, revamp the search method
+
+            // checking argument
+            if (entry.Key.argument != null && argument.argument != null)
             {
-                // check if is player round / enemy round
-                if (isPlayerRound)
+                if (entry.Key.argument.ArgumentName == argument.argument.ArgumentName) respondMatched = true;
+            }
+
+            // checking thesis
+            if (entry.Key.thesis != null && argument.thesis != null)
+            {
+                if (entry.Key.thesis.thesisName == argument.thesis.thesisName) respondMatched = true;
+            }
+
+            if (entry.Value.TacticInvariant) tacticMatched = true;
+            else if (entry.Key.tactic == null && argument.tactic == null) tacticMatched = true;
+            else if (entry.Key.tactic != null && argument.tactic != null && entry.Key.tactic.tacticName == argument.tactic.tacticName) tacticMatched = true;
+
+            // if the entry fact is null and the argument fact should be null or None
+            if (entry.Key.fact == null)
+            {
+                if (argument.fact == null || argument.fact.factName == "None") factMatched = true;
+            }
+            else if (entry.Key.fact.factName == "None")
+            {
+                // if the entry fact is None, the argument fact should be null or None
+                if (argument.fact == null || argument.fact.factName == "None") factMatched = true;
+            }
+            else
+            {
+                // finally, if fact is neither none nor null, compare fact name directly
+                if (argument.fact != null && argument.fact.factName == entry.Key.fact.factName) factMatched = true;
+            }
+
+            if (isPlayerRound)
+            {
+                if (entry.Value.IsProponentArgument == player.isProponent) standMatched = true;
+            }
+            else
+            {
+                if (entry.Value.IsProponentArgument == enemy.isProponent) standMatched = true;
+            }
+
+            // debug last problemm....
+            //if (!isPlayerRound) Debug.Log("Compare respond tactic fact stand of " + entry.Value.ArgumentName + " = " + respondMatched + "," + tacticMatched + "," + factMatched + "," + standMatched);
+            if (!respondMatched || !tacticMatched || !factMatched || !standMatched) continue;
+
+            // if tactic invariant, return this result
+            argumentInfo = entry.Value;
+            argumentEffect = GetArgumentEffect(argument, entry.Value.TacticInvariant);
+            break;
+        }
+        if (argumentEffect == null)
+        {
+            argumentEffect = GetDefaultArgumentEffect();
+        }
+        Debug.Log("Query=" + argument + ", info=" + argumentInfo + ", effect=" + argumentEffect);
+        return (argumentInfo, argumentEffect);
+    }
+
+    public ArgumentEffect GetArgumentEffect(Argument argument, bool tacticInvariant)
+    {
+
+        ArgumentEffect argumentEffect = null;
+        foreach (KeyValuePair<Argument, ArgumentEffect> entry in definedArgumentEffectDict)
+        {
+            if (entry.Key.argument == argument.argument && entry.Key.thesis == argument.thesis)
+            {
+                bool factMatched = false;
+                // if the entry fact is null and the argument fact should be null or None
+                if (entry.Key.fact == null)
                 {
-                    if (entry.Value.IsProponentArgument != player.isProponent) continue; 
-                } else
-                {
-                    if (entry.Value.IsProponentArgument != enemy.isProponent) continue;
+                    if (argument.fact == null || argument.fact.factName == "None") factMatched = true;
                 }
-                // if tactic invariant, return this result
-                if (entry.Value.TacticInvariant)
+                else if (entry.Key.fact.factName == "None")
                 {
-                    argumentInfo = entry.Value;
-                    definedArgumentEffectDict.TryGetValue(entry.Key, out argumentEffect);
+                    // if the entry fact is None, the argument fact should be null or None
+                    if (argument.fact == null || argument.fact.factName == "None") factMatched = true;
+                }
+                else
+                {
+                    // finally, if fact is neither none nor null, compare fact name directly
+                    if (argument.fact != null && argument.fact.factName == entry.Key.fact.factName) factMatched = true;
+                }
+
+                if (!factMatched) continue;
+                // if tactic invariant, return this result
+                if (tacticInvariant)
+                {
+                    argumentEffect = entry.Value;
                     break;
-                } else
+                }
+                else
                 {
                     if (entry.Key.tactic == argument.tactic)
                     {
-                        argumentInfo = entry.Value;
-                        definedArgumentEffectDict.TryGetValue(entry.Key, out argumentEffect);
+                        argumentEffect = entry.Value;
                         break;
                     }
                 }
@@ -378,36 +451,8 @@ public class Debate : ScriptableObject
         {
             argumentEffect = GetDefaultArgumentEffect();
         }
-        Debug.Log("Query=" + argument + ", result=" + argumentInfo);
-        return (argumentInfo, argumentEffect);
+        return argumentEffect;
     }
-
-    //public ArgumentEffect GetArgumentEffect(Argument argument)
-    //{
-    //    ArgumentEffect argumentEffect = null;
-    //    foreach (KeyValuePair<Argument, ArgumentEffect> entry in definedArgumentEffectDict)
-    //    {
-    //        if (entry.Key.argument == argument.argument && entry.Key.thesis == argument.thesis && entry.Key.fact == argument.fact)
-    //        {
-    //            // if tactic invariant, return this result
-    //            if (entry.Value.TacticInvariant)
-    //            {
-    //                argumentEffect = entry.Value;
-    //                break;
-    //            }
-    //            else
-    //            {
-    //                if (entry.Key.tactic == argument.tactic)
-    //                {
-    //                    argumentEffect = entry.Value;
-    //                    break;
-    //                }
-    //            }
-    //        }
-    //    }
-    //    Debug.Log("Query=" + argument + ", result=" + argumentEffect);
-    //    return argumentEffect;
-    //}
 
     public bool IsPlayerArgumentExist(Argument argument)
     {

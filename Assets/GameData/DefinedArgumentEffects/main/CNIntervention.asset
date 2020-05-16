@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1dcfeb715890844bf15ef1d385baf0, type: 3}
   m_Name: CNIntervention
   m_EditorClassIdentifier: 
-  toSelf: 1
-  mentalHealthChange: 0
-  supportChange: 0.4
+  toSelf: 0
+  mentalHealthChange: -0.25
+  supportChange: 0.75
   ArgAttBuff: 0
   mentalAttBuff: 0
   influenceBuff: 0
   targetThesisId: 0
-  maxThesisHealthChange: 35
-  currentThesisHealthChange: 35
+  maxThesisHealthChange: 0
+  currentThesisHealthChange: -80
   defenseChange: 0
   conversationBlock: CNIntervention

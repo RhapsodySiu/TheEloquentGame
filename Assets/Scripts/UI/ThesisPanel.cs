@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ThesisPanel : MonoBehaviour
 {
+    [System.Serializable]
     public struct ArgumentInfoBtnData
     {
         public ArgumentInfo argumentInfo;
@@ -62,7 +63,10 @@ public class ThesisPanel : MonoBehaviour
         }
         
         thesisInfoBtn.interactable = true;
-
+        if (thesisArgumentsPanel == null)
+        {
+            thesisArgumentsPanel = gameObject.GetComponentInChildren<ThesisArgumentsPanel>();
+        }
         thesisArgumentsPanel.UpdateArgumentInteraction();
     }
 
@@ -73,7 +77,10 @@ public class ThesisPanel : MonoBehaviour
             thesisInfoBtn = gameObject.GetComponentInChildren<ThesisInfoBtn>();
         }
         thesisInfoBtn.interactable = true;
-
+        if (thesisArgumentsPanel == null)
+        {
+            thesisArgumentsPanel = gameObject.GetComponentInChildren<ThesisArgumentsPanel>();
+        }
         thesisArgumentsPanel.DisableInteraction();
     }
 
@@ -104,6 +111,8 @@ public class ThesisPanel : MonoBehaviour
         argumentInfoBtnData.interactable = interactable;
         argumentInfoBtnData.respondToOther = respondtToOther;
         argumentInfoBtnDatas.Add(argumentInfoBtnData);
+        // Debug.Log("AddArgument: Argument button data adds " + argumentInfo.ArgumentName);
+        //Debug.Log("Current length = " + argumentInfoBtnDatas.Count);
         // UpdateArgumentListDisplay();
     }
 
@@ -134,7 +143,7 @@ public class ThesisPanel : MonoBehaviour
      */
     public void UpdateArgumentListDisplay()
     {
-        Debug.Log("Argument(s) to add = " + argumentInfoBtnDatas.Count);
+        // Debug.Log("UpdateArgumentListDisplay: Argument(s) to add = " + argumentInfoBtnDatas.Count);
         foreach ( ArgumentInfoBtnData argumentInfoBtnData in argumentInfoBtnDatas)
         {
             GameObject btn = Instantiate(argumentInfoBtnPrefab);
@@ -154,7 +163,7 @@ public class ThesisPanel : MonoBehaviour
         {
             thesisArgumentsPanel = gameObject.GetComponentInChildren<ThesisArgumentsPanel>();
         }
-        Debug.Log("Original argument size = " + argumentInfoBtnDatas.Count);
+        //Debug.Log("Original argument size = " + argumentInfoBtnDatas.Count);
         argumentInfoBtnDatas.Clear();
         int i = 0;
         foreach (Transform child in thesisArgumentsPanel.transform)
@@ -162,6 +171,6 @@ public class ThesisPanel : MonoBehaviour
             i += 1;
             GameObject.Destroy(child.gameObject);
         }
-        Debug.Log("Destroy child game object = " + i);
+        //Debug.Log("Destroy child game object = " + i);
     }
 }

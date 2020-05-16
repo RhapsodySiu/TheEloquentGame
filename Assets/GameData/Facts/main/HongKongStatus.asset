@@ -15,15 +15,13 @@ MonoBehaviour:
   factId: 0
   factName: HongKongStatus
   description: "In a part of the world familiar with conflict, dislocation and ruthless
-    ideological extremism, Hong Kong has long beckoned as an oasis of stability.\n\nIt
+    ideological extremism, Hong Kong has long beckoned as an oasis of stability. It
     has served as a bridge between two rival powers nursing mutual suspicions, the
     United States and China. It is Chinese territory yet governed by a legal system
     inherited from the West, and intertwined with the global financial system.\n\nBut
     now Hong Kong\u2019s status as neutral ground between mainland China and the outside
     world is being threatened by a pair of momentous confrontations. As President
     Trump increases tariffs on Chinese goods in his trade war, the value of Hong Kong
-    as a hub for commerce is being diminished. And as protesters filling  Hong Kong\u2019s
-    streets accuse China of breaching a deal that was supposed to protect the territory\u2019s
-    democratic norms, the endurance of its semiautonomous status appears in doubt.\n\n\nhttps://www.nytimes.com/2019/09/29/business/hong-kong-china-power.html"
+    as a hub for commerce is being diminished.\n\nhttps://www.nytimes.com/2019/09/29/business/hong-kong-china-power.html"
   cn_description: 
   zh_description: 

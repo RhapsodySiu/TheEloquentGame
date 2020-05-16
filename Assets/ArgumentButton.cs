@@ -70,8 +70,12 @@ public class ArgumentButton : MonoBehaviour
 
     public void Dehighlight(){
         transform.GetComponent<Image>().sprite = dehighlight;
+        if (btn == null)
+        {
+            btn = transform.GetComponent<Button>();
+        }
         btn.interactable = true;
-        Debug.Log("dehighlighting");
+        // Debug.Log("dehighlighting");
     }
 
     public void updateSubActionBtn(){
@@ -104,6 +108,10 @@ public class ArgumentButton : MonoBehaviour
 
     public bool IsInteractable()
     {
+        if (btn == null)
+        {
+            btn = transform.GetComponent<Button>();
+        }
         return this.btn.interactable;
     }
 

@@ -18,7 +18,7 @@ public class ThesisInfoBtn : MonoBehaviour
         debateModeController = GameObject.FindObjectOfType<DebateModeController>();
         if (thesis != null)
         {
-            gameObject.GetComponentInChildren<Text>().text = thesis.GetDescription("en") + "\n100/100";
+            gameObject.GetComponentInChildren<Text>().text = thesis.GetDescription("en");
         }
     }
 
@@ -30,8 +30,9 @@ public class ThesisInfoBtn : MonoBehaviour
     public void SetThesisInfo(DebaterThesis debaterThesis)
     {
         thesis = debaterThesis.thesis;
-        gameObject.GetComponentInChildren<Text>().text = thesis.GetDescription("en") + "\n" + debaterThesis.currentHealth + "/" + debaterThesis.maxHealth;
-        Debug.Log("Set thesis text successfully");
+        // gameObject.GetComponentInChildren<Text>().text = thesis.GetDescription("en") + "\n" + debaterThesis.currentHealth + "/" + debaterThesis.maxHealth;
+        gameObject.GetComponentInChildren<Text>().text = thesis.GetDescription("en");
+        // Debug.Log("Set thesis text successfully");
     }
 
     public void OnClick()

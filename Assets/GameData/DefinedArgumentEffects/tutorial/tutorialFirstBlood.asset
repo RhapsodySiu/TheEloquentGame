@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: tutorialFirstBlood
   m_EditorClassIdentifier: 
   toSelf: 0
-  mentalHealthChange: -0.1
-  supportChange: 0.1
+  mentalHealthChange: -0.2
+  supportChange: 0.4
   ArgAttBuff: 0
   mentalAttBuff: 0
   influenceBuff: 0

@@ -53,6 +53,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cf1e640b44b1e9d419a4f5749b34aea3, type: 3}
   - {fileID: 21300000, guid: df06cadf77625d3438be24d26d76bbe5, type: 3}
   - {fileID: 21300000, guid: fc53986ce5321df4aa2e634586b11c12, type: 3}
+  - {fileID: 21300000, guid: e430de79ae57f5b48be69394469cbbee, type: 3}
   portraitsFace: 1
   setSayDialog: {fileID: 0}
   description: 

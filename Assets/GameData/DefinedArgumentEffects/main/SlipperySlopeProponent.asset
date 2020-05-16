@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: SlipperySlopeProponent
   m_EditorClassIdentifier: 
   toSelf: 0
-  mentalHealthChange: -0.4
-  supportChange: 0.2
+  mentalHealthChange: -0.3
+  supportChange: 0.4
   ArgAttBuff: 0
   mentalAttBuff: 0
   influenceBuff: 0
   targetThesisId: 0
   maxThesisHealthChange: 0
-  currentThesisHealthChange: -30
+  currentThesisHealthChange: -90
   defenseChange: 0
   conversationBlock: SlipperySlopeProponent

@@ -874,7 +874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.85882354}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1070,6 +1070,7 @@ GameObject:
   - component: {fileID: 1585356548}
   - component: {fileID: 1585356546}
   - component: {fileID: 1585356547}
+  - component: {fileID: 1585356549}
   m_Layer: 0
   m_Name: GuiCamera
   m_TagString: Untagged
@@ -1146,6 +1147,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1585356549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585356545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0139e4798e0ce5a44a21a57d8edb6923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldFilmShader: {fileID: 4800000, guid: 81c09dcbfba220e459223269a96381e8, type: 3}
+  OldFilmEffectAmount: 0.2
+  contrast: 2
+  distortion: 0.1
+  cubicDistortion: 0.2
+  scale: 0.8
+  sepiaColor: {r: 0.3882353, g: 0.3372549, b: 0.14117648, a: 1}
+  vignetteTexture: {fileID: 2800000, guid: 0b9fb8967dbc12340823788e9559038b, type: 3}
+  vignetteAmount: 1
+  scratchesTexture: {fileID: 2800000, guid: aba39918b73c05440aa19d7c8f6caff2, type: 3}
+  scratchesYSpeed: 0.2
+  scratchesXSpeed: 0.2
+  dustTexture: {fileID: 2800000, guid: aba39918b73c05440aa19d7c8f6caff2, type: 3}
+  dustYSpeed: 0.2
+  dustXSpeed: 0
 --- !u!1 &1680262174
 GameObject:
   m_ObjectHideFlags: 0

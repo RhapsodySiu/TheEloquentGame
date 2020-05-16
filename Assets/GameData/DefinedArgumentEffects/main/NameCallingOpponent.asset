@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1dcfeb715890844bf15ef1d385baf0, type: 3}
+  m_Name: NameCallingOpponent
+  m_EditorClassIdentifier: 
+  toSelf: 0
+  mentalHealthChange: -0.4
+  supportChange: -0.5
+  ArgAttBuff: 0
+  mentalAttBuff: 0
+  influenceBuff: 0
+  targetThesisId: 0
+  maxThesisHealthChange: 0
+  currentThesisHealthChange: -100
+  defenseChange: 0
+  conversationBlock: NameCallingOpponent

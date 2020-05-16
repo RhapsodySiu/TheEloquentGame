@@ -26,7 +26,7 @@ public class PreviewSubActionPanel : MonoBehaviour
         {
             displayBtn.SetRedirectTo(selectFrom);
         }
-        Debug.Log("Listener added");
+        //Debug.Log("Listener added");
     }
 
     // Update is called once per frame

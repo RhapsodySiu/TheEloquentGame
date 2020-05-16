@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSelf: 0
   mentalHealthChange: -0.2
-  supportChange: 0.25
+  supportChange: 0.7
   ArgAttBuff: 0
   mentalAttBuff: 0
   influenceBuff: 0
   targetThesisId: 0
   maxThesisHealthChange: 0
-  currentThesisHealthChange: -40
+  currentThesisHealthChange: -90
   defenseChange: 0
   conversationBlock: PoliticalPersecution

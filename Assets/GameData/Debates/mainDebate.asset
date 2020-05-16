@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: mainDebate
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: ee9e968b3a3ece94cbbfcff8a4a5216c, type: 2}
-  enemy: {fileID: 0}
+  enemy: {fileID: 11400000, guid: 96c1edc1782d9c34380039bffa05ab99, type: 2}
   enemyProponent: {fileID: 11400000, guid: 7ffdefc933f058444b25a0714e0366b2, type: 2}
   enemyOpponent: {fileID: 11400000, guid: 96c1edc1782d9c34380039bffa05ab99, type: 2}
   isProponent: 1
@@ -37,4 +37,4 @@ MonoBehaviour:
   defalutInvalidArgumentEffect: {fileID: 11400000, guid: db53644dfe3c640479232b0912043147,
     type: 2}
   maxRound: 5
-  round: 0
+  round: 8

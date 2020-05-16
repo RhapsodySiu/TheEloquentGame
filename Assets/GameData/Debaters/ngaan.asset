@@ -21,12 +21,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f8e435f1b15dba446b63e4dc6d98cf40, type: 2}
   - {fileID: 11400000, guid: 6e3cb0bc9decdce4ea21959875c9f389, type: 2}
   - {fileID: 11400000, guid: 065ed422a6e5da84dacc783634059d1b, type: 2}
-  totalCurrentThesesHealth: 0
-  totalMaxThesesHealth: 0
-  arguments: []
+  totalCurrentThesesHealth: 245
+  totalMaxThesesHealth: 350
+  arguments:
+  - {fileID: 11400000, guid: 4bea161c363276e43aa52e2be3f99794, type: 2}
+  - {fileID: 11400000, guid: 74bb470bdb3e0ee49b68fe412a24931a, type: 2}
+  - {fileID: 11400000, guid: acbc44952523fec448c06988fbad9cff, type: 2}
+  - {fileID: 11400000, guid: c50fc092eba91684eae90752b2dcafa2, type: 2}
+  - {fileID: 11400000, guid: d45aab00ba7ec7c488f3467573d5e65f, type: 2}
   traits: 02000000
-  mentalMaxHealth: 100
-  mentalHealth: 100
+  mentalMaxHealth: 1
+  mentalHealth: 0.3
   actionPoint: 3
   basePow: 1
   baseInfluence: 1.1

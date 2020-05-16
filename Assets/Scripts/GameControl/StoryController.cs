@@ -15,11 +15,12 @@ public class StoryController : MonoBehaviour
 
     /**
      * Utility function to set player side in dataController.debateList[debateIdx] in story mode
+     * 
      */
     public void SetPlayerSide(bool isProponent)
     {
+        if (dataController.debateIdx < 1) dataController.IncrementDebateIdx();
         dataController.SetPlayerSide(isProponent);
-        Debug.Log("Set player proponent = " + isProponent);
     }
     
 }

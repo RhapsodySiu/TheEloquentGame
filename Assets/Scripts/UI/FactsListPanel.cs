@@ -17,7 +17,7 @@ public class FactsListPanel : MonoBehaviour
             // prevent distortion
             btn.transform.localPosition = Vector3.zero;
             btn.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-            Debug.Log("make fact button");
+            // Debug.Log("make fact button");
 
         }
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: P3CrisisSolver
   m_EditorClassIdentifier: 
   thesisId: 2
-  thesisName: CrsisSolver
+  thesisName: CrisisSolver
   isProponent: 1
   thesisMaxHealth: 100
   description: Response to demands help rebuild governance and tackle deep-rooted
